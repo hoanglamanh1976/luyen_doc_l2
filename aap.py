@@ -1,22 +1,20 @@
 import streamlit as st
-import json
+import streamlit.components.v1 as components
 import time
 
-# Cấu hình giao diện chuẩn cho học sinh tiểu học
+# Cấu hình giao diện
 st.set_page_config(page_title="Bạn Bút Chì - Luyện đọc Lớp 2", page_icon="✏️", layout="centered")
 
-# CSS tùy biến giao diện thân thiện, chữ to, màu sắc tươi sáng
 st.markdown("""
 <style>
-    .big-font { font-size: 26px !important; font-weight: bold; color: #1E3A8A; line-height: 1.6; }
-    .instruction { font-size: 18px; color: #4B5563; }
-    .stButton>button { border-radius: 20px; font-size: 18px; height: 3em; background-color: #3B82F6; color: white; }
+    .big-font { font-size: 24px !important; font-weight: bold; color: #1E3A8A; line-height: 1.6; }
+    .stButton>button { border-radius: 20px; font-size: 16px; height: 2.8em; }
 </style>
 """, unsafe_allow_html=True)
 
-st.title("✏️ Bạn Bút Chì - Luyện Đọc Tiếng Việt Lớp 2")
+st.title("✏️ Bạn Bút Chì - Luyện Đọc Lớp 2")
 
-# 1. Kho bài đọc chuẩn lớp 2 (Có thể kết nối từ Google Sheets)
+# Kho bài đọc
 sample_lessons = {
     "Bài 1: Mùa xuân đã về": {
         "text": "Mùa xuân đã về. Muôn hoa khoe sắc thắm trong vườn. Chú chim sâu ríu rít chuyền cành, đón chào một ngày mới ngập tràn ánh nắng ấm áp.",
@@ -39,59 +37,58 @@ current_lesson = sample_lessons[lesson_name]
 st.markdown("---")
 st.markdown("### 📖 Bài đọc của con:")
 st.markdown(f'<div class="big-font">{current_lesson["text"]}</div>', unsafe_allow_html=True)
+st.write("")
 
-# Đọc mẫu bằng Web Speech API của trình duyệt
-st.markdown(f"""
-<button onclick="
-    let utterance = new SpeechSynthesisUtterance('{current_lesson['text']}');
+# Nút đọc mẫu qua component cách ly chống lỗi
+tts_html = f"""
+<div style="text-align: left;">
+    <button onclick="playTTS()" style="background-color: #10B981; color: white; border: none; padding: 10px 18px; border-radius: 10px; cursor: pointer; font-size: 15px; font-weight: bold;">
+        🔊 Nghe Bạn Bút Chì đọc mẫu
+    </button>
+</div>
+<script>
+function playTTS() {{
+    window.speechSynthesis.cancel();
+    let utterance = new SpeechSynthesisUtterance("{current_lesson['text']}");
     utterance.lang = 'vi-VN';
     utterance.rate = 0.85;
     window.speechSynthesis.speak(utterance);
-" style="background-color: #10B981; color: white; border: none; padding: 10px 20px; border-radius: 12px; cursor: pointer; font-size: 16px; margin-top: 10px;">
-    🔊 Nghe Bạn Bút Chì đọc mẫu
-</button>
-""", unsafe_allow_html=True)
+}}
+</script>
+"""
+components.html(tts_html, height=55)
 
 st.markdown("---")
 st.markdown("### 🎙️ Luyện đọc và Ghi âm")
-st.write("Con hãy bấm vào ô ghi âm dưới đây và đọc thật to, rõ ràng nhé:")
+st.write("Con hãy bấm vào ô bên dưới để đọc bài nhé:")
 
-# Thu âm trực tiếp bằng tính năng audio_input của Streamlit Web
-audio_data = st.audio_input("Bấm micro để bắt đầu đọc:")
+# Ô thu âm trực tiếp
+audio_data = st.audio_input("Bấm micro để đọc:")
 
 if audio_data:
-    st.success("✅ Đã ghi nhận giọng đọc của con! Bạn Bút Chì đang chấm bài...")
+    st.success("✅ Đã ghi nhận giọng đọc của con!")
     
-    # Giả lập thời gian xử lý và phân tích ASR + LLM trên Cloud
-    with st.spinner("Đang tính tốc độ và phát hiện lỗi đọc..."):
+    with st.spinner("Bạn Bút Chì đang chấm điểm..."):
         time.sleep(1.5)
-        
-        # Dữ liệu mô phỏng kết quả phân tích theo thang 4 Thông tư 27
-        wpm = 52 # Tốc độ từ/phút
+        wpm = 52
         mispronounced = ["khoe sắc"]
-        pause_score = 1.5
-        pronunciation_speed_score = 1.5
-        comprehension_score = 0.5
-        total_score = pronunciation_speed_score + pause_score + comprehension_score
+        total_score = 3.5
 
-    # Hiển thị bảng tổng kết trực quan cho học sinh
-    st.balloons() # Hiệu ứng bóng bay khen ngợi
+    st.balloons()
     st.markdown("## 🎉 Kết quả luyện đọc của con")
     
-    col1, col2, col3 = st.columns(3)
-    col1.metric("Tốc độ đọc", f"{wpm} từ/phút", "Chuẩn 50-60 wpm")
-    col2.metric("Điểm đọc (TT27)", f"{total_score}/4.0 điểm", "Mức Tốt")
-    col3.metric("Số từ đọc đúng", f"{current_lesson['word_count'] - len(mispronounced)}/{current_lesson['word_count']}")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Tốc độ", f"{wpm} từ/phút", "Chuẩn 50-60")
+    c2.metric("Điểm (TT27)", f"{total_score}/4.0 đ", "Mức Tốt")
+    c3.metric("Số từ đúng", f"{current_lesson['word_count'] - len(mispronounced)}/{current_lesson['word_count']}")
 
-    st.markdown("### 💬 Lời nhắn từ Bạn Bút Chì:")
-    st.info(f"Hôm nay con đọc rất to, rõ ràng và tự tin! Con chú ý luyện đọc lại từ **'{', '.join(mispronounced)}'** một chút xíu để giọng đọc hay hơn nữa nhé. Con xứng đáng được 3 ngôi sao chăm chỉ! ⭐⭐⭐")
+    st.info(f"Hôm nay con đọc rất to và tự tin! Con chú ý luyện đọc lại từ **'{', '.join(mispronounced)}'** một chút để hay hơn nhé. Tặng con 3 ngôi sao! ⭐⭐⭐")
 
-    # Câu hỏi đọc hiểu nhanh tương tác
     st.markdown("---")
     st.markdown(f"### ❓ Câu đố nhanh: {current_lesson['question']}")
-    student_ans = st.text_input("Gõ hoặc đọc câu trả lời của con:")
+    student_ans = st.text_input("Gõ câu trả lời của con vào đây:")
     if student_ans:
         if any(keyword in student_ans.lower() for keyword in current_lesson["expected_answer"].split()):
             st.success("🌟 Chính xác! Con hiểu bài rất xuất sắc!")
         else:
-            st.warning("Gần đúng rồi, con nhìn lại đoạn văn một lần nữa xem nhé!")
+            st.warning("Gần đúng rồi, con đọc lại câu chuyện xem sao nhé!")
