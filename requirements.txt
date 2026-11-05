@@ -1,1 +1,4 @@
-Hỏi Gemini
+Plaintext
+streamlit>=1.40.0
+
+
