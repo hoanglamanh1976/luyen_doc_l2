@@ -39,20 +39,35 @@ st.markdown("### 📖 Bài đọc của con:")
 st.markdown(f'<div class="big-font">{current_lesson["text"]}</div>', unsafe_allow_html=True)
 st.write("")
 
-# Nút đọc mẫu qua component cách ly chống lỗi
+# Nút đọc mẫu tự động dò tìm giọng Tiếng Việt
 tts_html = f"""
 <div style="text-align: left;">
     <button onclick="playTTS()" style="background-color: #10B981; color: white; border: none; padding: 10px 18px; border-radius: 10px; cursor: pointer; font-size: 15px; font-weight: bold;">
-        🔊 Nghe Bạn Bút Chì đọc mẫu
+        🔊 Nghe Bạn Bút Chì đọc mẫu (Tiếng Việt)
     </button>
 </div>
 <script>
 function playTTS() {{
     window.speechSynthesis.cancel();
-    let utterance = new SpeechSynthesisUtterance("{current_lesson['text']}");
+    let text = "{current_lesson['text']}";
+    let utterance = new SpeechSynthesisUtterance(text);
+    
+    // Tìm kiếm giọng tiếng Việt chuẩn trên trình duyệt
+    let voices = window.speechSynthesis.getVoices();
+    let viVoice = voices.find(v => v.lang.includes("vi") || v.name.toLowerCase().includes("vietnam") || v.name.toLowerCase().includes("tiếng việt"));
+    
+    if (viVoice) {{
+        utterance.voice = viVoice;
+    }}
+    
     utterance.lang = 'vi-VN';
-    utterance.rate = 0.85;
+    utterance.rate = 0.85; // Tốc độ vừa phải cho học sinh lớp 2
     window.speechSynthesis.speak(utterance);
+}}
+
+// Đảm bảo danh sách giọng được tải đầy đủ
+if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {{
+    speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
 }}
 </script>
 """
