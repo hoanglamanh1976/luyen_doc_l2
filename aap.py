@@ -2,7 +2,8 @@ import streamlit as st
 import streamlit.components.v1 as components
 import pandas as pd
 from datetime import datetime
-from streamlit_gsheets import GSheetsConnection
+import hashlib
+import requests
 import time
 
 # 1. CẤU HÌNH GIAO DIỆN & CHỐNG LỖI TRÌNH DUYỆT
@@ -46,32 +47,33 @@ st.markdown('<div class="school-header" translate="no">TRƯỜNG TIỂU HỌC TH
 st.title("✏️ Trợ lý Luyện Đọc Tiếng Việt Lớp 2")
 st.caption("Dữ liệu chấm điểm được tự động đồng bộ về Bảng tổng hợp của nhà trường")
 
-# 2. KHỞI TẠO KẾT NỐI GOOGLE SHEETS
-try:
-    conn = st.connection("gsheets", type=GSheetsConnection)
-except Exception as e:
-    conn = None
+# 2. GỬI ĐIỂM VỀ GOOGLE SHEET (qua Google Apps Script Web App)
 def save_score_to_sheet(row_data):
+    """Trả về (thành công?, thông báo lỗi nếu có)."""
     try:
         webhook_url = st.secrets.get("WEBHOOK_URL")
-        if not webhook_url:
-            return False
-        
-        payload = {
-            "time": row_data["Thời gian"],
-            "class_name": row_data["Lớp"],
-            "student_name": row_data["Họ và tên"],
-            "lesson_title": row_data["Bài đọc"],
-            "wpm": row_data["Tốc độ (WPM)"],
-            "errors": row_data["Từ cần rèn"],
-            "score": row_data["Điểm TT27"],
-            "evaluation": row_data["Đánh giá"]
-        }
-        
-        response = requests.post(webhook_url, json=payload, timeout=10)
-        return response.status_code == 200
+    except Exception:
+        webhook_url = None
+    if not webhook_url:
+        return False, "Chưa cấu hình WEBHOOK_URL trong Secrets."
+
+    payload = {
+        "time": row_data["Thời gian"],
+        "class_name": row_data["Lớp"],
+        "student_name": row_data["Họ và tên"],
+        "lesson_title": row_data["Bài đọc"],
+        "wpm": row_data["Tốc độ (WPM)"],
+        "errors": row_data["Từ cần rèn"],
+        "score": row_data["Điểm TT27"],
+        "evaluation": row_data["Đánh giá"],
+    }
+    try:
+        response = requests.post(webhook_url, json=payload, timeout=15)
+        if response.status_code == 200 and "ok" in response.text.lower():
+            return True, ""
+        return False, f"Máy chủ trả về mã {response.status_code}: {response.text[:200]}"
     except Exception as e:
-        return False
+        return False, str(e)
 
 # 3. KHO DỮ LIỆU BÀI ĐỌC 35 TUẦN GDPT 2018
 curriculum_data = {
@@ -400,7 +402,16 @@ if audio_file:
                 "Đánh giá": rating_text
             }
             
-            is_saved = save_score_to_sheet(data_to_save)
+            # Chỉ ghi 1 lần cho mỗi lần thu âm (tránh trùng khi app rerun)
+            audio_key = hashlib.md5(
+                audio_file.getvalue() + student_name.strip().encode() + lesson['title'].encode()
+            ).hexdigest()
+            if st.session_state.get("saved_key") != audio_key:
+                ok, err = save_score_to_sheet(data_to_save)
+                st.session_state["saved_key"] = audio_key
+                st.session_state["saved_ok"] = ok
+                st.session_state["saved_err"] = err
+            is_saved = st.session_state.get("saved_ok", False)
 
         st.balloons()
         st.markdown("## 🌟 Kết quả Đánh giá Tiếng Việt")
@@ -414,6 +425,8 @@ if audio_file:
             st.success("📊 Kết quả của em đã được ghi nhận tự động vào Sổ theo dõi của nhà trường!")
         else:
             st.info("ℹ️ Kết quả đã được chấm điểm trực tiếp trên màn hình.")
+            if st.session_state.get("saved_err"):
+                st.caption(f"(Chi tiết lỗi ghi Sheet: {st.session_state['saved_err']})")
 
         st.markdown("### 💬 Lời nhận xét sư phạm:")
         st.info(f"Hôm nay em **{student_name}** lớp **{selected_class}** đọc bài to, rõ ràng. "
