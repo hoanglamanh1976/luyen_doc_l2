@@ -24,7 +24,8 @@ NEAR_RATIO = 0.75                    # độ giống tối thiểu để tính l
 MIN_SECONDS = 3.0                    # ghi âm ngắn hơn mức này -> yêu cầu ghi lại
 MIN_RECOGNIZED = 0.20                # máy nghe được dưới 20% bài -> coi là chưa nghe rõ, không chấm
 
-VOICES = {"Cô Hoài My (giọng nữ)": "vi-VN-HoaiMyNeural", "Thầy Nam Minh (giọng nam)": "vi-VN-NamMinhNeural"}
+VOICES = {"Cô Hoài My (giọng nữ, giọng Bắc)": "vi-VN-HoaiMyNeural",
+          "Thầy Nam Minh (giọng nam, giọng Bắc)": "vi-VN-NamMinhNeural"}
 SPEEDS = {"Đọc chậm (cho em tập đọc)": "-20%", "Đọc vừa": "-8%"}
 
 st.set_page_config(page_title="Luyện đọc Lớp 2 - Tiểu học Thái Hòa", page_icon="✏️", layout="centered")
@@ -264,58 +265,49 @@ def grade(status, credit, speaking_seconds, term):
 
 
 def build_comment(name, lesson_title, res, term):
-    """Viết lời nhận xét sư phạm theo kết quả cụ thể của từng em."""
-    r = res["rating"]
+    """Nhận xét theo tinh thần Thông tư 27/2020/TT-BGDĐT: mức đạt, kết quả, ưu điểm, điểm cần cố gắng, hướng khắc phục."""
+    rating = res["rating"]
     pct = round(res["accuracy"] * 100)
     n_read = res["n_ok"] + res["n_near"]
     target = TARGET_WPM.get(term, 30)
-    pick = (len(name) + int(res["score"] * 2) + res["total"]) % 3   # đổi câu chữ để mỗi em một khác
-
-    if r.startswith("Hoàn thành tốt"):
-        opening = [
-            f"Cô rất vui vì em {name} đã đọc bài “{lesson_title}” thật tốt!",
-            f"Chúc mừng em {name}! Bài đọc “{lesson_title}” của em rất đáng khen.",
-            f"Em {name} đọc bài “{lesson_title}” rất tròn vành rõ chữ, cô khen em!",
-        ][pick]
-        body = f"Em đọc đúng {n_read}/{res['total']} tiếng ({pct}%), giọng đọc rõ ràng, dễ nghe."
-    elif r.startswith("Hoàn thành ("):
-        opening = [
-            f"Em {name} đã hoàn thành bài đọc “{lesson_title}”, cô ghi nhận sự cố gắng của em.",
-            f"Cô thấy em {name} đã đọc được bài “{lesson_title}” rồi, em làm tốt lắm!",
-            f"Em {name} đọc bài “{lesson_title}” khá tốt, chỉ cần sửa thêm một vài chỗ nhỏ là tuyệt vời.",
-        ][pick]
-        body = f"Em đọc đúng {n_read}/{res['total']} tiếng ({pct}%). Em đã nắm được phần lớn bài đọc."
-    else:
-        opening = [
-            f"Em {name} đã rất can đảm đọc bài “{lesson_title}”, cô khen em đã dám đọc to!",
-            f"Cô thấy em {name} đã cố gắng, nhưng bài “{lesson_title}” cần được luyện thêm một chút nữa.",
-            f"Không sao đâu em {name}, ai cũng cần đọc vài lần mới thuộc. Mình cùng đọc lại nhé!",
-        ][pick]
-        body = f"Lần này em đọc đúng {n_read}/{res['total']} tiếng ({pct}%). Em hãy nghe cô đọc mẫu rồi đọc lại nhé."
-
-    parts = [opening, body]
-
     need = (res["wrong"] + res["near"])[:6]
+    wpm = res["wpm"]
+    is_t, is_h = rating.startswith("Hoàn thành tốt"), rating.startswith("Hoàn thành (")
+
+    result = f"Em đọc đúng {n_read}/{res['total']} tiếng ({pct}%), tốc độ khoảng {wpm} tiếng/phút."
+
+    strengths = []
+    if is_t:
+        strengths.append(f"Em {name} đọc bài “{lesson_title}” đúng, rõ ràng, phát âm chính xác hầu hết các tiếng.")
+    elif is_h:
+        strengths.append(f"Em {name} đã đọc được phần lớn bài “{lesson_title}”, đọc đúng nhiều tiếng.")
+    else:
+        strengths.append(f"Em {name} mạnh dạn đọc to bài “{lesson_title}”, đây là điểm đáng ghi nhận.")
+    if wpm >= target and not rating.startswith("Chưa"):
+        strengths.append("Tốc độ đọc đáp ứng yêu cầu.")
+
+    weaknesses = []
     if need:
-        parts.append("Những tiếng em cần rèn thêm: <b>" + ", ".join(need) + "</b>. "
-                     "Con đọc chậm từng tiếng, mỗi tiếng ba lần, rồi ghép vào cả câu nhé.")
-    else:
-        parts.append("Em không sai tiếng nào, thật xuất sắc!")
+        weaknesses.append("Còn đọc chưa chính xác các tiếng: <b>" + ", ".join(need) + "</b>.")
+    if wpm < target * 0.7:
+        weaknesses.append("Tốc độ đọc còn chậm, chưa trôi chảy.")
+    elif wpm > 130:
+        weaknesses.append("Em đọc hơi nhanh, cần đọc chậm lại để rõ từng tiếng.")
+    if not weaknesses:
+        weaknesses.append("Chưa thấy hạn chế đáng kể ở bài đọc này.")
 
-    if res["wpm"] < target * 0.7:
-        parts.append("Em đọc còn hơi chậm, con hãy nhìn trước cả cụm từ để đọc trôi chảy hơn.")
-    elif res["wpm"] > 130:
-        parts.append("Em đọc hơi nhanh, con nhớ ngắt nghỉ ở dấu phẩy và dấu chấm để nghe rõ từng tiếng.")
-    else:
-        parts.append("Tốc độ đọc của em vừa phải, nghe rất dễ chịu.")
-
-    if r.startswith("Hoàn thành tốt"):
-        parts.append("Em hãy tiếp tục giữ vững và thử sức với bài đọc tiếp theo nhé! ⭐⭐⭐")
-    elif r.startswith("Hoàn thành ("):
-        parts.append("Luyện thêm một lần nữa, em sẽ đạt điểm cao hơn. Cô tin em làm được! ⭐⭐")
-    else:
-        parts.append("Con bấm nút “Ghi âm lại” để đọc thêm một lần nữa nhé. Cô tin lần sau em sẽ tiến bộ! ⭐")
-    return parts
+    plan = []
+    if need:
+        plan.append("Đọc chậm từng tiếng còn sai (mỗi tiếng 3 lần), sau đó ghép vào cả câu; nghe đọc mẫu rồi đọc theo.")
+    if wpm < target * 0.7:
+        plan.append("Đọc thành tiếng bài đọc khoảng 5–10 phút mỗi ngày, tập đọc theo cụm từ để đọc trôi chảy hơn.")
+    if wpm > 130:
+        plan.append("Đọc chậm hơn, ngắt nghỉ ở dấu phẩy, dấu chấm.")
+    if is_t and not plan:
+        plan.append("Tiếp tục duy trì, đọc thêm các bài khác để đọc diễn cảm hơn.")
+    if not (is_t or is_h):
+        plan.append("Nghe đọc mẫu và đọc lại bài; gia đình và giáo viên hỗ trợ em luyện đọc thêm.")
+    return dict(level=rating, result=result, strengths=strengths, weaknesses=weaknesses, plan=plan)
 
 
 def render_marked(tokens):
@@ -575,11 +567,181 @@ curriculum_data = {
 
 
 # =====================================================================
+# 5b. KHÓA ĐÁP ÁN ĐỌC HIỂU (mỗi bài: các ý cần có, mỗi ý có nhiều cách nói đúng)
+#     "groups": mỗi nhóm là 1 ý; học sinh nói đúng 1 trong các cách của nhóm là được ý đó.
+#     Trả lời được ít nhất 1 ý là ĐÚNG; được tất cả các ý là ĐẦY ĐỦ.
+# =====================================================================
+ANSWER_KEYS = {
+    "Tuần 1: Tôi là học sinh lớp 2": {"sample": "Bạn nhỏ cảm thấy háo hức.",
+        "groups": [["háo hức", "hào hứng", "phấn khởi", "vui mừng", "hồ hởi", "vui", "mừng"]]},
+    "Tuần 2: Phần thưởng": {"sample": "Na đỡ bạn dậy và dìu bạn vào phòng y tế.",
+        "groups": [["đỡ bạn dậy", "đỡ bạn", "đỡ lan", "đỡ", "nâng bạn", "giúp bạn đứng dậy"],
+                   ["dìu bạn", "dìu", "phòng y tế", "y tế", "đưa bạn vào"]]},
+    "Tuần 3: Làm việc thật là vui": {"sample": "Con gà trống gáy vang gọi mọi người thức dậy.",
+        "groups": [["gáy vang", "gáy", "gọi mọi người thức dậy", "gọi mọi người dậy", "đánh thức mọi người"]]},
+    "Tuần 4: Mỗi người một vẻ": {"sample": "Bạn Hoa có đôi mắt đen láy và nụ cười tươi như hoa nở.",
+        "groups": [["đen láy", "mắt đen", "đôi mắt đen"],
+                   ["nụ cười tươi", "cười tươi", "tươi như hoa", "hoa nở"]]},
+    "Tuần 5: Ngôi trường mới": {"sample": "Ngôi trường mới có mái ngói màu đỏ tươi.",
+        "groups": [["đỏ tươi", "màu đỏ", "đỏ"]]},
+    "Tuần 6: Giờ ra chơi": {"sample": "Các bạn nữ đang nhảy dây.",
+        "groups": [["nhảy dây"]]},
+    "Tuần 7: Người thầy mẫu mực": {"sample": "Giọng thầy giáo ấm áp và truyền cảm.",
+        "groups": [["ấm áp", "ấm", "dịu dàng"], ["truyền cảm"]]},
+    "Tuần 8: Bàn tay dịu dàng": {"sample": "Thầy giáo đặt bàn tay lên vai bạn An.",
+        "groups": [["vai bạn an", "vai an", "lên vai", "vai"]]},
+    "Tuần 9: Ôn tập giữa học kỳ 1": {"sample": "Các bạn cố gắng đọc to, rõ ràng và phát âm tròn vành rõ chữ.",
+        "groups": [["đọc to"], ["rõ ràng", "tròn vành rõ chữ", "tròn vành", "rõ chữ"]]},
+    "Tuần 10: Bà nội, bà ngoại": {"sample": "Mái tóc bà trắng như cước.",
+        "groups": [["trắng như cước", "như cước", "cước"]]},
+    "Tuần 11: Mẹ": {"sample": "Mẹ ngồi bên giường quạt mát cho con.",
+        "groups": [["quạt mát", "quạt cho con", "quạt"], ["thức trắng đêm", "thức trắng", "ngồi bên giường"]]},
+    "Tuần 12: Bố của em": {"sample": "Bố dạy bạn nhỏ tập đi xe đạp.",
+        "groups": [["xe đạp"]]},
+    "Tuần 13: Anh em một nhà": {"sample": "Mẹ mua cho hai anh em chùm nhãn chín mọng.",
+        "groups": [["chùm nhãn", "quả nhãn", "nhãn"]]},
+    "Tuần 14: Bữa cơm gia đình": {"sample": "Bạn nhỏ giúp mẹ dọn bát đũa.",
+        "groups": [["dọn bát đũa", "dọn bát", "bát đũa", "bát", "đũa"]]},
+    "Tuần 15: Bạn trong nhà": {"sample": "Đôi mắt chú mèo được so sánh với hai hòn ngọc.",
+        "groups": [["hai hòn ngọc", "hòn ngọc", "ngọc"]]},
+    "Tuần 16: Con vật nuôi": {"sample": "Chú cún chạy ra và ve vẩy chiếc đuôi đón bạn nhỏ.",
+        "groups": [["chạy xổ ra", "chạy ra", "chạy", "mừng rỡ", "chạy ra đón"],
+                   ["ve vẩy", "vẫy đuôi", "vẩy đuôi", "đuôi"]]},
+    "Tuần 17: Cây xanh quanh em": {"sample": "Những búp non nhú ra giống như những ngọn nến.",
+        "groups": [["ngọn nến", "những ngọn nến", "nến"]]},
+    "Tuần 18: Ôn tập cuối học kỳ 1": {"sample": "Mọi người mặc áo len và quàng khăn ấm.",
+        "groups": [["áo len", "len"], ["quàng khăn", "khăn ấm", "khăn"]]},
+    "Tuần 19: Mùa xuân đến rồi": {"sample": "Những hạt mưa xuân là mưa bụi lất phất.",
+        "groups": [["mưa bụi", "lất phất", "mưa phùn"]]},
+    "Tuần 20: Tết quê em": {"sample": "Những chậu quất trĩu trịt quả vàng ươm.",
+        "groups": [["trĩu trịt", "trĩu", "vàng ươm", "quả vàng", "nhiều quả"]]},
+    "Tuần 21: Muôn loài chim": {"sample": "Chim chích chòe chuyền cành thoăn thoắt.",
+        "groups": [["chích chòe", "chim chích chòe", "chích choè"]]},
+    "Tuần 22: Rừng xanh muôn màu": {"sample": "Bác gấu đen chia sẻ mật ong ngọt cho muôn loài.",
+        "groups": [["mật ong ngọt", "mật ong", "mật"]]},
+    "Tuần 23: Sông nước quê hương": {"sample": "Dòng sông được so sánh với dải lụa mềm mại.",
+        "groups": [["dải lụa", "giải lụa", "lụa"]]},
+    "Tuần 24: Biển đảo quê hương": {"sample": "Mặt trời mọc được so sánh với quả cầu lửa khổng lồ.",
+        "groups": [["quả cầu lửa", "cầu lửa", "quả cầu"]]},
+    "Tuần 25: Bác Hồ kính yêu": {"sample": "Bác dặn các cháu phải chăm ngoan, học giỏi.",
+        "groups": [["chăm ngoan", "ngoan", "chăm chỉ"], ["học giỏi", "học tốt"]]},
+    "Tuần 26: Ai ngoan sẽ được thưởng": {"sample": "Vì bạn dũng cảm nhận lỗi và thật thà.",
+        "groups": [["dũng cảm", "nhận lỗi", "dám nhận lỗi"], ["thật thà", "trung thực", "thành thật"]]},
+    "Tuần 27: Ôn tập giữa học kỳ 2": {"sample": "Ở phương Bắc là hoa đào phai.",
+        "groups": [["hoa đào phai", "đào phai", "hoa đào", "đào"]]},
+    "Tuần 28: Đất nước tươi đẹp": {"sample": "Đó là ruộng bậc thang và biển xanh cát trắng.",
+        "groups": [["ruộng bậc thang", "bậc thang"], ["biển xanh", "cát trắng", "biển"]]},
+    "Tuần 29: Quê hương mến yêu": {"sample": "Hương lúa mới bay theo ngọn gió.",
+        "groups": [["ngọn gió", "gió"]]},
+    "Tuần 30: Nghề nghiệp ước mơ": {"sample": "Bạn Mai ước mơ làm bác sĩ.",
+        "groups": [["bác sĩ", "bác sỹ"]]},
+    "Tuần 31: Chú bộ đội cụ Hồ": {"sample": "Chú bộ đội làm nhiệm vụ nơi đảo xa, đầu sóng ngọn gió.",
+        "groups": [["đảo xa", "ngoài đảo", "hải đảo", "đầu sóng ngọn gió", "đảo"]]},
+    "Tuần 32: Bầu trời và vũ trụ": {"sample": "Những ngôi sao được ví như những viên kim cương.",
+        "groups": [["viên kim cương", "kim cương"]]},
+    "Tuần 33: Trái đất của chúng mình": {"sample": "Bạn nhỏ cùng các bạn nhặt rác và chăm sóc bồn hoa.",
+        "groups": [["nhặt rác", "dọn rác", "rác"], ["bồn hoa", "chăm sóc bồn hoa", "chăm sóc cây", "cây cảnh"]]},
+    "Tuần 34: Mùa hè rực rỡ": {"sample": "Cây phượng vĩ nở hoa đỏ rực.",
+        "groups": [["phượng vĩ", "hoa phượng", "cây phượng", "phượng"]]},
+    "Tuần 35: Tạm biệt lớp 2": {"sample": "Bạn nhỏ hứa sẽ chăm ngoan và chuẩn bị bước vào lớp ba.",
+        "groups": [["chăm ngoan", "ngoan", "chăm chỉ"], ["lớp ba", "lớp 3", "chuẩn bị", "bước vào lớp"]]},
+}
+
+
+def _words(text):
+    return [w for w in (norm_token(t) for t in text.split()) if w]
+
+
+def _phrase_match(phrase, words):
+    """Tìm cụm từ trong câu trả lời. Trả về 'exact' | 'nodau' | 'typo' | None."""
+    p = _words(phrase)
+    n = len(p)
+    if n == 0 or len(words) < n:
+        return None
+    best = None
+    for i in range(len(words) - n + 1):
+        win = words[i:i + n]
+        if win == p:
+            return "exact"
+        if [strip_marks(x) for x in win] == [strip_marks(x) for x in p]:
+            best = best or "nodau"
+        elif all(strip_marks(a) == strip_marks(b) or (len(b) >= 3 and
+                 difflib.SequenceMatcher(a=strip_marks(a), b=strip_marks(b)).ratio() >= 0.85)
+                 for a, b in zip(win, p)):
+            best = best or "typo"
+    return best
+
+
+def check_answer(answer, lesson_title, lesson_text, fallback_expected=""):
+    words = _words(answer)
+    key = ANSWER_KEYS.get(lesson_title)
+    if key is None:   # bài chưa có khóa: dùng đáp án cũ
+        key = {"sample": fallback_expected, "groups": [[fallback_expected]] if fallback_expected else []}
+    hit, missing, no_dau, typo = [], [], False, False
+    for g in key["groups"]:
+        found = None
+        for variant in g:
+            m = _phrase_match(variant, words)
+            if m == "exact":
+                found = "exact"
+                break
+            if m and not found:
+                found = m
+        if found:
+            hit.append(g[0])
+            no_dau |= found == "nodau"
+            typo |= found == "typo"
+        else:
+            missing.append(g[0])
+    level = "sai" if not hit else ("daydu" if not missing else "dung")
+    # Câu trong bài chứa đáp án -> dùng làm gợi ý khi em trả lời chưa đúng
+    hint = None
+    for sent in re.split(r"(?<=[.!?])\s+", lesson_text):
+        sw = [strip_marks(w) for w in _words(sent)]
+        if any(all(strip_marks(w) in sw for w in _words(v)) for g in key["groups"] for v in g if _words(v)):
+            hint = sent
+            break
+    sample_len = max(1, len(_words(key["sample"])))
+    return dict(level=level, hit=hit, missing=missing, no_dau=no_dau, typo=typo,
+                too_long=len(words) > max(10, int(1.5 * sample_len) + 2), too_short=len(words) == 0,
+                sample=key["sample"], hint=hint)
+
+
+def comprehension_feedback(r, name):
+    """Lời nhận xét cho câu trả lời đọc hiểu. Trả về (loại thông báo, danh sách đoạn)."""
+    out = []
+    if r["too_long"] and r["level"] != "sai":
+        out.append(f"Em {name} đã tìm đúng ý trong bài, nhưng câu trả lời của em hơi dài.")
+        out.append("Em chỉ cần trả lời <b>ngắn gọn</b> vào đúng ý câu hỏi, không cần chép cả đoạn văn nhé.")
+        if r["no_dau"]:
+            out.append("Em cũng nhớ gõ <b>đủ dấu</b> khi viết câu trả lời nhé.")
+        return "success", out
+    if r["level"] == "daydu":
+        out.append(f"Chính xác rồi em {name}! Câu trả lời của em đúng và đầy đủ ý.")
+    elif r["level"] == "dung":
+        out.append(f"Em {name} trả lời đúng rồi! Em đã tìm được ý: <b>{'; '.join(r['hit'])}</b>.")
+        out.append("Để câu trả lời đầy đủ hơn, em có thể bổ sung thêm ý: <b>" + "; ".join(r["missing"]) + "</b>.")
+    else:
+        out.append("Chưa đúng ý của câu hỏi rồi em ạ. Em đừng nản nhé!")
+        if r["hint"]:
+            out.append(f"Gợi ý: em đọc kĩ lại câu này trong bài: <i>“{r['hint']}”</i> rồi trả lời lại nhé.")
+        else:
+            out.append("Em hãy đọc lại đoạn văn thật kĩ rồi trả lời lại nhé.")
+    if r["level"] != "sai" and r["no_dau"]:
+        out.append("Ý của em đúng, nhưng em nhớ gõ <b>đủ dấu</b> khi viết câu trả lời nhé.")
+    elif r["level"] != "sai" and r["typo"]:
+        out.append("Em đúng ý rồi, nhưng có chữ em gõ chưa chính xác. Em kiểm tra lại chính tả nhé.")
+    if r["too_long"]:
+        out.append("Em chỉ cần trả lời <b>ngắn gọn</b> vào đúng ý câu hỏi, không cần chép cả đoạn văn.")
+    return ("success" if r["level"] != "sai" else "warning"), out
+
+
+# =====================================================================
 # 6. GIAO DIỆN
 # =====================================================================
 col_class, col_name = st.columns([1, 2])
 with col_class:
-    selected_class = st.selectbox("Lớp học:", ["2A1", "2A2", "2A3", "2A4", "Khối 2"])
+    selected_class = st.text_input("Lớp học:", placeholder="Ví dụ: 2A1").strip().upper()
 with col_name:
     student_name = st.text_input("Họ và tên học sinh:", placeholder="Ví dụ: Nguyễn Văn An")
 
@@ -636,8 +798,8 @@ def reset_recording():
 audio_file = st.audio_input("Ghi âm giọng đọc của học sinh:", key=f"audio_{st.session_state['rec_n']}")
 
 if audio_file:
-    if not student_name.strip():
-        st.warning("⚠️ Con hãy nhập đầy đủ Họ và tên ở phía trên trước khi nộp bài nhé!")
+    if not student_name.strip() or not selected_class:
+        st.warning("⚠️ Con hãy nhập đầy đủ Lớp và Họ và tên ở phía trên trước khi nộp bài nhé!")
         st.stop()
 
     wav_bytes = audio_file.getvalue()
@@ -669,9 +831,10 @@ if audio_file:
 
     st.markdown("## 🌟 Kết quả Đánh giá Tiếng Việt")
     c1, c2, c3 = st.columns(3)
-    c1.metric("Tốc độ đọc", f"{res['wpm']} tiếng/phút")
-    c2.metric("Điểm đọc (TT27)", f"{res['score']}/4.0 đ", res["rating"], delta_color="off")
-    c3.metric("Đọc đúng", f"{res['n_ok'] + res['n_near']}/{res['total']} tiếng")
+    c1.metric("Mức đánh giá (TT27)", res["rating"])
+    c2.metric("Đọc đúng", f"{res['n_ok'] + res['n_near']}/{res['total']} tiếng")
+    c3.metric("Tốc độ đọc", f"{res['wpm']} tiếng/phút")
+    st.caption(f"Điểm đọc thành tiếng tham khảo: {res['score']}/4,0")
 
     if res["saved"]:
         st.success("📊 Kết quả của em đã được ghi nhận tự động vào Sổ theo dõi của nhà trường!")
@@ -681,16 +844,26 @@ if audio_file:
             st.caption(f"(Chi tiết lỗi ghi Sheet: {res['save_err']})")
 
     if res["rating"].startswith("Chưa"):
-        st.warning("Bài đọc lần này chưa đạt. Con nghe đọc mẫu rồi bấm “Ghi âm lại” để đọc thêm một lần nhé!")
+        st.warning("Lần đọc này em cần cố gắng thêm. Con nghe đọc mẫu rồi bấm “Ghi âm lại” để đọc thêm một lần nhé!")
     st.button("🔄 Ghi âm lại (đọc lần nữa)", type="primary" if res["rating"].startswith("Chưa") else "secondary",
               on_click=reset_recording, key="retry_ok")
 
     st.markdown("### 💬 Bài đọc của em")
     st.markdown(f'<div class="reading-box" translate="no">{render_marked(res["tokens"])}</div>', unsafe_allow_html=True)
     st.caption("Màu xanh: đọc đúng · Nền vàng: đọc gần đúng (chưa chuẩn dấu) · Nền đỏ: cần đọc lại")
-    st.markdown("### 📝 Lời nhận xét của cô giáo")
-    comment = build_comment(student_name.strip(), lesson["title"], res, term_filter)
-    st.markdown('<div class="comment">' + "".join(f"<p>{p}</p>" for p in comment) + "</div>", unsafe_allow_html=True)
+    st.markdown("### 📝 Nhận xét (theo Thông tư 27/2020/TT-BGDĐT)")
+    cm = build_comment(student_name.strip(), lesson["title"], res, term_filter)
+    li = lambda xs: "<br>".join("• " + x for x in xs)
+    st.markdown(
+        '<div class="comment">'
+        f'<p><b>Mức đạt được:</b> {cm["level"]}</p>'
+        f'<p><b>Kết quả:</b> {cm["result"]}</p>'
+        f'<p><b>Ưu điểm:</b><br>{li(cm["strengths"])}</p>'
+        f'<p><b>Điểm cần cố gắng:</b><br>{li(cm["weaknesses"])}</p>'
+        f'<p><b>Hướng khắc phục:</b><br>{li(cm["plan"])}</p>'
+        '<p style="font-size:14px;color:#64748B;margin-top:12px">Nhận xét do máy hỗ trợ, '
+        'giáo viên xem lại và điều chỉnh khi ghi vào sổ theo dõi.</p>'
+        '</div>', unsafe_allow_html=True)
 
     with st.expander("Cách chấm điểm (để thầy cô và phụ huynh tham khảo)"):
         st.markdown(f"""
@@ -698,17 +871,27 @@ if audio_file:
 - **Đọc đúng:** đọc đúng từ {int(FULL_ACCURACY*100)}% số tiếng trở lên là được trọn điểm phần này. Tiếng đúng được 1; tiếng gần đúng (máy có thể nghe lệch dấu hoặc âm do giọng trẻ em) được {NEAR_CREDIT}; tiếng sót hoặc sai được 0. Đọc thêm hoặc lặp từ không bị trừ điểm.
 - **Tốc độ:** tính trên thời gian em thực sự đọc (đã bỏ khoảng lặng lúc bắt đầu và kết thúc). Mức chuẩn là {TARGET_WPM['Học kỳ 1']} tiếng/phút (học kỳ 1) và {TARGET_WPM['Học kỳ 2']} tiếng/phút (học kỳ 2).
 - Máy được xét nhiều cách nghe khác nhau và lấy cách khớp bài nhất để tránh phạt oan. Nếu máy nghe không rõ, bài sẽ **không được chấm** để em ghi âm lại.
-- Điểm do máy chấm chỉ mang tính **gợi ý**; giáo viên là người đánh giá cuối cùng.""")
+- **Mức đánh giá** theo Thông tư 27: **Hoàn thành tốt (T)** khi đọc đúng từ 80% số tiếng; **Hoàn thành (H)** khi đọc đúng từ 50%; dưới 50% là **Chưa hoàn thành (C)**. Điểm /4 chỉ để tham khảo.
+- Kết quả do máy chấm chỉ mang tính **gợi ý**; giáo viên là người đánh giá cuối cùng.""")
     with st.expander("Xem máy nghe được gì"):
         st.markdown(f'<div class="heard">{res["heard"]}</div>', unsafe_allow_html=True)
 
     st.markdown("---")
-    st.markdown(f"### ❓ Câu hỏi đọc hiểu: {lesson['question']}")
-    answer_input = st.text_input("Con hãy gõ câu trả lời ngắn vào đây (hoặc nói với bố mẹ):")
-    if answer_input:
-        kws = [w for w in re.findall(r"\w+", lesson["expected_answer"].lower()) if len(w) > 1]
-        got_words = set(re.findall(r"\w+", answer_input.lower()))
-        if kws and sum(1 for w in kws if w in got_words) / len(kws) >= 0.5:
-            st.success("🎉 Rất chính xác! Con đã hiểu bài rất sâu sắc.")
+    st.markdown(f"### ❓ Câu hỏi đọc hiểu")
+    st.markdown(f"**{lesson['question']}**")
+    with st.form(key=f"form_{key}"):
+        answer_input = st.text_input("Con gõ câu trả lời ngắn vào đây:", placeholder="Ví dụ: Bạn nhỏ cảm thấy ...")
+        submitted = st.form_submit_button("✅ Kiểm tra câu trả lời", type="primary")
+    if submitted:
+        if not answer_input.strip():
+            st.warning("Con hãy gõ câu trả lời rồi bấm “Kiểm tra câu trả lời” nhé.")
         else:
-            st.warning("Gần đúng rồi! Con hãy đọc lại đoạn văn một lần nữa để tìm câu trả lời nhé.")
+            cr = check_answer(answer_input, selected_week, lesson["text"], lesson["expected_answer"])
+            kind, paras = comprehension_feedback(cr, student_name.strip())
+            body = "".join(f"<p>{p}</p>" for p in paras)
+            (st.success if kind == "success" else st.warning)("🎉 Con trả lời đúng rồi!" if kind == "success"
+                                                              else "Con thử lại nhé!")
+            st.markdown(f'<div class="comment">{body}</div>', unsafe_allow_html=True)
+            if cr["level"] != "sai":
+                with st.expander("Xem câu trả lời mẫu"):
+                    st.markdown(cr["sample"])
