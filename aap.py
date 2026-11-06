@@ -90,38 +90,43 @@ def save_score_to_sheet(row):
 # 3. GIỌNG ĐỌC MẪU (giọng thần kinh tiếng Việt)
 # =====================================================================
 @st.cache_data(show_spinner=False, max_entries=60)
+def synth_edge(text, voice, rate):
+    """Giọng thần kinh Microsoft (giọng Bắc). Lỗi thì raise để không bị lưu vào cache."""
+    import edge_tts
+
+    async def run():
+        buf = b""
+        async for chunk in edge_tts.Communicate(text, voice, rate=rate).stream():
+            if chunk["type"] == "audio":
+                buf += chunk["data"]
+        return buf
+
+    loop = asyncio.new_event_loop()
+    try:
+        data = loop.run_until_complete(run())
+    finally:
+        loop.close()
+    if not data:
+        raise RuntimeError("edge-tts không trả về âm thanh")
+    return data
+
+
+@st.cache_data(show_spinner=False, max_entries=60)
+def synth_gtts(text):
+    """Giọng dự phòng của Google."""
+    from gtts import gTTS
+    buf = io.BytesIO()
+    gTTS(text=text, lang="vi").write_to_fp(buf)
+    return buf.getvalue()
+
+
 def synth_vi(text, voice, rate):
-    """Tạo file mp3 đọc mẫu. Lỗi thì raise để không bị lưu vào cache."""
-    errors = []
-    try:  # Ưu tiên: giọng thần kinh Microsoft (tự nhiên, có giọng nam/nữ)
-        import edge_tts
-
-        async def run():
-            buf = b""
-            comm = edge_tts.Communicate(text, voice, rate=rate)
-            async for chunk in comm.stream():
-                if chunk["type"] == "audio":
-                    buf += chunk["data"]
-            return buf
-
-        loop = asyncio.new_event_loop()
-        try:
-            data = loop.run_until_complete(run())
-        finally:
-            loop.close()
-        if data:
-            return data, "edge"
-        errors.append("edge-tts không trả về âm thanh")
+    """Trả về (âm thanh mp3, tên giọng đang dùng, lỗi của giọng chính nếu có)."""
+    try:
+        return synth_edge(text, voice, rate), "edge", ""
     except Exception as e:
-        errors.append(f"edge-tts: {e}")
-    try:  # Dự phòng: Google dịch
-        from gtts import gTTS
-        buf = io.BytesIO()
-        gTTS(text=text, lang="vi").write_to_fp(buf)
-        return buf.getvalue(), "gtts"
-    except Exception as e:
-        errors.append(f"gTTS: {e}")
-    raise RuntimeError(" | ".join(errors))
+        edge_err = str(e) or e.__class__.__name__
+    return synth_gtts(text), "gtts", edge_err
 
 
 def browser_tts_button(text):
@@ -772,11 +777,16 @@ if st.button("▶️ Nghe đọc mẫu", type="primary"):
 if st.session_state.get("tts_play") == tts_key:
     try:
         with st.spinner("Bạn Bút Chì đang chuẩn bị giọng đọc..."):
-            audio_bytes, engine = synth_vi(lesson["text"], VOICES[voice_label], SPEEDS[speed_label])
+            audio_bytes, engine, edge_err = synth_vi(lesson["text"], VOICES[voice_label], SPEEDS[speed_label])
         try:
             st.audio(audio_bytes, format="audio/mp3", autoplay=True)
         except TypeError:
             st.audio(audio_bytes, format="audio/mp3")
+        if engine == "edge":
+            st.caption(f"Đang dùng giọng: {voice_label}")
+        else:
+            st.warning("Giọng Bắc chất lượng cao đang không kết nối được, app tạm dùng giọng dự phòng của Google.")
+            st.caption(f"Chi tiết kỹ thuật: {edge_err[:300]}")
     except Exception as e:
         st.warning("Chưa tạo được giọng đọc chất lượng cao, tạm dùng giọng của trình duyệt.")
         browser_tts_button(lesson["text"])
