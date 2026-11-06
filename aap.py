@@ -1,45 +1,48 @@
+import asyncio
+import difflib
+import hashlib
+import io
+import re
+import unicodedata
+import wave
+from datetime import datetime
+
+import numpy as np
+import requests
 import streamlit as st
 import streamlit.components.v1 as components
-import pandas as pd
-from datetime import datetime
-import hashlib
-import requests
-import time
 
-# 1. CẤU HÌNH GIAO DIỆN & CHỐNG LỖI TRÌNH DUYỆT
-st.set_page_config(
-    page_title="Luyện đọc Lớp 2 - Tiểu học Thái Hòa",
-    page_icon="✏️",
-    layout="centered"
-)
+# =====================================================================
+# 1. CẤU HÌNH
+# =====================================================================
+# Tốc độ đọc chuẩn (tiếng/phút) dùng để tính điểm - thầy/cô có thể chỉnh
+TARGET_WPM = {"Học kỳ 1": 40, "Học kỳ 2": 50}
+W_ACCURACY, W_SPEED = 0.7, 0.3      # điểm = 70% đọc đúng + 30% tốc độ
+NEAR_CREDIT = 0.5                    # đọc gần đúng (chỉ sai dấu thanh) được 0.5 tiếng
+MIN_SECONDS = 3.0                    # ghi âm ngắn hơn mức này -> yêu cầu ghi lại
+MIN_RECOGNIZED = 0.25                # máy nghe được dưới 25% bài -> coi là chưa nghe rõ, không chấm
+
+VOICES = {"Cô Hoài My (giọng nữ)": "vi-VN-HoaiMyNeural", "Thầy Nam Minh (giọng nam)": "vi-VN-NamMinhNeural"}
+SPEEDS = {"Đọc chậm (cho em tập đọc)": "-20%", "Đọc vừa": "-8%"}
+
+st.set_page_config(page_title="Luyện đọc Lớp 2 - Tiểu học Thái Hòa", page_icon="✏️", layout="centered")
 
 st.markdown("""
 <style>
-    html, body, [class*="css"] {
-        translate: no !important;
-    }
-    .skiptranslate {
-        display: none !important;
-    }
+    html, body, [class*="css"] { translate: no !important; }
+    .skiptranslate { display: none !important; }
     .reading-box {
-        font-size: 26px !important;
-        font-weight: 600;
-        color: #1E3A8A;
-        line-height: 1.8;
-        background-color: #F8FAFC;
-        padding: 20px;
-        border-radius: 12px;
-        border: 2px solid #E2E8F0;
-        margin-bottom: 15px;
+        font-size: 26px !important; font-weight: 600; color: #1E3A8A; line-height: 1.8;
+        background-color: #F8FAFC; padding: 20px; border-radius: 12px;
+        border: 2px solid #E2E8F0; margin-bottom: 15px;
     }
-    .school-header {
-        text-align: center;
-        color: #B91C1C;
-        font-weight: bold;
-        font-size: 20px;
-        margin-bottom: 5px;
-        text-transform: uppercase;
-    }
+    .school-header { text-align: center; color: #B91C1C; font-weight: bold; font-size: 20px;
+        margin-bottom: 5px; text-transform: uppercase; }
+    .w-ok { color: #166534; }
+    .w-near { color: #B45309; background: #FEF3C7; border-radius: 6px; padding: 0 4px; }
+    .w-miss { color: #B91C1C; background: #FEE2E2; border-radius: 6px; padding: 0 4px; text-decoration: underline wavy; }
+    .heard { color:#475569; font-size:15px; background:#F8FAFC; border-radius:10px; padding:10px 14px; border:1px dashed #CBD5E1; }
+    @media (max-width: 640px) { .reading-box { font-size: 22px !important; padding: 14px; } }
 </style>
 """, unsafe_allow_html=True)
 
@@ -47,35 +50,236 @@ st.markdown('<div class="school-header" translate="no">TRƯỜNG TIỂU HỌC TH
 st.title("✏️ Trợ lý Luyện Đọc Tiếng Việt Lớp 2")
 st.caption("Dữ liệu chấm điểm được tự động đồng bộ về Bảng tổng hợp của nhà trường")
 
-# 2. GỬI ĐIỂM VỀ GOOGLE SHEET (qua Google Apps Script Web App)
-def save_score_to_sheet(row_data):
-    """Trả về (thành công?, thông báo lỗi nếu có)."""
-    try:
-        webhook_url = st.secrets.get("WEBHOOK_URL")
-    except Exception:
-        webhook_url = None
-    if not webhook_url:
-        return False, "Chưa cấu hình WEBHOOK_URL trong Secrets."
 
+# =====================================================================
+# 2. GHI ĐIỂM VÀO GOOGLE SHEET
+# =====================================================================
+def _secret(name, default=""):
+    try:
+        return st.secrets.get(name, default)
+    except Exception:
+        return default
+
+
+def save_score_to_sheet(row):
+    url = _secret("WEBHOOK_URL")
+    if not url:
+        return False, "Chưa cấu hình WEBHOOK_URL trong Secrets."
     payload = {
-        "time": row_data["Thời gian"],
-        "class_name": row_data["Lớp"],
-        "student_name": row_data["Họ và tên"],
-        "lesson_title": row_data["Bài đọc"],
-        "wpm": row_data["Tốc độ (WPM)"],
-        "errors": row_data["Từ cần rèn"],
-        "score": row_data["Điểm TT27"],
-        "evaluation": row_data["Đánh giá"],
+        "key": _secret("WEBHOOK_KEY"),
+        "time": row["Thời gian"], "class_name": row["Lớp"], "student_name": row["Họ và tên"],
+        "lesson_title": row["Bài đọc"], "wpm": row["Tốc độ (WPM)"], "errors": row["Từ cần rèn"],
+        "score": row["Điểm TT27"], "evaluation": row["Đánh giá"],
+        "accuracy": row["Độ chính xác (%)"], "heard": row["Nhận dạng được"],
     }
     try:
-        response = requests.post(webhook_url, json=payload, timeout=15)
-        if response.status_code == 200 and "ok" in response.text.lower():
+        r = requests.post(url, json=payload, timeout=20)
+        if r.status_code == 200 and r.text.strip().lower().startswith("ok"):
             return True, ""
-        return False, f"Máy chủ trả về mã {response.status_code}: {response.text[:200]}"
+        return False, f"Máy chủ trả về {r.status_code}: {r.text[:150]}"
     except Exception as e:
         return False, str(e)
 
-# 3. KHO DỮ LIỆU BÀI ĐỌC 35 TUẦN GDPT 2018
+
+# =====================================================================
+# 3. GIỌNG ĐỌC MẪU (giọng thần kinh tiếng Việt)
+# =====================================================================
+@st.cache_data(show_spinner=False, max_entries=60)
+def synth_vi(text, voice, rate):
+    """Tạo file mp3 đọc mẫu. Lỗi thì raise để không bị lưu vào cache."""
+    errors = []
+    try:  # Ưu tiên: giọng thần kinh Microsoft (tự nhiên, có giọng nam/nữ)
+        import edge_tts
+
+        async def run():
+            buf = b""
+            comm = edge_tts.Communicate(text, voice, rate=rate)
+            async for chunk in comm.stream():
+                if chunk["type"] == "audio":
+                    buf += chunk["data"]
+            return buf
+
+        loop = asyncio.new_event_loop()
+        try:
+            data = loop.run_until_complete(run())
+        finally:
+            loop.close()
+        if data:
+            return data, "edge"
+        errors.append("edge-tts không trả về âm thanh")
+    except Exception as e:
+        errors.append(f"edge-tts: {e}")
+    try:  # Dự phòng: Google dịch
+        from gtts import gTTS
+        buf = io.BytesIO()
+        gTTS(text=text, lang="vi").write_to_fp(buf)
+        return buf.getvalue(), "gtts"
+    except Exception as e:
+        errors.append(f"gTTS: {e}")
+    raise RuntimeError(" | ".join(errors))
+
+
+def browser_tts_button(text):
+    """Phương án cuối: giọng có sẵn trong trình duyệt."""
+    safe = text.replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ")
+    components.html(f"""
+<!DOCTYPE html><html lang="vi" translate="no"><head><meta charset="utf-8">
+<style>body{{margin:0;font-family:sans-serif}}
+.b{{background:linear-gradient(135deg,#10B981,#059669);color:#fff;border:none;padding:11px 20px;
+border-radius:8px;cursor:pointer;font-size:15px;font-weight:600}}</style></head><body>
+<button class="b" onclick="p()">🔊 Nghe đọc mẫu (giọng trình duyệt)</button>
+<script>
+function p(){{speechSynthesis.cancel();const m=new SpeechSynthesisUtterance("{safe}");
+const v=speechSynthesis.getVoices().filter(x=>x.lang.toLowerCase().startsWith('vi'));
+if(v.length)m.voice=v[0];m.lang='vi-VN';m.rate=0.82;speechSynthesis.speak(m);}}
+</script></body></html>""", height=52)
+
+
+# =====================================================================
+# 4. CHẤM ĐIỂM GIỌNG ĐỌC (công bằng, minh bạch)
+# =====================================================================
+def strip_marks(w):
+    w = w.replace("đ", "d").replace("Đ", "D")
+    return "".join(c for c in unicodedata.normalize("NFD", w) if not unicodedata.combining(c))
+
+
+def norm_token(tok):
+    tok = re.sub(r"[^\w]", "", tok.lower(), flags=re.UNICODE).replace("_", "")
+    return tok
+
+
+def analyze_audio(wav_bytes):
+    """Trả về (thời lượng nói thực tế, tổng thời lượng, mức âm lượng) - đã cắt khoảng lặng đầu/cuối."""
+    try:
+        with wave.open(io.BytesIO(wav_bytes), "rb") as w:
+            sr_, ch, sw, n = w.getframerate(), w.getnchannels(), w.getsampwidth(), w.getnframes()
+            raw = w.readframes(n)
+        total = n / float(sr_)
+        if sw != 2:
+            return total, total, None
+        x = np.frombuffer(raw, dtype=np.int16).astype(np.float32)
+        if ch > 1:
+            x = x[::ch]
+        frame = max(1, int(sr_ * 0.02))
+        m = len(x) // frame
+        if m < 5:
+            return total, total, 0.0
+        rms = np.sqrt((x[: m * frame].reshape(m, frame) ** 2).mean(axis=1))
+        level = float(np.percentile(rms, 95))
+        thr = max(150.0, 0.12 * level)
+        voiced = np.where(rms > thr)[0]
+        if len(voiced) == 0:
+            return total, total, level
+        speaking = (voiced[-1] - voiced[0] + 1) * frame / float(sr_)
+        return max(speaking, 0.5), total, level
+    except Exception:
+        return 0.0, 0.0, None
+
+
+def transcribe_alternatives(wav_bytes):
+    """Nhận dạng tiếng Việt, trả về (danh sách các cách nghe có thể, lỗi)."""
+    try:
+        import speech_recognition as sr
+    except Exception:
+        return [], "Thiếu thư viện SpeechRecognition (kiểm tra requirements.txt)."
+    try:
+        rec = sr.Recognizer()
+        with sr.AudioFile(io.BytesIO(wav_bytes)) as src:
+            audio = rec.record(src)
+        res = rec.recognize_google(audio, language="vi-VN", show_all=True)
+        alts = [a.get("transcript", "") for a in (res.get("alternative", []) if isinstance(res, dict) else [])]
+        return [a for a in alts if a.strip()][:5], ""
+    except sr.RequestError as e:
+        return [], f"Dịch vụ nhận dạng giọng nói đang bận ({e}). Con thử lại sau nhé."
+    except Exception as e:
+        return [], f"Lỗi xử lý âm thanh: {e}"
+
+
+def align(ref_text, heard_text):
+    """So khớp từng tiếng. Trả về (danh sách (hiển thị, trạng thái), điểm 'đúng' đã tính)."""
+    ref_tokens = ref_text.split()
+    ref_norm = [norm_token(t) for t in ref_tokens]
+    got = [norm_token(t) for t in heard_text.split()]
+    got = [g for g in got if g]
+    idx = [i for i, w in enumerate(ref_norm) if w]
+    ref = [ref_norm[i] for i in idx]
+
+    status = ["miss"] * len(ref)
+    sm = difflib.SequenceMatcher(a=ref, b=got, autojunk=False)
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag == "equal":
+            for k in range(i1, i2):
+                status[k] = "ok"
+        elif tag == "replace":
+            # Ghép từng cặp: nếu chỉ khác dấu thanh/dấu mũ -> "gần đúng" (máy nghe sai hoặc sai dấu nhẹ)
+            for k in range(min(i2 - i1, j2 - j1)):
+                a, b = ref[i1 + k], got[j1 + k]
+                if strip_marks(a) == strip_marks(b):
+                    status[i1 + k] = "near"
+    credit = sum(1.0 if s == "ok" else NEAR_CREDIT if s == "near" else 0 for s in status)
+    full = {i: s for i, s in zip(idx, status)}
+    out = [(ref_tokens[i], full.get(i, "ok")) for i in range(len(ref_tokens))]
+    return out, credit, status
+
+
+def round_half(x):
+    return round(x * 2) / 2
+
+
+def grade(status, credit, speaking_seconds, term):
+    total = len(status)
+    accuracy = credit / total if total else 0
+    read_count = sum(1 for s in status if s in ("ok", "near"))   # số tiếng em đã đọc ra
+    wpm = round(read_count / (speaking_seconds / 60)) if speaking_seconds > 0 else 0
+    target = TARGET_WPM.get(term, 40)
+    speed = min(wpm / target, 1.0) if target else 0
+    score = max(0.0, min(4.0, round_half(4 * (W_ACCURACY * accuracy + W_SPEED * speed))))
+    rating = "Hoàn thành tốt (T)" if score >= 3.5 else "Hoàn thành (H)" if score >= 2.0 else "Chưa hoàn thành (C)"
+    return accuracy, wpm, score, rating
+
+
+def render_marked(tokens):
+    cls = {"ok": "w-ok", "near": "w-near", "miss": "w-miss"}
+    return " ".join(f'<span class="{cls[s]}">{t}</span>' for t, s in tokens)
+
+
+def evaluate(ref_text, wav_bytes, term):
+    """Chấm 1 bài đọc. Trả về dict kết quả hoặc {'err': ...} nếu cần ghi âm lại."""
+    speaking, total, level = analyze_audio(wav_bytes)
+    if total < MIN_SECONDS:
+        return {"err": "Bản ghi âm quá ngắn. Con hãy đọc cả đoạn văn rồi mới bấm dừng nhé."}
+    if level is not None and level < 150:
+        return {"err": "Âm thanh quá nhỏ. Con hãy đọc to hơn hoặc ngồi gần micro hơn rồi ghi âm lại nhé."}
+    alts, err = transcribe_alternatives(wav_bytes)
+    if err:
+        return {"err": err}
+    if not alts:
+        return {"err": "Máy chưa nghe rõ giọng đọc. Con hãy đọc to, rõ, ở nơi yên tĩnh rồi ghi âm lại nhé."}
+
+    # Chọn cách nghe khớp với bài nhất trong các khả năng máy đưa ra (tránh phạt oan khi máy nghe nhầm)
+    best = None
+    for a in alts:
+        tokens, credit, status = align(ref_text, a)
+        if best is None or credit > best[1]:
+            best = (tokens, credit, status, a)
+    tokens, credit, status, heard = best
+
+    if status and sum(1 for s in status if s != "miss") / len(status) < MIN_RECOGNIZED:
+        return {"err": "Máy chưa nghe đủ rõ để chấm công bằng. Con ghi âm lại một lần nữa nhé. "
+                       "Nếu vẫn chưa được, con đọc trực tiếp cho cô giáo nghe."}
+    accuracy, wpm, score, rating = grade(status, credit, speaking, term)
+    wrong = [norm_token(t) for t, s in tokens if s == "miss"]
+    near = [norm_token(t) for t, s in tokens if s == "near"]
+    uniq = lambda xs: list(dict.fromkeys(xs))
+    return dict(err="", tokens=tokens, accuracy=accuracy, wpm=wpm, score=score, rating=rating, heard=heard,
+                wrong=uniq(wrong), near=uniq(near), total=len(status), speaking=speaking,
+                n_ok=sum(1 for s in status if s == "ok"), n_near=sum(1 for s in status if s == "near"),
+                n_miss=sum(1 for s in status if s == "miss"))
+
+
+# =====================================================================
+# 5. KHO BÀI ĐỌC 35 TUẦN GDPT 2018
+# =====================================================================
 curriculum_data = {
     "Tuần 1: Tôi là học sinh lớp 2": {
         "term": "Học kỳ 1", "title": "Ngày đầu năm học mới",
@@ -289,7 +493,10 @@ curriculum_data = {
     }
 }
 
-# 4. CHỌN THÔNG TIN HỌC SINH VÀ BÀI ĐỌC
+
+# =====================================================================
+# 6. GIAO DIỆN
+# =====================================================================
 col_class, col_name = st.columns([1, 2])
 with col_class:
     selected_class = st.selectbox("Lớp học:", ["2A1", "2A2", "2A3", "2A4", "Khối 2"])
@@ -299,145 +506,114 @@ with col_name:
 col_term, col_week = st.columns([1, 2])
 with col_term:
     selected_term = st.selectbox("Kỳ học:", ["Học kỳ 1 (Tuần 1 - 18)", "Học kỳ 2 (Tuần 19 - 35)"])
-
 term_filter = "Học kỳ 1" if "Học kỳ 1" in selected_term else "Học kỳ 2"
 filtered_lessons = [k for k, v in curriculum_data.items() if v["term"] == term_filter]
-
 with col_week:
     selected_week = st.selectbox("📚 Chọn bài đọc:", filtered_lessons)
-
 lesson = curriculum_data[selected_week]
 
 st.markdown("---")
 st.markdown(f"### 📖 Bài đọc: {lesson['title']}")
 st.markdown(f'<div class="reading-box" translate="no">{lesson["text"]}</div>', unsafe_allow_html=True)
 
-# 5. BỘ ĐỌC MẪU TIẾNG VIỆT
-escaped_text = lesson['text'].replace('"', '\\"').replace("'", "\\'")
-tts_component_code = f"""
-<!DOCTYPE html>
-<html lang="vi" translate="no">
-<head>
-<meta charset="utf-8">
-<style>
-    body {{ margin: 0; padding: 0; background: transparent; font-family: sans-serif; }}
-    .btn-read {{
-        background: linear-gradient(135deg, #10B981, #059669);
-        color: #FFFFFF;
-        border: none;
-        padding: 11px 20px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 15px;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-    }}
-</style>
-</head>
-<body>
-    <button class="btn-read" onclick="playVietnameseAudio()">
-        🔊 Nghe Bạn Bút Chì đọc mẫu (Tiếng Việt)
-    </button>
-<script>
-let viVoices = [];
-function loadVoices() {{
-    let allVoices = window.speechSynthesis.getVoices();
-    viVoices = allVoices.filter(v => 
-        v.lang === 'vi-VN' || v.lang === 'vi_VN' || 
-        v.lang.toLowerCase().startsWith('vi') ||
-        v.name.toLowerCase().includes('vietnam')
-    );
-}}
-loadVoices();
-if (window.speechSynthesis.onvoiceschanged !== undefined) {{
-    window.speechSynthesis.onvoiceschanged = loadVoices;
-}}
-function playVietnameseAudio() {{
-    window.speechSynthesis.cancel();
-    loadVoices();
-    let text = "{escaped_text}";
-    let msg = new SpeechSynthesisUtterance(text);
-    if (viVoices.length > 0) {{ msg.voice = viVoices[0]; }}
-    msg.lang = 'vi-VN';
-    msg.rate = 0.82;
-    window.speechSynthesis.speak(msg);
-}}
-</script>
-</body>
-</html>
-"""
-components.html(tts_component_code, height=52)
+# ---- Nghe đọc mẫu ----
+st.markdown("#### 🔊 Nghe Bạn Bút Chì đọc mẫu")
+v1, v2 = st.columns(2)
+with v1:
+    voice_label = st.radio("Giọng đọc", list(VOICES), horizontal=False)
+with v2:
+    speed_label = st.radio("Tốc độ", list(SPEEDS), horizontal=False)
 
-# 6. THU ÂM VÀ LƯU DỮ LIỆU CHẤM ĐIỂM
+tts_key = f"{lesson['title']}|{voice_label}|{speed_label}"
+if st.button("▶️ Nghe đọc mẫu", type="primary"):
+    st.session_state["tts_play"] = tts_key
+if st.session_state.get("tts_play") == tts_key:
+    try:
+        with st.spinner("Bạn Bút Chì đang chuẩn bị giọng đọc..."):
+            audio_bytes, engine = synth_vi(lesson["text"], VOICES[voice_label], SPEEDS[speed_label])
+        try:
+            st.audio(audio_bytes, format="audio/mp3", autoplay=True)
+        except TypeError:
+            st.audio(audio_bytes, format="audio/mp3")
+    except Exception as e:
+        st.warning("Chưa tạo được giọng đọc chất lượng cao, tạm dùng giọng của trình duyệt.")
+        browser_tts_button(lesson["text"])
+
+# ---- Ghi âm và chấm điểm ----
 st.markdown("---")
 st.markdown("### 🎙️ Luyện đọc và Đánh giá kết quả")
-
+st.caption("Bấm micro, đọc to cả đoạn văn ở nơi yên tĩnh, rồi bấm dừng.")
 audio_file = st.audio_input("Ghi âm giọng đọc của học sinh:")
 
 if audio_file:
     if not student_name.strip():
         st.warning("⚠️ Con hãy nhập đầy đủ Họ và tên ở phía trên trước khi nộp bài nhé!")
+        st.stop()
+
+    wav_bytes = audio_file.getvalue()
+    key = hashlib.md5(wav_bytes + student_name.strip().encode() + lesson["title"].encode()).hexdigest()
+
+    # Chỉ chấm và ghi 1 lần cho mỗi bản ghi âm (tránh trùng khi app chạy lại)
+    if st.session_state.get("result_key") != key:
+        with st.spinner("Bạn Bút Chì đang lắng nghe và chấm bài..."):
+            res = evaluate(lesson["text"], wav_bytes, term_filter)
+            if not res["err"]:
+                row = {
+                    "Thời gian": datetime.now().strftime("%d/%m/%Y %H:%M"),
+                    "Lớp": selected_class, "Họ và tên": student_name.strip(), "Bài đọc": lesson["title"],
+                    "Tốc độ (WPM)": res["wpm"],
+                    "Từ cần rèn": ", ".join((res["wrong"] + res["near"])[:8]) or "Không có",
+                    "Điểm TT27": res["score"], "Đánh giá": res["rating"],
+                    "Độ chính xác (%)": round(res["accuracy"] * 100), "Nhận dạng được": res["heard"],
+                }
+                res["saved"], res["save_err"] = save_score_to_sheet(row)
+            st.session_state["result_key"], st.session_state["result"] = key, res
+            if not res["err"]:
+                st.balloons()
+
+    res = st.session_state["result"]
+    if res["err"]:
+        st.error(res["err"])
+        st.stop()
+
+    st.markdown("## 🌟 Kết quả Đánh giá Tiếng Việt")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Tốc độ đọc", f"{res['wpm']} tiếng/phút")
+    c2.metric("Điểm đọc (TT27)", f"{res['score']}/4.0 đ", res["rating"], delta_color="off")
+    c3.metric("Đọc đúng", f"{res['n_ok'] + res['n_near']}/{res['total']} tiếng")
+
+    if res["saved"]:
+        st.success("📊 Kết quả của em đã được ghi nhận tự động vào Sổ theo dõi của nhà trường!")
     else:
-        with st.spinner("Đang phân tích và đồng bộ điểm về Bảng tổng hợp của trường..."):
-            time.sleep(1.5)
-            
-            total_words = lesson["word_count"]
-            calculated_wpm = 54
-            detected_errors = [lesson["difficult_words"][0]] if len(lesson["difficult_words"]) > 0 else []
-            total_score = 4.0 if len(detected_errors) == 0 else 3.5
-            rating_text = "Hoàn thành tốt (T)" if total_score >= 3.5 else "Hoàn thành (H)"
-            error_str = ", ".join(detected_errors) if detected_errors else "Không có"
-            
-            current_time = datetime.now().strftime("%d/%m/%Y %H:%M")
-            data_to_save = {
-                "Thời gian": current_time,
-                "Lớp": selected_class,
-                "Họ và tên": student_name.strip(),
-                "Bài đọc": lesson['title'],
-                "Tốc độ (WPM)": calculated_wpm,
-                "Từ cần rèn": error_str,
-                "Điểm TT27": total_score,
-                "Đánh giá": rating_text
-            }
-            
-            # Chỉ ghi 1 lần cho mỗi lần thu âm (tránh trùng khi app rerun)
-            audio_key = hashlib.md5(
-                audio_file.getvalue() + student_name.strip().encode() + lesson['title'].encode()
-            ).hexdigest()
-            if st.session_state.get("saved_key") != audio_key:
-                ok, err = save_score_to_sheet(data_to_save)
-                st.session_state["saved_key"] = audio_key
-                st.session_state["saved_ok"] = ok
-                st.session_state["saved_err"] = err
-            is_saved = st.session_state.get("saved_ok", False)
+        st.info("ℹ️ Kết quả đã được chấm trên màn hình, chưa ghi được vào Sổ. Con báo cô giáo nhé.")
+        if res.get("save_err"):
+            st.caption(f"(Chi tiết lỗi ghi Sheet: {res['save_err']})")
 
-        st.balloons()
-        st.markdown("## 🌟 Kết quả Đánh giá Tiếng Việt")
-        
-        col1, col2, col3 = st.columns(3)
-        col1.metric("Tốc độ đọc", f"{calculated_wpm} từ/phút", "Đạt chuẩn Lớp 2")
-        col2.metric("Điểm đọc (TT27)", f"{total_score}/4.0 đ", rating_text)
-        col3.metric("Độ chính xác", f"{total_words - len(detected_errors)}/{total_words} từ")
+    st.markdown("### 💬 Bài đọc của em")
+    st.markdown(f'<div class="reading-box" translate="no">{render_marked(res["tokens"])}</div>', unsafe_allow_html=True)
+    st.caption("Màu xanh: đọc đúng · Nền vàng: đọc gần đúng (chưa chuẩn dấu) · Nền đỏ: cần đọc lại")
+    if res["wrong"] or res["near"]:
+        st.info("Con rèn thêm các tiếng: " + ", ".join((res["wrong"] + res["near"])[:8]) + ".")
+    else:
+        st.info("Con đọc rất lưu loát và chính xác! Tặng con 3 ngôi sao chăm chỉ! ⭐⭐⭐")
 
-        if is_saved:
-            st.success("📊 Kết quả của em đã được ghi nhận tự động vào Sổ theo dõi của nhà trường!")
+    with st.expander("Cách chấm điểm (để thầy cô và phụ huynh tham khảo)"):
+        st.markdown(f"""
+- **Điểm = {int(W_ACCURACY*100)}% đọc đúng + {int(W_SPEED*100)}% tốc độ**, làm tròn đến 0,5 điểm.
+- **Đọc đúng:** tiếng đọc đúng được 1; tiếng chỉ sai dấu thanh/dấu mũ được {NEAR_CREDIT} (vì máy có thể nghe nhầm dấu); tiếng sót hoặc sai được 0. Đọc thêm hoặc lặp từ không bị trừ điểm.
+- **Tốc độ:** tính trên thời gian em thực sự đọc (đã bỏ khoảng lặng lúc bắt đầu và kết thúc). Mức chuẩn là {TARGET_WPM['Học kỳ 1']} tiếng/phút (học kỳ 1) và {TARGET_WPM['Học kỳ 2']} tiếng/phút (học kỳ 2).
+- Máy được xét nhiều cách nghe khác nhau và lấy cách khớp bài nhất để tránh phạt oan. Nếu máy nghe không rõ, bài sẽ **không được chấm** để em ghi âm lại.
+- Điểm do máy chấm chỉ mang tính **gợi ý**; giáo viên là người đánh giá cuối cùng.""")
+    with st.expander("Xem máy nghe được gì"):
+        st.markdown(f'<div class="heard">{res["heard"]}</div>', unsafe_allow_html=True)
+
+    st.markdown("---")
+    st.markdown(f"### ❓ Câu hỏi đọc hiểu: {lesson['question']}")
+    answer_input = st.text_input("Con hãy gõ câu trả lời ngắn vào đây (hoặc nói với bố mẹ):")
+    if answer_input:
+        kws = [w for w in re.findall(r"\w+", lesson["expected_answer"].lower()) if len(w) > 1]
+        got_words = set(re.findall(r"\w+", answer_input.lower()))
+        if kws and sum(1 for w in kws if w in got_words) / len(kws) >= 0.5:
+            st.success("🎉 Rất chính xác! Con đã hiểu bài rất sâu sắc.")
         else:
-            st.info("ℹ️ Kết quả đã được chấm điểm trực tiếp trên màn hình.")
-            if st.session_state.get("saved_err"):
-                st.caption(f"(Chi tiết lỗi ghi Sheet: {st.session_state['saved_err']})")
-
-        st.markdown("### 💬 Lời nhận xét sư phạm:")
-        st.info(f"Hôm nay em **{student_name}** lớp **{selected_class}** đọc bài to, rõ ràng. "
-                f"{f'Con lưu ý rèn thêm từ: {error_str}.' if detected_errors else 'Con đọc rất lưu loát và diễn cảm!'} "
-                f"Tặng con 3 ngôi sao chăm chỉ! ⭐⭐⭐")
-
-        st.markdown("---")
-        st.markdown(f"### ❓ Câu hỏi đọc hiểu: {lesson['question']}")
-        answer_input = st.text_input("Con hãy gõ câu trả lời ngắn vào đây (hoặc nói với bố mẹ):")
-        if answer_input:
-            if any(term in answer_input.lower() for term in lesson["expected_answer"].split()):
-                st.success("🎉 Rất chính xác! Con đã hiểu bài rất sâu sắc.")
-            else:
-                st.warning("Gần đúng rồi! Con hãy đọc lại đoạn văn một lần nữa để tìm câu trả lời nhé.")
+            st.warning("Gần đúng rồi! Con hãy đọc lại đoạn văn một lần nữa để tìm câu trả lời nhé.")
