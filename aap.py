@@ -16,11 +16,13 @@ import streamlit.components.v1 as components
 # 1. CẤU HÌNH
 # =====================================================================
 # Tốc độ đọc chuẩn (tiếng/phút) dùng để tính điểm - thầy/cô có thể chỉnh
-TARGET_WPM = {"Học kỳ 1": 40, "Học kỳ 2": 50}
-W_ACCURACY, W_SPEED = 0.7, 0.3      # điểm = 70% đọc đúng + 30% tốc độ
-NEAR_CREDIT = 0.5                    # đọc gần đúng (chỉ sai dấu thanh) được 0.5 tiếng
+TARGET_WPM = {"Học kỳ 1": 30, "Học kỳ 2": 40}
+W_ACCURACY, W_SPEED = 0.85, 0.15     # điểm = 85% đọc đúng + 15% tốc độ (ưu tiên đọc đúng, tròn chữ)
+FULL_ACCURACY = 0.90                 # đọc đúng từ 90% số tiếng trở lên là đã được trọn điểm phần "đọc đúng"
+NEAR_CREDIT = 0.75                   # tiếng đọc gần đúng (máy nghe lệch dấu/âm) được 0.75 tiếng
+NEAR_RATIO = 0.75                    # độ giống tối thiểu để tính là "gần đúng"
 MIN_SECONDS = 3.0                    # ghi âm ngắn hơn mức này -> yêu cầu ghi lại
-MIN_RECOGNIZED = 0.25                # máy nghe được dưới 25% bài -> coi là chưa nghe rõ, không chấm
+MIN_RECOGNIZED = 0.20                # máy nghe được dưới 20% bài -> coi là chưa nghe rõ, không chấm
 
 VOICES = {"Cô Hoài My (giọng nữ)": "vi-VN-HoaiMyNeural", "Thầy Nam Minh (giọng nam)": "vi-VN-NamMinhNeural"}
 SPEEDS = {"Đọc chậm (cho em tập đọc)": "-20%", "Đọc vừa": "-8%"}
@@ -41,6 +43,8 @@ st.markdown("""
     .w-ok { color: #166534; }
     .w-near { color: #B45309; background: #FEF3C7; border-radius: 6px; padding: 0 4px; }
     .w-miss { color: #B91C1C; background: #FEE2E2; border-radius: 6px; padding: 0 4px; text-decoration: underline wavy; }
+    .comment { background:#F0F9FF; border-left: 5px solid #0EA5E9; border-radius: 10px; padding: 8px 18px; font-size: 17px; line-height: 1.7; color:#0F172A; }
+    .comment p { margin: 8px 0; }
     .heard { color:#475569; font-size:15px; background:#F8FAFC; border-radius:10px; padding:10px 14px; border:1px dashed #CBD5E1; }
     @media (max-width: 640px) { .reading-box { font-size: 22px !important; padding: 14px; } }
 </style>
@@ -211,11 +215,22 @@ def align(ref_text, heard_text):
             for k in range(i1, i2):
                 status[k] = "ok"
         elif tag == "replace":
-            # Ghép từng cặp: nếu chỉ khác dấu thanh/dấu mũ -> "gần đúng" (máy nghe sai hoặc sai dấu nhẹ)
-            for k in range(min(i2 - i1, j2 - j1)):
-                a, b = ref[i1 + k], got[j1 + k]
-                if strip_marks(a) == strip_marks(b):
-                    status[i1 + k] = "near"
+            # Ghép từng tiếng với tiếng nghe được giống nhất trong cùng đoạn.
+            # Giống nhau khi bỏ dấu, hoặc rất gần nhau -> "gần đúng" (giọng trẻ em máy dễ nghe lệch).
+            used = set()
+            for k in range(i1, i2):
+                a = strip_marks(ref[k])
+                best_j, best_r = None, 0.0
+                for j in range(j1, j2):
+                    if j in used:
+                        continue
+                    b = strip_marks(got[j])
+                    r = 1.0 if a == b else difflib.SequenceMatcher(a=a, b=b).ratio()
+                    if r > best_r:
+                        best_j, best_r = j, r
+                if best_j is not None and best_r >= NEAR_RATIO:
+                    status[k] = "near"
+                    used.add(best_j)
     credit = sum(1.0 if s == "ok" else NEAR_CREDIT if s == "near" else 0 for s in status)
     full = {i: s for i, s in zip(idx, status)}
     out = [(ref_tokens[i], full.get(i, "ok")) for i in range(len(ref_tokens))]
@@ -233,9 +248,74 @@ def grade(status, credit, speaking_seconds, term):
     wpm = round(read_count / (speaking_seconds / 60)) if speaking_seconds > 0 else 0
     target = TARGET_WPM.get(term, 40)
     speed = min(wpm / target, 1.0) if target else 0
-    score = max(0.0, min(4.0, round_half(4 * (W_ACCURACY * accuracy + W_SPEED * speed))))
-    rating = "Hoàn thành tốt (T)" if score >= 3.5 else "Hoàn thành (H)" if score >= 2.0 else "Chưa hoàn thành (C)"
+    eff = min(accuracy / FULL_ACCURACY, 1.0)          # đọc đúng >= 90% là trọn điểm phần đọc đúng
+    score = max(0.0, min(4.0, round_half(4 * (W_ACCURACY * eff + W_SPEED * speed))))
+    if accuracy < 0.5:
+        score = min(score, 1.5)                        # đọc đúng chưa tới một nửa thì chưa thể hoàn thành
+    elif accuracy < 0.8:
+        score = min(score, 3.0)                        # chưa đạt mức "tốt" thì tối đa 3 điểm
+    if score >= 3.5 and accuracy >= 0.8:
+        rating = "Hoàn thành tốt (T)"
+    elif score >= 2.0 and accuracy >= 0.5:
+        rating = "Hoàn thành (H)"
+    else:
+        rating = "Chưa hoàn thành (C)"
     return accuracy, wpm, score, rating
+
+
+def build_comment(name, lesson_title, res, term):
+    """Viết lời nhận xét sư phạm theo kết quả cụ thể của từng em."""
+    r = res["rating"]
+    pct = round(res["accuracy"] * 100)
+    n_read = res["n_ok"] + res["n_near"]
+    target = TARGET_WPM.get(term, 30)
+    pick = (len(name) + int(res["score"] * 2) + res["total"]) % 3   # đổi câu chữ để mỗi em một khác
+
+    if r.startswith("Hoàn thành tốt"):
+        opening = [
+            f"Cô rất vui vì em {name} đã đọc bài “{lesson_title}” thật tốt!",
+            f"Chúc mừng em {name}! Bài đọc “{lesson_title}” của em rất đáng khen.",
+            f"Em {name} đọc bài “{lesson_title}” rất tròn vành rõ chữ, cô khen em!",
+        ][pick]
+        body = f"Em đọc đúng {n_read}/{res['total']} tiếng ({pct}%), giọng đọc rõ ràng, dễ nghe."
+    elif r.startswith("Hoàn thành ("):
+        opening = [
+            f"Em {name} đã hoàn thành bài đọc “{lesson_title}”, cô ghi nhận sự cố gắng của em.",
+            f"Cô thấy em {name} đã đọc được bài “{lesson_title}” rồi, em làm tốt lắm!",
+            f"Em {name} đọc bài “{lesson_title}” khá tốt, chỉ cần sửa thêm một vài chỗ nhỏ là tuyệt vời.",
+        ][pick]
+        body = f"Em đọc đúng {n_read}/{res['total']} tiếng ({pct}%). Em đã nắm được phần lớn bài đọc."
+    else:
+        opening = [
+            f"Em {name} đã rất can đảm đọc bài “{lesson_title}”, cô khen em đã dám đọc to!",
+            f"Cô thấy em {name} đã cố gắng, nhưng bài “{lesson_title}” cần được luyện thêm một chút nữa.",
+            f"Không sao đâu em {name}, ai cũng cần đọc vài lần mới thuộc. Mình cùng đọc lại nhé!",
+        ][pick]
+        body = f"Lần này em đọc đúng {n_read}/{res['total']} tiếng ({pct}%). Em hãy nghe cô đọc mẫu rồi đọc lại nhé."
+
+    parts = [opening, body]
+
+    need = (res["wrong"] + res["near"])[:6]
+    if need:
+        parts.append("Những tiếng em cần rèn thêm: <b>" + ", ".join(need) + "</b>. "
+                     "Con đọc chậm từng tiếng, mỗi tiếng ba lần, rồi ghép vào cả câu nhé.")
+    else:
+        parts.append("Em không sai tiếng nào, thật xuất sắc!")
+
+    if res["wpm"] < target * 0.7:
+        parts.append("Em đọc còn hơi chậm, con hãy nhìn trước cả cụm từ để đọc trôi chảy hơn.")
+    elif res["wpm"] > 130:
+        parts.append("Em đọc hơi nhanh, con nhớ ngắt nghỉ ở dấu phẩy và dấu chấm để nghe rõ từng tiếng.")
+    else:
+        parts.append("Tốc độ đọc của em vừa phải, nghe rất dễ chịu.")
+
+    if r.startswith("Hoàn thành tốt"):
+        parts.append("Em hãy tiếp tục giữ vững và thử sức với bài đọc tiếp theo nhé! ⭐⭐⭐")
+    elif r.startswith("Hoàn thành ("):
+        parts.append("Luyện thêm một lần nữa, em sẽ đạt điểm cao hơn. Cô tin em làm được! ⭐⭐")
+    else:
+        parts.append("Con bấm nút “Ghi âm lại” để đọc thêm một lần nữa nhé. Cô tin lần sau em sẽ tiến bộ! ⭐")
+    return parts
 
 
 def render_marked(tokens):
@@ -543,7 +623,17 @@ if st.session_state.get("tts_play") == tts_key:
 st.markdown("---")
 st.markdown("### 🎙️ Luyện đọc và Đánh giá kết quả")
 st.caption("Bấm micro, đọc to cả đoạn văn ở nơi yên tĩnh, rồi bấm dừng.")
-audio_file = st.audio_input("Ghi âm giọng đọc của học sinh:")
+st.session_state.setdefault("rec_n", 0)
+
+
+def reset_recording():
+    """Xóa bản ghi âm cũ để học sinh ghi âm lại mà không cần tải lại trang."""
+    st.session_state["rec_n"] += 1
+    st.session_state.pop("result_key", None)
+    st.session_state.pop("result", None)
+
+
+audio_file = st.audio_input("Ghi âm giọng đọc của học sinh:", key=f"audio_{st.session_state['rec_n']}")
 
 if audio_file:
     if not student_name.strip():
@@ -574,6 +664,7 @@ if audio_file:
     res = st.session_state["result"]
     if res["err"]:
         st.error(res["err"])
+        st.button("🔄 Ghi âm lại", type="primary", on_click=reset_recording, key="retry_err")
         st.stop()
 
     st.markdown("## 🌟 Kết quả Đánh giá Tiếng Việt")
@@ -589,18 +680,22 @@ if audio_file:
         if res.get("save_err"):
             st.caption(f"(Chi tiết lỗi ghi Sheet: {res['save_err']})")
 
+    if res["rating"].startswith("Chưa"):
+        st.warning("Bài đọc lần này chưa đạt. Con nghe đọc mẫu rồi bấm “Ghi âm lại” để đọc thêm một lần nhé!")
+    st.button("🔄 Ghi âm lại (đọc lần nữa)", type="primary" if res["rating"].startswith("Chưa") else "secondary",
+              on_click=reset_recording, key="retry_ok")
+
     st.markdown("### 💬 Bài đọc của em")
     st.markdown(f'<div class="reading-box" translate="no">{render_marked(res["tokens"])}</div>', unsafe_allow_html=True)
     st.caption("Màu xanh: đọc đúng · Nền vàng: đọc gần đúng (chưa chuẩn dấu) · Nền đỏ: cần đọc lại")
-    if res["wrong"] or res["near"]:
-        st.info("Con rèn thêm các tiếng: " + ", ".join((res["wrong"] + res["near"])[:8]) + ".")
-    else:
-        st.info("Con đọc rất lưu loát và chính xác! Tặng con 3 ngôi sao chăm chỉ! ⭐⭐⭐")
+    st.markdown("### 📝 Lời nhận xét của cô giáo")
+    comment = build_comment(student_name.strip(), lesson["title"], res, term_filter)
+    st.markdown('<div class="comment">' + "".join(f"<p>{p}</p>" for p in comment) + "</div>", unsafe_allow_html=True)
 
     with st.expander("Cách chấm điểm (để thầy cô và phụ huynh tham khảo)"):
         st.markdown(f"""
-- **Điểm = {int(W_ACCURACY*100)}% đọc đúng + {int(W_SPEED*100)}% tốc độ**, làm tròn đến 0,5 điểm.
-- **Đọc đúng:** tiếng đọc đúng được 1; tiếng chỉ sai dấu thanh/dấu mũ được {NEAR_CREDIT} (vì máy có thể nghe nhầm dấu); tiếng sót hoặc sai được 0. Đọc thêm hoặc lặp từ không bị trừ điểm.
+- **Điểm = {int(W_ACCURACY*100)}% đọc đúng + {int(W_SPEED*100)}% tốc độ**, làm tròn đến 0,5 điểm. Chủ yếu chấm việc đọc đúng, tròn vành rõ chữ.
+- **Đọc đúng:** đọc đúng từ {int(FULL_ACCURACY*100)}% số tiếng trở lên là được trọn điểm phần này. Tiếng đúng được 1; tiếng gần đúng (máy có thể nghe lệch dấu hoặc âm do giọng trẻ em) được {NEAR_CREDIT}; tiếng sót hoặc sai được 0. Đọc thêm hoặc lặp từ không bị trừ điểm.
 - **Tốc độ:** tính trên thời gian em thực sự đọc (đã bỏ khoảng lặng lúc bắt đầu và kết thúc). Mức chuẩn là {TARGET_WPM['Học kỳ 1']} tiếng/phút (học kỳ 1) và {TARGET_WPM['Học kỳ 2']} tiếng/phút (học kỳ 2).
 - Máy được xét nhiều cách nghe khác nhau và lấy cách khớp bài nhất để tránh phạt oan. Nếu máy nghe không rõ, bài sẽ **không được chấm** để em ghi âm lại.
 - Điểm do máy chấm chỉ mang tính **gợi ý**; giáo viên là người đánh giá cuối cùng.""")
