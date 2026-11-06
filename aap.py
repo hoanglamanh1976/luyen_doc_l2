@@ -51,17 +51,25 @@ try:
     conn = st.connection("gsheets", type=GSheetsConnection)
 except Exception as e:
     conn = None
-
 def save_score_to_sheet(row_data):
-    if conn is None:
-        return False
     try:
-        existing_data = conn.read(worksheet="Lop2", usecols=[0,1,2,3,4,5,6,7], ttl=5)
-        existing_data = existing_data.dropna(how="all")
-        new_row = pd.DataFrame([row_data])
-        updated_df = pd.concat([existing_data, new_row], ignore_index=True)
-        conn.update(worksheet="Lop2", data=updated_df)
-        return True
+        webhook_url = st.secrets.get("WEBHOOK_URL")
+        if not webhook_url:
+            return False
+        
+        payload = {
+            "time": row_data["Thời gian"],
+            "class_name": row_data["Lớp"],
+            "student_name": row_data["Họ và tên"],
+            "lesson_title": row_data["Bài đọc"],
+            "wpm": row_data["Tốc độ (WPM)"],
+            "errors": row_data["Từ cần rèn"],
+            "score": row_data["Điểm TT27"],
+            "evaluation": row_data["Đánh giá"]
+        }
+        
+        response = requests.post(webhook_url, json=payload, timeout=10)
+        return response.status_code == 200
     except Exception as e:
         return False
 
