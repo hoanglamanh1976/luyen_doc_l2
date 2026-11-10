@@ -894,6 +894,6 @@ with tab_help:
 
 st.markdown(f"""
 <div class="footer" translate="no">
-  💛 Web được tạo bởi giáo viên <b>{AUTHOR}</b><br>
+  💛 "✏️BẠN BÚT CHÌ" được tạo bởi giáo viên <b>{AUTHOR}</b><br>
   <span style="font-weight:700;font-size:15px">Trường Tiểu học Thái Hòa , {LOCATION}</span>
 </div>""", unsafe_allow_html=True)
