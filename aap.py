@@ -129,7 +129,7 @@ st.markdown(f"""
   <h1> ✏️ BẠN BÚT CHÌ - TRỢ LÝ AI LUYỆN ĐỌC TIẾNG VIỆT </h1>
   <p> 🌟🌟🌟DÀNH CHO HỌC SINH LỚP 1 ĐẾN LỚP 5🌟🌟🌟 
  
-  🌱Được tạo bởi Thầy giáo Hoàng Lâm Anh⭐ </p>
+  🌱Được tạo bởi Thầy giáo Hoàng Lâm Anh💛 </p>
 </div>
 """, unsafe_allow_html=True)
 
