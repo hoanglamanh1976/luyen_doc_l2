@@ -1,7 +1,9 @@
 import asyncio
+import base64
 import difflib
 import hashlib
 import io
+import os
 import re
 import unicodedata
 import wave
@@ -69,18 +71,48 @@ st.set_page_config(page_title="Luyện đọc Tiếng Việt - Tiểu học Thá
 
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&family=Baloo+2:wght@800&display=swap');
     html, body, [class*="css"] { translate: no !important; font-family: 'Nunito', 'Segoe UI', sans-serif; }
     .skiptranslate { display: none !important; }
     .block-container { padding-top: 1.2rem; max-width: 880px; }
 
-    .hero { background: linear-gradient(135deg, #1E3A8A 0%, #6D28D9 55%, #DB2777 100%); color: #fff;
-        border-radius: 22px; padding: 22px 24px; text-align: center; margin-bottom: 14px;
-        box-shadow: 0 10px 28px rgba(79,70,229,.28); position: relative; overflow: hidden; }
-    .hero::after { content: "✏️ 📖 ⭐ 🎈 📚"; position: absolute; right: 14px; bottom: 6px; opacity: .22; font-size: 26px; letter-spacing: 6px; }
-    .hero .school { font-size: 23px; letter-spacing: 3px; font-weight: 800; opacity: .98; text-shadow: 0 2px 6px rgba(0,0,0,.25); }
-    .hero h1 { margin: 6px 0 4px; font-size: 30px; font-weight: 800; color: #fff; padding: 0; }
-    .hero p { margin: 0; opacity: .92; font-size: 15px; }
+    .banner { position: relative; overflow: hidden; border-radius: 24px; margin-bottom: 14px; color: #fff;
+        text-align: center; padding: 26px 160px 20px; min-height: 300px; display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        background:
+          radial-gradient(ellipse at 50% 40%, rgba(255,214,102,.38) 0%, rgba(255,214,102,0) 52%),
+          radial-gradient(ellipse at 0% 105%, rgba(255,255,255,.62) 0%, rgba(255,255,255,0) 42%),
+          radial-gradient(ellipse at 100% 105%, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 40%),
+          linear-gradient(100deg, #1D3FD8 0%, #4A2FD0 48%, #8E2BD6 100%);
+        box-shadow: 0 12px 30px rgba(76,29,149,.35); }
+    .banner .mascot { position: absolute; left: 10px; bottom: 0; height: 78%; max-height: 260px; z-index: 2;
+        filter: drop-shadow(0 6px 8px rgba(0,0,0,.35)); animation: bob 3.4s ease-in-out infinite; }
+    .banner .deco { position: absolute; z-index: 1; line-height: 1; filter: drop-shadow(0 3px 4px rgba(0,0,0,.3));
+        animation: floaty 4.2s ease-in-out infinite; }
+    @keyframes floaty { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-7px) rotate(6deg); } }
+    @keyframes bob { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-6px) rotate(3deg); } }
+    @keyframes twinkle { 0%,100% { opacity: .25; transform: scale(.7); } 50% { opacity: 1; transform: scale(1.15); } }
+    .banner .spark { position: absolute; color: #FDE68A; z-index: 1; animation: twinkle 2.6s ease-in-out infinite; }
+    .banner-img { width: 100%; display: block; border-radius: 24px; margin-bottom: 14px; box-shadow: 0 12px 30px rgba(76,29,149,.35); }
+    .t-wrap { position: relative; display: inline-block; line-height: 1.05; margin: 0 0 4px; z-index: 3; }
+    .t-wrap span { display: block; font-family: 'Baloo 2', 'Nunito', 'Segoe UI', sans-serif; font-weight: 800;
+        font-size: clamp(38px, 8.4vw, 72px); letter-spacing: 1px; white-space: nowrap; }
+    .t-wrap .l1 { position: absolute; left: 0; top: 0; color: #fff; -webkit-text-stroke: .235em #fff;
+        text-shadow: 0 .125em 0 #B45309, 0 .22em .3em rgba(0,0,0,.45); }
+    .t-wrap .l2 { position: absolute; left: 0; top: 0; color: #C2410C; -webkit-text-stroke: .125em #C2410C; }
+    .t-wrap .l3 { position: relative; background: linear-gradient(180deg, #FEF08A 0%, #FBBF24 42%, #F97316 100%);
+        -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+    .banner .sub { font-size: clamp(14px, 2.7vw, 23px); font-weight: 800; letter-spacing: .5px; margin: 12px 0 10px;
+        text-shadow: 0 2px 6px rgba(0,0,0,.4); z-index: 3; }
+    .ribbon-wrap { filter: drop-shadow(0 4px 6px rgba(0,0,0,.35)); z-index: 3; }
+    .ribbon { display: inline-block; padding: 7px 40px; font-weight: 800; font-size: clamp(11px, 2.1vw, 16px);
+        color: #0B3B63; letter-spacing: .3px; white-space: nowrap;
+        background: linear-gradient(90deg, #14B8A6 0%, #99F6E4 14%, #FEF3C7 50%, #99F6E4 86%, #14B8A6 100%);
+        clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 50%, 100% 100%, 0 100%, 14px 50%); }
+    .banner .credit { margin-top: 12px; font-size: clamp(13px, 2.3vw, 17px); font-weight: 700; color: #F5F3FF;
+        text-shadow: 0 2px 4px rgba(0,0,0,.35); z-index: 3; }
+    @media (max-width: 760px) { .banner { padding: 22px 12px 16px; min-height: 0; }
+        .banner .mascot, .banner .hide-m { display: none; } .ribbon { padding: 6px 22px; font-size: 10.5px; } .t-wrap span { font-size: 40px; } }
 
     .steps { display: flex; gap: 8px; margin: 6px 0 14px; flex-wrap: wrap; }
     .steps div { flex: 1; min-width: 150px; background: #fff; border: 2px solid #E2E8F0; border-radius: 14px;
@@ -119,19 +151,93 @@ st.markdown("""
     .footer { text-align:center; margin: 34px 0 8px; padding: 14px; border-radius: 16px; color:#475569;
         background: linear-gradient(90deg, #EEF2FF, #FDF2F8); font-weight: 700; }
     .footer b { color: #BE185D; }
-    @media (max-width: 640px) { .reading-box { font-size: 22px !important; padding: 14px; } .hero h1 { font-size: 24px; } .hero .school { font-size: 17px; letter-spacing: 1px; } }
+    @media (max-width: 640px) { .reading-box { font-size: 22px !important; padding: 14px; } }
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown(f"""
-<div class="hero" translate="no">
-  <div class="school">{SCHOOL}</div>
-  <h1> ✏️ BẠN BÚT CHÌ - TRỢ LÝ AI LUYỆN ĐỌC TIẾNG VIỆT </h1>
-  <p> 🌟🌟🌟DÀNH CHO HỌC SINH LỚP 1 ĐẾN LỚP 5🌟🌟🌟 
- 
-  🌱Được tạo bởi Thầy giáo Hoàng Lâm Anh💛 </p>
+def _mascot_uri():
+    """Bạn Bút Chì (vẽ bằng SVG, nhúng thẳng vào trang nên không cần file ảnh)."""
+    svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 300">
+<defs>
+ <linearGradient id="b" x1="0" x2="1"><stop offset="0" stop-color="#FDE047"/><stop offset=".55" stop-color="#FBBF24"/><stop offset="1" stop-color="#F59E0B"/></linearGradient>
+ <linearGradient id="e" x1="0" x2="1"><stop offset="0" stop-color="#FBCFE8"/><stop offset="1" stop-color="#F472B6"/></linearGradient>
+ <linearGradient id="m" x1="0" x2="1"><stop offset="0" stop-color="#F3F4F6"/><stop offset=".5" stop-color="#9CA3AF"/><stop offset="1" stop-color="#E5E7EB"/></linearGradient>
+</defs>
+<g transform="rotate(-8 105 150)">
+ <path d="M62 128 Q28 148 32 186" stroke="#F59E0B" stroke-width="9" fill="none" stroke-linecap="round"/>
+ <circle cx="31" cy="192" r="15" fill="#fff" stroke="#E5E7EB" stroke-width="3"/>
+ <path d="M148 118 Q184 108 180 70" stroke="#F59E0B" stroke-width="9" fill="none" stroke-linecap="round"/>
+ <circle cx="180" cy="62" r="16" fill="#fff" stroke="#E5E7EB" stroke-width="3"/>
+ <rect x="62" y="8" width="86" height="46" rx="18" fill="url(#e)"/>
+ <rect x="62" y="50" width="86" height="18" fill="url(#m)"/>
+ <rect x="62" y="68" width="86" height="136" fill="url(#b)"/>
+ <rect x="62" y="68" width="14" height="136" fill="#FFF7AE" opacity=".55"/>
+ <rect x="136" y="68" width="12" height="136" fill="#D97706" opacity=".35"/>
+ <polygon points="62,204 148,204 105,262" fill="#F8D9A8"/>
+ <polygon points="62,204 84,204 105,262" fill="#EBC58E"/>
+ <polygon points="92,240 118,240 105,262" fill="#374151"/>
+ <ellipse cx="86" cy="116" rx="12" ry="14" fill="#fff"/><ellipse cx="124" cy="116" rx="12" ry="14" fill="#fff"/>
+ <circle cx="88" cy="119" r="7" fill="#1F2937"/><circle cx="126" cy="119" r="7" fill="#1F2937"/>
+ <circle cx="90" cy="115" r="2.6" fill="#fff"/><circle cx="128" cy="115" r="2.6" fill="#fff"/>
+ <circle cx="72" cy="146" r="8" fill="#FB7185" opacity=".6"/><circle cx="138" cy="146" r="8" fill="#FB7185" opacity=".6"/>
+ <path d="M84 142 Q105 176 126 142 Z" fill="#7F1D1D"/>
+ <path d="M94 158 Q105 170 116 158 Q105 150 94 158 Z" fill="#FB7185"/>
+</g></svg>"""
+    return "data:image/svg+xml;base64," + base64.b64encode(svg.encode("utf-8")).decode()
+
+
+def _deco(emoji, css, size=30, delay=0.0, hide_m=False):
+    return (f'<span class="deco{" hide-m" if hide_m else ""}" style="{css}font-size:{size}px;'
+            f'animation-delay:{delay}s">{emoji}</span>')
+
+
+@st.cache_data(show_spinner=False)
+def _banner_image_uri():
+    """Nếu có file banner.jpg (hoặc banner.png) nằm cạnh aap.py thì dùng ảnh đó làm đầu trang."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    for name, mime in (("banner.jpg", "jpeg"), ("banner.jpeg", "jpeg"), ("banner.png", "png")):
+        path = os.path.join(here, name)
+        if os.path.exists(path):
+            with open(path, "rb") as f:
+                return f"data:image/{mime};base64," + base64.b64encode(f.read()).decode()
+    return None
+
+
+def render_banner():
+    img = _banner_image_uri()
+    if img:
+        st.markdown(f'<img class="banner-img" src="{img}" alt="Bạn Bút Chì - Trợ lý AI luyện đọc Tiếng Việt" translate="no">',
+                    unsafe_allow_html=True)
+        return
+    decos = "".join([
+        _deco("⭐", "left:9%;top:9%;", 30, 0.2, True),
+        _deco("🚀", "left:21%;top:7%;", 40, 0.9, True),
+        _deco("🎵", "left:5%;top:34%;", 26, 1.4, True),
+        _deco("🎶", "right:9%;top:20%;", 28, 0.6, True),
+        _deco("⭐", "right:6%;top:6%;", 34, 1.1, True),
+        _deco("🚀", "right:5%;top:30%;", 46, 0.4, True),
+        _deco("🎈", "right:4%;bottom:20%;", 44, 1.6, True),
+        _deco("📘", "right:3%;bottom:2%;", 62, 0.3, True),
+        _deco("✏️", "right:23%;bottom:3%;", 40, 1.2, True),
+        _deco("⭐", "right:15%;bottom:6%;", 40, 0.8, True),
+        _deco("📖", "left:3%;bottom:1%;", 56, 0.5, True),
+    ])
+    sparks = "".join(f'<span class="spark" style="left:{x}%;top:{y}%;font-size:{z}px;animation-delay:{d}s">✦</span>'
+                     for x, y, z, d in [(30, 10, 18, 0.0), (68, 9, 22, 0.8), (42, 3, 14, 1.5), (77, 40, 16, 0.4),
+                                       (22, 46, 14, 1.9), (60, 2, 12, 1.1)])
+    st.markdown(f"""
+<div class="banner" translate="no">
+  {decos}{sparks}
+  <img class="mascot" src="{_mascot_uri()}" alt="Bạn Bút Chì">
+  <div class="t-wrap"><span class="l1">BẠN BÚT CHÌ</span><span class="l2">BẠN BÚT CHÌ</span><span class="l3">BẠN BÚT CHÌ</span></div>
+  <div class="sub">TRỢ LÝ AI LUYỆN ĐỌC TIẾNG VIỆT</div>
+  <div class="ribbon-wrap"><div class="ribbon">⭐⭐⭐ DÀNH CHO HỌC SINH LỚP 1 ĐẾN LỚP 5 ⭐⭐⭐</div></div>
+  <div class="credit">🌱 Được tạo bởi Thầy giáo {AUTHOR} 💛</div>
 </div>
 """, unsafe_allow_html=True)
+
+
+render_banner()
 
 
 # =====================================================================
@@ -581,6 +687,13 @@ COMP_LABEL = {"daydu": "Đúng, đầy đủ ý", "dung": "Đúng một phần �
 # =====================================================================
 # 6. GIAO DIỆN
 # =====================================================================
+def show_table(rows):
+    try:
+        st.dataframe(rows, hide_index=True, width="stretch")
+    except Exception:
+        st.dataframe(rows, hide_index=True, use_container_width=True)
+
+
 def stars_html(n):
     on = "".join(f'<span class="star on" style="animation-delay:{i * 0.18:.2f}s">⭐</span>' for i in range(n))
     off = "".join('<span class="star off">⭐</span>' for _ in range(5 - n))
@@ -851,9 +964,8 @@ with tab_prog:
             st.success("👑 Em đã đạt danh hiệu cao nhất. Tuyệt vời!")
         if mine:
             st.markdown("#### Các lần đọc hôm nay")
-            st.dataframe([{"Giờ": h["Thời gian"], "Bài đọc": h["Bài đọc"], "Mức": h["Đánh giá"], "Điểm /4": h["Điểm"],
-                           "Sao": "⭐" * h["Sao"], "Chính xác (%)": h["Chính xác (%)"]} for h in reversed(mine)],
-                         hide_index=True, use_container_width=True)
+            show_table([{"Giờ": h["Thời gian"], "Bài đọc": h["Bài đọc"], "Mức": h["Đánh giá"], "Điểm /4": h["Điểm"],
+                           "Sao": "⭐" * h["Sao"], "Chính xác (%)": h["Chính xác (%)"]} for h in reversed(mine)])
         else:
             st.caption("Em chưa có lần đọc nào trong phiên này. Sang tab “Đọc bài” để bắt đầu nhé!")
         st.caption("Thành tích ở đây tính trong lần mở web này. Toàn bộ kết quả được lưu lâu dài trong Sổ theo dõi của nhà trường.")
@@ -868,17 +980,17 @@ with tab_help:
 4. Xem **sao thưởng**, nhận xét và trả lời **câu hỏi đọc hiểu**. Đọc lại nhiều lần để được thêm sao!""")
 
     st.markdown("### ⭐ Sao thưởng")
-    st.dataframe([
+    show_table([
         {"Số sao": "⭐" * 5, "Điểm đọc /4": "4,0", "Ý nghĩa": "Xuất sắc, giọng đọc vàng"},
         {"Số sao": "⭐" * 4, "Điểm đọc /4": "3,5", "Ý nghĩa": "Rất giỏi"},
         {"Số sao": "⭐" * 3, "Điểm đọc /4": "3,0", "Ý nghĩa": "Giỏi"},
         {"Số sao": "⭐" * 2, "Điểm đọc /4": "2,0 - 2,5", "Ý nghĩa": "Đang tiến bộ"},
         {"Số sao": "⭐", "Điểm đọc /4": "dưới 2,0", "Ý nghĩa": "Cố gắng thêm (em luôn được ít nhất 1 sao)"},
-    ], hide_index=True, use_container_width=True)
+    ])
     st.caption("Sao của mỗi bài tính theo lần đọc tốt nhất. Chưa đạt mức “Hoàn thành tốt” thì tối đa 3 sao.")
 
     st.markdown("### 📏 Mức chấm của từng khối (để thầy cô và phụ huynh tham khảo)")
-    st.dataframe([{
+    show_table([{
         "Khối": p["name"], "Mức chấm": p["level"].split("·")[1].strip(),
         "Đọc đúng để trọn điểm": f"{round(p['full_acc'] * 100)}%",
         "Tiếng gần đúng được": f"{p['near_credit']:.2f} tiếng",
@@ -886,7 +998,7 @@ with tab_help:
         "Đạt T khi đúng ≥": f"{round(p['t_th'] * 100)}%",
         "Đạt H khi đúng ≥": f"{round(p['h_th'] * 100)}%",
         "Tốc độ tối thiểu để đạt T": "không yêu cầu" if not p["t_speed"] else f"{round(p['t_speed'] * 100)}% mức chuẩn",
-    } for p in PROFILES.values()], hide_index=True, use_container_width=True)
+    } for p in PROFILES.values()])
     st.markdown(f"""
 - **Điểm /4 = tỉ trọng đọc đúng + tỉ trọng tốc độ**, làm tròn 0,5. Lớp càng cao càng yêu cầu đọc chính xác và đúng tốc độ.
 - Tiếng đúng được 1; tiếng **gần đúng** (máy có thể nghe lệch dấu hoặc âm do giọng trẻ em) được một phần điểm; tiếng sót hoặc sai được 0. Đọc thêm hoặc lặp từ không bị trừ điểm.
@@ -896,6 +1008,6 @@ with tab_help:
 
 st.markdown(f"""
 <div class="footer" translate="no">
-  💛 "✏️BẠN BÚT CHÌ" được tạo bởi giáo viên <b>{AUTHOR}</b><br>
-  <span style="font-weight:700;font-size:15px">Trường Tiểu học Thái Hòa , {LOCATION}</span>
+  💛 Web được tạo bởi giáo viên <b>{AUTHOR}</b><br>
+  <span style="font-weight:700;font-size:15px">Trường Tiểu học Thái Hòa · {LOCATION}</span>
 </div>""", unsafe_allow_html=True)
