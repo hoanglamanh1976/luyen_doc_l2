@@ -5,7 +5,7 @@ import io
 import re
 import unicodedata
 import wave
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 import numpy as np
 import requests
@@ -16,6 +16,8 @@ import streamlit.components.v1 as components
 # 1. CẤU HÌNH
 # =====================================================================
 SCHOOL = "TRƯỜNG TIỂU HỌC THÁI HÒA"
+LOCATION = "xã Thái Hòa, tỉnh Tuyên Quang"
+VN_TZ = timezone(timedelta(hours=7))   # giờ Việt Nam (máy chủ web chạy giờ UTC nên phải đổi)
 AUTHOR = "Hoàng Lâm Anh"
 MIN_SECONDS = 3.0                    # ghi âm ngắn hơn mức này -> yêu cầu ghi lại
 
@@ -59,8 +61,8 @@ STAR_INFO = {
 RANKS = [(0, "Mầm non chăm chỉ", "🌱"), (10, "Chú chim hót hay", "🐦"), (25, "Ngôi sao đang sáng", "🌟"),
          (50, "Siêu sao đọc giỏi", "🚀"), (100, "Vua đọc sách", "👑")]
 
-VOICES = {"Cô Hoài My (giọng nữ, giọng Bắc)": "vi-VN-HoaiMyNeural",
-          "Thầy Nam Minh (giọng nam, giọng Bắc)": "vi-VN-NamMinhNeural"}
+VOICES = {"Cô Hoài My (giọng nữ, tiếng phổ thông chuẩn)": "vi-VN-HoaiMyNeural",
+          "Thầy Nam Minh (giọng nam, tiếng phổ thông chuẩn)": "vi-VN-NamMinhNeural"}
 SPEEDS = {"Đọc chậm (cho em tập đọc)": "-20%", "Đọc vừa": "-8%"}
 
 st.set_page_config(page_title="Luyện đọc Tiếng Việt - Tiểu học Thái Hòa", page_icon="✏️", layout="centered")
@@ -76,7 +78,7 @@ st.markdown("""
         border-radius: 22px; padding: 22px 24px; text-align: center; margin-bottom: 14px;
         box-shadow: 0 10px 28px rgba(79,70,229,.28); position: relative; overflow: hidden; }
     .hero::after { content: "✏️ 📖 ⭐ 🎈 📚"; position: absolute; right: 14px; bottom: 6px; opacity: .22; font-size: 26px; letter-spacing: 6px; }
-    .hero .school { font-size: 14px; letter-spacing: 2px; font-weight: 800; opacity: .92; }
+    .hero .school { font-size: 23px; letter-spacing: 3px; font-weight: 800; opacity: .98; text-shadow: 0 2px 6px rgba(0,0,0,.25); }
     .hero h1 { margin: 6px 0 4px; font-size: 30px; font-weight: 800; color: #fff; padding: 0; }
     .hero p { margin: 0; opacity: .92; font-size: 15px; }
 
@@ -117,7 +119,7 @@ st.markdown("""
     .footer { text-align:center; margin: 34px 0 8px; padding: 14px; border-radius: 16px; color:#475569;
         background: linear-gradient(90deg, #EEF2FF, #FDF2F8); font-weight: 700; }
     .footer b { color: #BE185D; }
-    @media (max-width: 640px) { .reading-box { font-size: 22px !important; padding: 14px; } .hero h1 { font-size: 24px; } }
+    @media (max-width: 640px) { .reading-box { font-size: 22px !important; padding: 14px; } .hero h1 { font-size: 24px; } .hero .school { font-size: 17px; letter-spacing: 1px; } }
 </style>
 """, unsafe_allow_html=True)
 
@@ -157,19 +159,19 @@ def _post_webhook(payload):
 def save_score_to_sheet(row):
     """Ghi 1 dòng kết quả đọc thành tiếng (tạo dòng mới trong Google Sheet)."""
     return _post_webhook({
-        "action": "reading", "record_id": row["Mã bản ghi"],
+        "action": "reading",
         "time": row["Thời gian"], "class_name": row["Lớp"], "grade": row["Khối"],
-        "student_name": row["Họ và tên"], "lesson_code": row["Mã bài"], "lesson_title": row["Bài đọc"],
+        "student_name": row["Họ và tên"], "lesson_title": row["Bài đọc"],
         "wpm": row["Tốc độ (WPM)"], "errors": row["Từ cần rèn"],
         "score": row["Điểm TT27"], "evaluation": row["Đánh giá"], "stars": row["Số sao"],
         "accuracy": row["Độ chính xác (%)"], "heard": row["Nhận dạng được"],
     })
 
 
-def save_comprehension_to_sheet(record_id, answer, level_text):
-    """Cập nhật kết quả đọc hiểu vào ĐÚNG dòng đã ghi trước đó (tìm theo record_id)."""
-    return _post_webhook({"action": "comprehension", "record_id": record_id,
-                          "comprehension": level_text, "comprehension_answer": answer})
+def save_comprehension_to_sheet(class_name, student_name, lesson_title, answer, level_text):
+    """Cập nhật đọc hiểu vào dòng gần nhất của đúng em đó, đúng bài đó (tìm theo lớp + tên + bài)."""
+    return _post_webhook({"action": "comprehension", "class_name": class_name, "student_name": student_name,
+                          "lesson_title": lesson_title, "comprehension": level_text, "comprehension_answer": answer})
 
 
 # =====================================================================
@@ -177,7 +179,7 @@ def save_comprehension_to_sheet(record_id, answer, level_text):
 # =====================================================================
 @st.cache_data(show_spinner=False, max_entries=60)
 def synth_edge(text, voice, rate):
-    """Giọng thần kinh Microsoft (giọng Bắc). Lỗi thì raise để không bị lưu vào cache."""
+    """Giọng thần kinh Microsoft (tiếng phổ thông chuẩn). Lỗi thì raise để không bị lưu vào cache."""
     import edge_tts
 
     async def run():
@@ -687,7 +689,7 @@ def reading_flow():
             if engine == "edge":
                 st.caption(f"Đang dùng giọng: {voice_label}")
             else:
-                st.warning("Giọng Bắc chất lượng cao đang không kết nối được, app tạm dùng giọng dự phòng của Google.")
+                st.warning("Giọng phổ thông chất lượng cao đang không kết nối được, app tạm dùng giọng dự phòng của Google.")
                 st.caption(f"Chi tiết kỹ thuật: {edge_err[:300]}")
         except Exception:
             st.warning("Chưa tạo được giọng đọc chất lượng cao, tạm dùng giọng của trình duyệt.")
@@ -719,13 +721,13 @@ def reading_flow():
         with st.spinner("Bạn Bút Chì đang lắng nghe và chấm bài..."):
             res = evaluate(lesson["text"], wav_bytes, target_wpm, P)
             if not res["err"]:
-                now = datetime.now()
+                now = datetime.now(VN_TZ)
                 record_id = key[:10] + now.strftime("%y%m%d%H%M%S")
                 res["record_id"] = record_id
                 row = {
-                    "Mã bản ghi": record_id, "Thời gian": now.strftime("%d/%m/%Y %H:%M"),
+                    "Thời gian": now.strftime("%d/%m/%Y %H:%M"),
                     "Lớp": selected_class, "Khối": grade_num, "Họ và tên": student_name,
-                    "Mã bài": lesson_id, "Bài đọc": lesson["title"], "Tốc độ (WPM)": res["wpm"],
+                    "Bài đọc": lesson["title"], "Tốc độ (WPM)": res["wpm"],
                     "Từ cần rèn": ", ".join((res["wrong"] + res["near"])[:8]) or "Không có",
                     "Điểm TT27": res["score"], "Đánh giá": res["rating"], "Số sao": res["stars"],
                     "Độ chính xác (%)": round(res["accuracy"] * 100), "Nhận dạng được": res["heard"],
@@ -815,7 +817,7 @@ def reading_flow():
                                                               else "Con thử lại nhé!")
             st.markdown(f'<div class="comment">{body}</div>', unsafe_allow_html=True)
             if res.get("record_id"):
-                ok, err = save_comprehension_to_sheet(res["record_id"], answer_input.strip(), COMP_LABEL[cr["level"]])
+                ok, err = save_comprehension_to_sheet(selected_class, student_name, lesson["title"], answer_input.strip(), COMP_LABEL[cr["level"]])
                 if not ok and err:
                     st.caption(f"(Chưa ghi được kết quả đọc hiểu vào Sheet: {err})")
             if cr["level"] != "sai":
@@ -893,5 +895,5 @@ with tab_help:
 st.markdown(f"""
 <div class="footer" translate="no">
   💛 Web được tạo bởi giáo viên <b>{AUTHOR}</b><br>
-  <span style="font-weight:600;font-size:13px">{SCHOOL.title()} · Chương trình GDPT 2018</span>
+  <span style="font-weight:700;font-size:15px">Trường Tiểu học Thái Hòa · {LOCATION}</span>
 </div>""", unsafe_allow_html=True)
