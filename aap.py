@@ -126,9 +126,8 @@ st.markdown("""
 st.markdown(f"""
 <div class="hero" translate="no">
   <div class="school">{SCHOOL}</div>
-  <h1> ✏️ BẠN BÚT CHÌ-TRỢ LÝ AI LUYỆN ĐỌC TIẾNG VIỆT </h1>
-  <p> DÀNH CHO HỌC SINH LỚP 1 ĐẾN LỚP 5·
-  Ứng dụng AI hỗ trợ đọc thành tiếng và số hóa đánh giá theo Thông tư 27/2020/TT-BGDĐT 
+  <h1> ✏️ BẠN BÚT CHÌ - TRỢ LÝ AI LUYỆN ĐỌC TIẾNG VIỆT </h1>
+  <p> DÀNH CHO HỌC SINH LỚP 1 ĐẾN LỚP 5 
   Được tạo bởi Thầy giáo Hoàng Lâm Anh⭐ </p>
 </div>
 """, unsafe_allow_html=True)
