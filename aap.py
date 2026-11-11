@@ -564,21 +564,72 @@ def render_marked(tokens):
 # 5. KHO BÀI ĐỌC LỚP 1 - 5 (35 tuần x 2 bài / tuần) - đọc từ file giáo trình
 #    Đặt file curriculum_full_grades_1_to_5.py (hoặc .json) cùng thư mục với aap.py
 # =====================================================================
-@st.cache_data(show_spinner=False)
-def load_curriculum():
-    """Trả về {'Lop_1': {'Tuần 01': {'term':..., 'readings':[...]}, ...}, ...}"""
+def _load_base_curriculum():
     try:
         from curriculum_full_grades_1_to_5 import CURRICULUM_DATA
         return CURRICULUM_DATA
     except Exception:
         import json
-        import os
         path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "curriculum_full_grades_1_to_5.json")
         with open(path, encoding="utf-8") as f:
             return json.load(f)
 
 
-CURRICULUM = load_curriculum()
+def _cell(v):
+    return "" if v is None else str(v).strip()
+
+
+@st.cache_data(show_spinner=False)
+def load_curriculum():
+    """Bài đọc gốc + (nếu có) file bai_doc.xlsx của giáo viên ghi đè lên từng bài.
+    Trả về (giáo trình, danh sách lưu ý). Dòng nào trong Excel có nội dung bài đọc thì dùng, dòng trống thì giữ bài cũ."""
+    data = _load_base_curriculum()
+    notes = []
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bai_doc.xlsx")
+    if not os.path.exists(path):
+        return data, notes
+    try:
+        import openpyxl
+        wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+        ws = wb["BaiDoc"] if "BaiDoc" in wb.sheetnames else wb.worksheets[0]
+        n_used = 0
+        for r, row in enumerate(ws.iter_rows(min_row=2, values_only=True), start=2):
+            row = list(row) + [None] * 9
+            khoi, tuan, bai, ten, text, cau_hoi, dap_an, tu_kho, wpm = [row[k] for k in range(9)]
+            text = _cell(text)
+            if not text:
+                continue                                    # chưa nhập bài -> giữ bài cũ
+            try:
+                gk, wk, idx = f"Lop_{int(float(khoi))}", f"Tuần {int(float(tuan)):02d}", int(float(bai)) - 1
+                lesson = data[gk][wk]["readings"][idx]
+            except Exception:
+                notes.append(f"Dòng {r} trong bai_doc.xlsx: Khối/Tuần/Bài không hợp lệ, đã bỏ qua.")
+                continue
+            lesson["text"] = text
+            lesson["word_count"] = len(text.split())
+            head = f"Tuần {int(float(tuan))} - Bài {idx + 1}"
+            lesson["title"] = f"{head}: {_cell(ten)}" if _cell(ten) else head   # để trống tên bài thì chỉ hiện "Tuần - Bài"
+            lesson["question"] = _cell(cau_hoi)
+            lesson["expected_answer"] = _cell(dap_an)
+            lesson["difficult_words"] = [w.strip() for w in re.split(r"[,;]", _cell(tu_kho)) if w.strip()]
+            if _cell(wpm):
+                try:
+                    lesson["target_wpm"] = int(float(wpm))
+                except Exception:
+                    notes.append(f"Dòng {r}: tốc độ chuẩn không phải số, dùng mức mặc định của khối.")
+            if not lesson["question"] or not lesson["expected_answer"]:
+                notes.append(f"Dòng {r} (Lớp {int(float(khoi))}, Tuần {int(float(tuan))}, Bài {idx + 1}): "
+                             "thiếu câu hỏi hoặc đáp án mẫu nên bài này chưa có phần đọc hiểu.")
+            n_used += 1
+        wb.close()
+        if n_used == 0:
+            notes.append("File bai_doc.xlsx chưa có bài nào được nhập nội dung (cột “Nội dung bài đọc” đang trống).")
+    except Exception as e:
+        notes.append(f"Không đọc được bai_doc.xlsx ({e}). Web đang dùng bài đọc mặc định.")
+    return data, notes
+
+
+CURRICULUM, CURRICULUM_NOTES = load_curriculum()
 GRADES = {f"Lớp {k.split('_')[1]}": k for k in CURRICULUM}          # {'Lớp 1': 'Lop_1', ...}
 GRADE_OF = {v: k.split()[1] for k, v in GRADES.items()}             # {'Lop_1': '1', ...}
 
@@ -721,6 +772,9 @@ def student_total_stars(history, name, cls):
 st.session_state.setdefault("history", [])
 st.session_state.setdefault("rec_n", 0)
 
+for _n in CURRICULUM_NOTES:
+    st.warning(_n)
+
 # ---- Thông tin học sinh ----
 with st.container(border=True):
     col_class, col_name = st.columns([1, 2])
@@ -777,7 +831,7 @@ def reading_flow():
                 unsafe_allow_html=True)
     st.write("")
     st.radio("🔎 Cỡ chữ bài đọc", list(FONT_SIZES), index=P["fs"], horizontal=True, key=f"fs_{grade_num}")
-    st.markdown(f'<div class="reading-box" translate="no">{lesson["text"]}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="reading-box" translate="no">{lesson["text"].replace(chr(10), "<br>")}</div>', unsafe_allow_html=True)
     if lesson.get("difficult_words"):
         tags = "".join(f"<span>{w}</span>" for w in lesson["difficult_words"])
         st.markdown(f'<div class="tags" translate="no">🔔 Từ cần chú ý khi đọc: {tags}</div>', unsafe_allow_html=True)
@@ -915,6 +969,8 @@ def reading_flow():
     with st.expander("Xem máy nghe được gì"):
         st.markdown(f'<div class="heard">{res["heard"]}</div>', unsafe_allow_html=True)
 
+    if not lesson.get("question") or not lesson.get("expected_answer"):
+        return
     st.markdown("---")
     st.markdown("### ❓ Câu hỏi đọc hiểu")
     st.markdown(f"**{lesson['question']}**")
@@ -1011,3 +1067,4 @@ st.markdown(f"""
   💛 Web được tạo bởi giáo viên <b>{AUTHOR}</b><br>
   <span style="font-weight:700;font-size:15px">Trường Tiểu học Thái Hòa · {LOCATION}</span>
 </div>""", unsafe_allow_html=True)
+     
