@@ -1,0 +1,6723 @@
+# -*- coding: utf-8 -*-
+"""
+KHO NGỮ LIỆU ĐỌC CHUẨN HÓA 35 TUẦN X 2 BÀI/TUẦN (350 BÀI ĐỌC TỪ LỚP 1 ĐẾN LỚP 5)
+CHƯƠNG TRÌNH GIÁO DỤC PHỔ THÔNG 2018 & THÔNG TƯ 27/2020/TT-BGDĐT
+Đơn vị: Trường Tiểu học Thái Hòa, xã Thái Hòa, tỉnh Tuyên Quang
+Tác giả: Hoàng Lâm Anh
+"""
+
+KHO_NGU_LIEU_DOC = {
+    "Lop_1": {
+        "Tuần 01": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W01_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 01 - Bài 1: Em làm quen chữ cái",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W01_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 01 - Bài 2: Bé chuẩn bị đến trường",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 02": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W02_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 02 - Bài 1: Âm và thanh điệu",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W02_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 02 - Bài 2: Ngôi nhà của bé",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 03": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W03_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 03 - Bài 1: Âm vần đơn giản",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W03_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 03 - Bài 2: Bữa cơm gia đình",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 04": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W04_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 04 - Bài 1: Luyện đọc từ ngữ",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W04_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 04 - Bài 2: Đồ dùng học tập",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 05": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W05_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 05 - Bài 1: Câu ngắn đầu tiên",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W05_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 05 - Bài 2: Bạn bè trong lớp",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 06": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W06_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 06 - Bài 1: Chào hỏi lễ phép",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W06_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 06 - Bài 2: Cô giáo mến thương",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 07": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W07_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 07 - Bài 1: Bé giữ vệ sinh",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W07_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 07 - Bài 2: Góc học tập gọn gàng",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 08": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W08_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 08 - Bài 1: Những người bạn nhỏ",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W08_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 08 - Bài 2: Giờ ra chơi vui vẻ",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 09": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W09_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 09 - Bài 1: Ôn tập giữa học kỳ 1",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W09_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 09 - Bài 2: Bé đọc lưu loát",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 10": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W10_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 10 - Bài 1: Gia đình thân yêu",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W10_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 10 - Bài 2: Bàn tay của mẹ",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 11": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W11_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 11 - Bài 1: Ông bà kính yêu",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W11_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 11 - Bài 2: Lời dặn của bố",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 12": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W12_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 12 - Bài 1: Vườn cây quanh nhà",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W12_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 12 - Bài 2: Chú mèo tinh nghịch",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 13": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W13_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 13 - Bài 1: Con gà trống sớm mai",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W13_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 13 - Bài 2: Đàn gà con lon ton",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 14": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W14_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 14 - Bài 1: Con suối trong xanh",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W14_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 14 - Bài 2: Cánh đồng lúa chín",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 15": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W15_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 15 - Bài 1: Bầu trời đầy sao",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W15_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 15 - Bài 2: Tia nắng ban mai",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 16": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W16_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 16 - Bài 1: Cây bàng trút lá",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W16_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 16 - Bài 2: Mùa đông ấm áp",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 17": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W17_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 17 - Bài 1: Chăm ngoan học tập",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W17_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 17 - Bài 2: Chiếc bảng con sạch đẹp",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 18": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G1_W18_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 18 - Bài 1: Ôn tập cuối học kỳ 1",
+                    "text": "Sáng sớm, ánh nắng vàng rải nhẹ trên đường làng. Bé thức dậy thật sớm, rửa mặt sạch sẽ rồi đeo chiếc cặp xinh xắn. Bé vui bước cùng mẹ tới trường Tiểu học Thái Hòa trong niềm vui rộn rã.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "rải nhẹ",
+                        "rửa mặt",
+                        "xinh xắn",
+                        "rộn rã"
+                    ],
+                    "question": "Buổi sớm, bạn nhỏ đi đâu cùng mẹ?",
+                    "expected_answer": "đi tới trường Tiểu học Thái Hòa"
+                },
+                {
+                    "lesson_code": "G1_W18_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 18 - Bài 2: Ngày hội đọc sách lớp 1",
+                    "text": "Trong lớp một, các bạn ngồi học thật ngay ngắn. Cô giáo cầm tay từng bạn, nắn nót từng nét chữ hoa đầu tiên. Tiếng đọc bài ngân vang, trong trẻo như đàn chim non ríu rít chuyền cành.",
+                    "word_count": 39,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "ngay ngắn",
+                        "nắn nót",
+                        "ngân vang",
+                        "ríu rít"
+                    ],
+                    "question": "Cô giáo đã giúp học sinh làm việc gì?",
+                    "expected_answer": "nắn nót từng nét chữ"
+                }
+            ]
+        },
+        "Tuần 19": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W19_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 19 - Bài 1: Mùa xuân tươi đẹp",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W19_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 19 - Bài 2: Mưa xuân lất phất",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 20": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W20_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 20 - Bài 1: Hoa đào khoe sắc",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W20_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 20 - Bài 2: Bé đón Tết vui",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 21": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W21_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 21 - Bài 1: Cây xanh quanh em",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W21_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 21 - Bài 2: Mầm non hé nụ",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 22": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W22_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 22 - Bài 1: Muôn loài chim hót",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W22_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 22 - Bài 2: Chú bồ câu trắng",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 23": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W23_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 23 - Bài 1: Loài vật quanh em",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W23_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 23 - Bài 2: Chú chó Vàng trung thành",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 24": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W24_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 24 - Bài 1: Thiên nhiên kỳ thú",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W24_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 24 - Bài 2: Dòng sông quê em",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 25": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W25_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 25 - Bài 1: Biển trời quê hương",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W25_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 25 - Bài 2: Thuyền buồm lướt sóng",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 26": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W26_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 26 - Bài 1: Bác Hồ với thiếu nhi",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W26_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 26 - Bài 2: Ảnh Bác trên tường",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 27": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W27_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 27 - Bài 1: Ôn tập giữa học kỳ 2",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W27_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 27 - Bài 2: Bé chăm rèn đọc",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 28": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W28_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 28 - Bài 1: Đất nước gấm vóc",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W28_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 28 - Bài 2: Thủ đô Hà Nội",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 29": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W29_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 29 - Bài 1: Đồng bào các dân tộc",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W29_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 29 - Bài 2: Bản làng vùng cao",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 30": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W30_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 30 - Bài 1: Ước mơ tuổi thơ",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W30_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 30 - Bài 2: Bé muốn làm phi công",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 31": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W31_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 31 - Bài 1: Bác sĩ tương lai",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W31_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 31 - Bài 2: Cô giáo tí hon",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 32": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W32_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 32 - Bài 1: Hành tinh xanh",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W32_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 32 - Bài 2: Giữ gìn nguồn nước sạch",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 33": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W33_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 33 - Bài 1: Vui chơi an toàn",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W33_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 33 - Bài 2: Bé đi qua đường",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 34": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W34_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 34 - Bài 1: Mùa hè rực rỡ",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W34_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 34 - Bài 2: Tiếng ve gọi hè",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        },
+        "Tuần 35": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G1_W35_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 35 - Bài 1: Tạm biệt lớp 1",
+                    "text": "Mùa xuân đã về trên khắp ngả đường quê hương. Những hạt mưa bụi lất phất bay làm cho cây cối đâm chồi nảy lộc. Bông hoa đào trước sân nhà nở rộ, khoe sắc hồng thắm đón chào năm mới.",
+                    "word_count": 41,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "lất phất",
+                        "đâm chồi",
+                        "nảy lộc",
+                        "hồng thắm"
+                    ],
+                    "question": "Loài hoa nào nở trước sân đón năm mới?",
+                    "expected_answer": "hoa đào"
+                },
+                {
+                    "lesson_code": "G1_W35_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 35 - Bài 2: Chào mùa hè đón lớp 2",
+                    "text": "Bé thích nhất là được cùng bố mẹ về quê chúc Tết ông bà. Ông bà xoa đầu khen bé ngoan, học giỏi và tặng phong bao lì xì đỏ thắm. Cả nhà quây quần bên nhau thật ấm áp và ngập tràn niềm vui.",
+                    "word_count": 45,
+                    "target_wpm": 35,
+                    "difficult_words": [
+                        "chúc Tết",
+                        "xoa đầu",
+                        "lì xì",
+                        "quây quần"
+                    ],
+                    "question": "Ông bà đã khen bạn nhỏ điều gì?",
+                    "expected_answer": "khen bé ngoan, học giỏi"
+                }
+            ]
+        }
+    },
+    "Lop_2": {
+        "Tuần 01": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W01_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 01 - Bài 1: Em là học sinh lớp 2",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W01_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 01 - Bài 2: Ngày khai trường rộn rã",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 02": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W02_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 02 - Bài 1: Phần thưởng xứng đáng",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W02_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 02 - Bài 2: Tấm lòng thơm thảo",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 03": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W03_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 03 - Bài 1: Làm việc thật là vui",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W03_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 03 - Bài 2: Đồng hồ tích tắc",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 04": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W04_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 04 - Bài 1: Mỗi người một vẻ",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W04_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 04 - Bài 2: Nụ cười rạng rỡ",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 05": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W05_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 05 - Bài 1: Ngôi trường khang trang",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W05_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 05 - Bài 2: Mái ngói đỏ tươi",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 06": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W06_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 06 - Bài 1: Giờ ra chơi bổ ích",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W06_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 06 - Bài 2: Trò chơi nhảy dây",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 07": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W07_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 07 - Bài 1: Người thầy mẫu mực",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W07_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 07 - Bài 2: Bàn tay uốn nắn",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 08": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W08_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 08 - Bài 1: Bàn tay dịu dàng",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W08_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 08 - Bài 2: Lời thầy động viên",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 09": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W09_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 09 - Bài 1: Ôn tập giữa học kỳ 1",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W09_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 09 - Bài 2: Văn hay chữ tốt",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 10": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W10_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 10 - Bài 1: Bà nội hiền hậu",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W10_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 10 - Bài 2: Bà ngoại đảm đang",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 11": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W11_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 11 - Bài 1: Tình mẹ bao la",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W11_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 11 - Bài 2: Bàn tay rám nắng",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 12": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W12_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 12 - Bài 1: Bố của em",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W12_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 12 - Bài 2: Bờ vai vững chãi",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 13": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W13_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 13 - Bài 1: Anh em thuận hòa",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W13_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 13 - Bài 2: Chùm nhãn chia đôi",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 14": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W14_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 14 - Bài 1: Bữa cơm ấm cúng",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W14_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 14 - Bài 2: Gia đình sum họp",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 15": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W15_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 15 - Bài 1: Bạn trong nhà",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W15_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 15 - Bài 2: Chú mèo mướp tinh khôn",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 16": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W16_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 16 - Bài 1: Vật nuôi thân thiết",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W16_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 16 - Bài 2: Chú cún Vàng đón chủ",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 17": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W17_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 17 - Bài 1: Cây xanh bóng mát",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W17_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 17 - Bài 2: Hàng bàng góc sân",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 18": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G2_W18_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 18 - Bài 1: Ôn tập cuối học kỳ 1",
+                    "text": "Ngày khai trường mùa thu năm nay, trường Tiểu học Thái Hòa rực rỡ cờ hoa và biểu ngữ. Tiếng trống trường ngân vang giòn giã báo hiệu năm học mới bắt đầu. Em khoác trên mình bộ đồng phục sạch đẹp, hân hoan bước vào lớp hai với quyết tâm chăm ngoan, rèn luyện thật tốt.",
+                    "word_count": 57,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "rực rỡ",
+                        "ngân vang",
+                        "giòn giã",
+                        "hân hoan"
+                    ],
+                    "question": "Tiếng trống trường ngân vang báo hiệu điều gì?",
+                    "expected_answer": "năm học mới bắt đầu"
+                },
+                {
+                    "lesson_code": "G2_W18_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 18 - Bài 2: Mùa đông không lạnh",
+                    "text": "Trong giờ học Tiếng Việt, cô giáo hướng dẫn chúng em luyện đọc to, rõ ràng và diễn cảm. Nhờ có Trợ lý Bạn Bút Chì đồng hành mỗi tối, việc phát âm chuẩn các âm đầu l và n trở nên thật dễ dàng. Em rất tự tin khi đứng trước lớp đọc bài cho thầy cô và bè bạn cùng nghe.",
+                    "word_count": 63,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "hướng dẫn",
+                        "rõ ràng",
+                        "phát âm chuẩn",
+                        "tự tin"
+                    ],
+                    "question": "Ứng dụng Bạn Bút Chì giúp bạn nhỏ rèn luyện điều gì?",
+                    "expected_answer": "phát âm chuẩn âm đầu l và n"
+                }
+            ]
+        },
+        "Tuần 19": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W19_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 19 - Bài 1: Mùa xuân đến rồi",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W19_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 19 - Bài 2: Khúc ca chim sâu",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 20": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W20_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 20 - Bài 1: Chợ hoa ngày Tết",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W20_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 20 - Bài 2: Cành đào khoe sắc",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 21": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W21_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 21 - Bài 1: Muôn loài chim rừng",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W21_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 21 - Bài 2: Tiếng hót chim chòe",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 22": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W22_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 22 - Bài 1: Rừng xanh đại ngàn",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W22_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 22 - Bài 2: Bác gấu tốt bụng",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 23": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W23_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 23 - Bài 1: Sông nước quê hương",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W23_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 23 - Bài 2: Dải lụa hiền hòa",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 24": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W24_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 24 - Bài 1: Bình minh trên biển",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W24_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 24 - Bài 2: Đoàn thuyền cá về",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 25": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W25_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 25 - Bài 1: Bác Hồ kính yêu",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W25_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 25 - Bài 2: Vườn hoa Bác chăm",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 26": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W26_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 26 - Bài 1: Lòng trung thực",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W26_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 26 - Bài 2: Cậu bé dũng cảm nhận lỗi",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 27": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W27_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 27 - Bài 1: Ôn tập giữa học kỳ 2",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W27_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 27 - Bài 2: Hội thi đọc thơ",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 28": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W28_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 28 - Bài 1: Non sông gấm vóc",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W28_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 28 - Bài 2: Ruộng bậc thang Mù Cang Chải",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 29": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W29_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 29 - Bài 1: Hương sen ngát mùa",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W29_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 29 - Bài 2: Cánh đồng lúa chín",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 30": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W30_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 30 - Bài 1: Ước mơ nghề nghiệp",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W30_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 30 - Bài 2: Chiếc áo blouse trắng",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 31": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W31_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 31 - Bài 1: Chú bộ đội cụ Hồ",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W31_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 31 - Bài 2: Chiến sĩ giữ đảo xa",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 32": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W32_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 32 - Bài 1: Bầu trời và vũ trụ",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W32_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 32 - Bài 2: Đêm hè ngắm sao",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 33": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W33_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 33 - Bài 1: Bảo vệ môi trường",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W33_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 33 - Bài 2: Hành động nhỏ ý nghĩa lớn",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 34": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W34_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 34 - Bài 1: Tiếng ve gọi hè",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W34_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 34 - Bài 2: Cây phượng vĩ thắp lửa",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        },
+        "Tuần 35": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G2_W35_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 35 - Bài 1: Tạm biệt lớp 2",
+                    "text": "Dòng sông Lô hiền hòa chảy qua mảnh đất Tuyên Quang anh hùng mang theo dòng nước phù sa mát lành tưới mát đôi bờ. Buổi sớm, từng dải sương mờ mỏng manh lững lờ trôi trên mặt nước xanh biếc. Những con thuyền đánh cá nối đuôi nhau rời bến tạo nên khung cảnh quê hương trù phú, yên bình.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "phù sa",
+                        "mỏng manh",
+                        "lững lờ",
+                        "trù phú"
+                    ],
+                    "question": "Dòng sông Lô buổi sớm có khung cảnh như thế nào?",
+                    "expected_answer": "sương mờ lững lờ trôi, yên bình và trù phú"
+                },
+                {
+                    "lesson_code": "G2_W35_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 35 - Bài 2: Vững vàng bước vào lớp 3",
+                    "text": "Cây phượng vĩ già sừng sững ở giữa sân trường em bắt đầu trút bỏ màu áo xanh để đón những chùm hoa đỏ rực. Tiếng ve sầu râm ran cất lên những nốt nhạc đầu tiên gọi hè về. Chúng em thầm hứa sẽ hoàn thành thật tốt kỳ thi cuối năm để bước vào kỳ nghỉ hè ý nghĩa.",
+                    "word_count": 61,
+                    "target_wpm": 55,
+                    "difficult_words": [
+                        "sừng sững",
+                        "đỏ rực",
+                        "râm ran",
+                        "ý nghĩa"
+                    ],
+                    "question": "Âm thanh nào báo hiệu mùa hè đang về trên sân trường?",
+                    "expected_answer": "tiếng ve sầu râm ran"
+                }
+            ]
+        }
+    },
+    "Lop_3": {
+        "Tuần 01": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W01_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 01 - Bài 1: Mái trường thân yêu",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W01_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 01 - Bài 2: Tiếng trống khai trường",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 02": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W02_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 02 - Bài 1: Bàn bè bốn phương",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W02_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 02 - Bài 2: Đôi bạn cùng tiến",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 03": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W03_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 03 - Bài 1: Gia đình là điểm tựa",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W03_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 03 - Bài 2: Chiếc võng ru hời",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 04": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W04_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 04 - Bài 1: Nhớ ơn thầy cô",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W04_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 04 - Bài 2: Ngọn đèn khuya",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 05": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W05_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 05 - Bài 1: Xóm làng thân thương",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W05_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 05 - Bài 2: Đường làng sạch đẹp",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 06": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W06_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 06 - Bài 1: Hương đồng cỏ nội",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W06_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 06 - Bài 2: Mùa cốm thơm",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 07": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W07_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 07 - Bài 1: Bàn tay khéo léo",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W07_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 07 - Bài 2: Nghề gốm quê em",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 08": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W08_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 08 - Bài 1: Rèn luyện thân thể",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W08_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 08 - Bài 2: Hội khỏe Phù Đổng",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 09": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W09_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 09 - Bài 1: Ôn tập giữa học kỳ 1",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W09_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 09 - Bài 2: Đọc thông hiểu sâu",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 10": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W10_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 10 - Bài 1: Đoàn kết yêu thương",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W10_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 10 - Bài 2: Bát cháo hành nghĩa tình",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 11": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W11_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 11 - Bài 1: Uống nước nhớ nguồn",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W11_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 11 - Bài 2: Đền Hùng linh thiêng",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 12": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W12_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 12 - Bài 1: Cộng đồng gắn bó",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W12_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 12 - Bài 2: Bữa cơm đại đoàn kết",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 13": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W13_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 13 - Bài 1: Thành thị nhộn nhịp",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W13_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 13 - Bài 2: Phố phường sáng đèn",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 14": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W14_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 14 - Bài 1: Nông thôn đổi mới",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W14_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 14 - Bài 2: Con đường bê tông liên thôn",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 15": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W15_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 15 - Bài 1: Vẻ đẹp non sông",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W15_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 15 - Bài 2: Hồ Ba Bể huyền thoại",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 16": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W16_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 16 - Bài 1: Biển đảo thiêng liêng",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W16_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 16 - Bài 2: Vịnh Hạ Long kỳ quan",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 17": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W17_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 17 - Bài 1: Bảo vệ tài nguyên",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W17_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 17 - Bài 2: Rừng phòng hộ xanh thắm",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 18": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G3_W18_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 18 - Bài 1: Ôn tập cuối học kỳ 1",
+                    "text": "Mỗi sớm mùa thu, con đường làng dẫn vào trường Tiểu học Thái Hòa trải đầy hương lúa mới thơm ngát. Gió thu se lạnh mơn man trên từng cành bàng lá nõn. Các bạn học sinh tung tăng cắp sách tới trường, tiếng cười nói giòn tan xua tan đi cái lạnh đầu mùa. Mái trường thân yêu luôn là nơi chắp cánh cho bao ước mơ tuổi thơ bay cao, bay xa.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "thơm ngát",
+                        "mơn man",
+                        "giòn tan",
+                        "chắp cánh"
+                    ],
+                    "question": "Không khí buổi sớm mùa thu trên đường đến trường được miêu tả ra sao?",
+                    "expected_answer": "hương lúa thơm ngát, gió thu se lạnh, tiếng cười nói giòn tan"
+                },
+                {
+                    "lesson_code": "G3_W18_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 18 - Bài 2: Bức tranh mùa đông",
+                    "text": "Hôm nay, tổ chúng em được phân công chăm sóc công trình măng non bên bồn hoa trước lớp. Bạn Nam nhanh nhẹn xới đất, bạn Lan cẩn thận nhổ sạch cỏ dại, còn em thì tưới nước mát cho từng khóm cúc vàng. Ai nấy đều hăng say làm việc với mong muốn giữ cho cảnh quan trường lớp luôn xanh tươi, sạch đẹp và ngát hương thơm.",
+                    "word_count": 69,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân công",
+                        "công trình măng non",
+                        "nhanh nhẹn",
+                        "cảnh quan"
+                    ],
+                    "question": "Các bạn học sinh đã làm những công việc gì để chăm sóc bồn hoa?",
+                    "expected_answer": "xới đất, nhổ cỏ dại và tưới nước cho hoa"
+                }
+            ]
+        },
+        "Tuần 19": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W19_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 19 - Bài 1: Sức sống mùa xuân",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W19_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 19 - Bài 2: Chồi non vươn mình",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 20": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W20_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 20 - Bài 1: Tết sum vầy",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W20_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 20 - Bài 2: Nồi bánh chưng đêm giao thừa",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 21": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W21_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 21 - Bài 1: Lễ hội mùa xuân",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W21_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 21 - Bài 2: Tiếng trống hội làng",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 22": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W22_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 22 - Bài 1: Nghệ sĩ tí hon",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W22_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 22 - Bài 2: Tiếng đàn bầu ngân nga",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 23": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W23_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 23 - Bài 1: Sáng tạo không ngừng",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W23_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 23 - Bài 2: Nhà phát minh nhỏ tuổi",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 24": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W24_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 24 - Bài 1: Khám phá vũ trụ",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W24_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 24 - Bài 2: Kính thiên văn diệu kỳ",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 25": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W25_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 25 - Bài 1: Thể thao đem lại niềm vui",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W25_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 25 - Bài 2: Trận bóng giao hữu",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 26": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W26_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 26 - Bài 1: Bác Hồ và thiếu nhi",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W26_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 26 - Bài 2: Căn nhà sàn lịch sử",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 27": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W27_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 27 - Bài 1: Ôn tập giữa học kỳ 2",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W27_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 27 - Bài 2: Tập làm nhà văn",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 28": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W28_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 28 - Bài 1: Đất nước ba miền",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W28_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 28 - Bài 2: Cầu Tràng Tiền duyên dáng",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 29": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W29_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 29 - Bài 1: Chợ nổi miền Tây",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W29_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 29 - Bài 2: Nét đẹp Nam Bộ",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 30": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W30_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 30 - Bài 1: Người lao động cần cù",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W30_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 30 - Bài 2: Bàn tay người thợ xây",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 31": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W31_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 31 - Bài 1: Yêu hòa bình",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W31_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 31 - Bài 2: Cánh chim hòa bình",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 32": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W32_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 32 - Bài 1: Trái đất là ngôi nhà chung",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W32_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 32 - Bài 2: Giảm thiểu rác thải nhựa",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 33": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W33_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 33 - Bài 1: Ứng phó thiên tai",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W33_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 33 - Bài 2: Cùng nhau vượt mùa lũ",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 34": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W34_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 34 - Bài 1: Khúc nhạc mùa hè",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W34_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 34 - Bài 2: Hoa bằng lăng tím ngát",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        },
+        "Tuần 35": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G3_W35_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 35 - Bài 1: Chào mùa hè rực rỡ",
+                    "text": "Hồ Ba Bể hiện lên giữa đại ngàn Việt Bắc như một viên ngọc bích khổng lồ xanh thẳm. Nước hồ trong vắt quanh năm in bóng những dãy núi đá vôi kỳ vĩ và những cánh rừng nguyên sinh rậm rạp. Ngồi trên chiếc thuyền độc mộc lướt nhẹ trên mặt sóng gợn lăn tăn, du khách ngỡ như mình đang lạc vào chốn bồng lai tiên cảnh tĩnh lặng và thơ mộng.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "ngọc bích",
+                        "kỳ vĩ",
+                        "nguyên sinh",
+                        "thuyền độc mộc",
+                        "bồng lai"
+                    ],
+                    "question": "Hồ Ba Bể được so sánh với hình ảnh tuyệt đẹp nào?",
+                    "expected_answer": "viên ngọc bích khổng lồ xanh thẳm"
+                },
+                {
+                    "lesson_code": "G3_W35_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 35 - Bài 2: Trưởng thành cùng năm học mới",
+                    "text": "Bảo vệ môi trường bắt đầu từ những hành động nhỏ nhặt hàng ngày của mỗi học sinh. Việc phân loại rác thải tại nguồn, hạn chế sử dụng túi ni lông và tích cực trồng thêm cây xanh sẽ góp phần gìn giữ màu xanh cho trái đất. Hãy cùng nhau chung tay lan tỏa ý thức giữ gìn vệ sinh để ngôi trường và quê hương mãi mãi trong lành, bền vững.",
+                    "word_count": 74,
+                    "target_wpm": 75,
+                    "difficult_words": [
+                        "phân loại",
+                        "rác thải tại nguồn",
+                        "ni lông",
+                        "bền vững"
+                    ],
+                    "question": "Học sinh có thể làm gì để bảo vệ môi trường sống?",
+                    "expected_answer": "phân loại rác, hạn chế túi ni lông và trồng thêm cây xanh"
+                }
+            ]
+        }
+    },
+    "Lop_4": {
+        "Tuần 01": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W01_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 01 - Bài 1: Thương người như thể thương thân",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W01_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 01 - Bài 2: Nắm cơm nghĩa tình",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 02": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W02_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 02 - Bài 1: Măng mọc thẳng",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W02_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 02 - Bài 2: Lòng tự trọng của cậu bé",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 03": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W03_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 03 - Bài 1: Tự tin tỏa sáng",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W03_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 03 - Bài 2: Bài phát biểu đầu tiên",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 04": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W04_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 04 - Bài 1: Tình bạn cao quý",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W04_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 04 - Bài 2: Chiếc áo ấm sẻ chia",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 05": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W05_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 05 - Bài 1: Ơn sâu nghĩa nặng",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W05_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 05 - Bài 2: Bụi phấn trên bục giảng",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 06": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W06_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 06 - Bài 1: Truyền thống hiếu học",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W06_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 06 - Bài 2: Trạng nguyên nhỏ tuổi",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 07": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W07_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 07 - Bài 1: Ý chí và nghị lực",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W07_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 07 - Bài 2: Bàn chân kỳ diệu",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 08": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W08_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 08 - Bài 1: Có chí thì nên",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W08_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 08 - Bài 2: Đường leo lên đỉnh núi",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 09": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W09_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 09 - Bài 1: Ôn tập giữa học kỳ 1",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W09_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 09 - Bài 2: Luyện đọc diễn cảm",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 10": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W10_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 10 - Bài 1: Trên đôi cánh ước mơ",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W10_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 10 - Bài 2: Khát vọng bay cao",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 11": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W11_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 11 - Bài 1: Chắp cánh tương lai",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W11_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 11 - Bài 2: Học tập trong kỷ nguyên số",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 12": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W12_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 12 - Bài 1: Khám phá tri thức",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W12_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 12 - Bài 2: Thư viện mở sáng tạo",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 13": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W13_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 13 - Bài 1: Vẻ đẹp muôn màu",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W13_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 13 - Bài 2: Rừng cúc phương mùa bướm nở",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 14": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W14_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 14 - Bài 1: Thiên nhiên kỳ vĩ",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W14_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 14 - Bài 2: Động Phong Nha tráng lệ",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 15": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W15_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 15 - Bài 1: Văn hóa vùng miền",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W15_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 15 - Bài 2: Nhà rông Tây Nguyên",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 16": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W16_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 16 - Bài 1: Hương vị quê hương",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W16_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 16 - Bài 2: Mùi khói rơm rạ",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 17": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W17_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 17 - Bài 1: Bảo vệ màu xanh",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W17_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 17 - Bài 2: Lá phổi xanh của đô thị",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 18": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G4_W18_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 18 - Bài 1: Ôn tập cuối học kỳ 1",
+                    "text": "Truyền thống 'Thương người như thể thương thân' từ ngàn đời nay đã trở thành đạo lý sống thiêng liêng của dân tộc Việt Nam. Khi bão lũ thiên tai tràn qua làm thiệt hại mùa màng xóm làng, hàng triệu con tim trên khắp mọi miền đất nước lại cùng chung tay hướng về đồng bào vùng khó khăn. Từng gói lương khô, tấm áo ấm, cuốn sách vở thơm mùi giấy mới được trao tận tay các em nhỏ vùng cao chính là minh chứng sống động nhất cho tình tương thân tương ái cao đẹp.",
+                    "word_count": 98,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "thiêng liêng",
+                        "thiên tai",
+                        "đồng bào",
+                        "tương thân tương ái",
+                        "minh chứng"
+                    ],
+                    "question": "Tình cảm tương thân tương ái của nhân dân ta được thể hiện qua hành động nào?",
+                    "expected_answer": "chung tay gửi cứu trợ lương thực, áo ấm và sách vở cho đồng bào vùng bão lũ"
+                },
+                {
+                    "lesson_code": "G4_W18_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 18 - Bài 2: Kể chuyện lịch sử",
+                    "text": "Ý chí và lòng kiên định là ngọn đèn hải đăng soi sáng con đường chinh phục đỉnh cao tri thức. Thầy giáo Nguyễn Ngọc Ký năm xưa dù bị liệt cả hai tay từ thuở nhỏ nhưng bằng nghị lực phi thường đã kiên trì tập viết bằng đôi bàn chân khéo léo. Những nét chữ tròn trịa trên trang giấy trắng không chỉ là kết tinh của những giọt mồ hôi đau đớn mà còn là bài học bất hủ về tinh thần vượt khó vươn lên cho bao thế hệ học trò noi theo.",
+                    "word_count": 97,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "hải đăng",
+                        "kiên định",
+                        "nghị lực phi thường",
+                        "kết tinh",
+                        "bất hủ"
+                    ],
+                    "question": "Tấm gương thầy giáo Nguyễn Ngọc Ký để lại bài học sâu sắc gì cho thế hệ trẻ?",
+                    "expected_answer": "bài học về ý chí kiên trì, nghị lực phi thường vượt khó vươn lên"
+                }
+            ]
+        },
+        "Tuần 19": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W19_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 19 - Bài 1: Sắc xuân đất nước",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W19_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 19 - Bài 2: Bản làng vào hội",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 20": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W20_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 20 - Bài 1: Lòng dũng cảm",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W20_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 20 - Bài 2: Người chiến sĩ cứu hỏa",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 21": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W21_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 21 - Bài 1: Giữ trọn lời thề",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W21_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 21 - Bài 2: Bản lĩnh người lính",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 22": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W22_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 22 - Bài 1: Tình yêu cuộc sống",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W22_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 22 - Bài 2: Tiếng cười là liều thuốc bổ",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 23": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W23_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 23 - Bài 1: Khám phá thế giới",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W23_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 23 - Bài 2: Những bước chân vạn dặm",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 24": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W24_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 24 - Bài 1: Chinh phục đỉnh cao",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W24_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 24 - Bài 2: Thử thách lòng kiên trì",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 25": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W25_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 25 - Bài 1: Bác Hồ sống mãi",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W25_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 25 - Bài 2: Đôi dép lốp lịch sử",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 26": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W26_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 26 - Bài 1: Hòa bình cho muôn loài",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W26_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 26 - Bài 2: Cánh buồm trắng khát vọng",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 27": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W27_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 27 - Bài 1: Ôn tập giữa học kỳ 2",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W27_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 27 - Bài 2: Phân tích câu chuyện",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 28": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W28_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 28 - Bài 1: Vẻ đẹp non sông Việt Nam",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W28_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 28 - Bài 2: Hoàng Liên Sơn ngút ngàn",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 29": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W29_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 29 - Bài 1: Biển bạc đồng xanh",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W29_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 29 - Bài 2: Mùa cá bờ biển miền Trung",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 30": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W30_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 30 - Bài 1: Những con người thầm lặng",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W30_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 30 - Bài 2: Bác lao công đêm đông",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 31": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W31_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 31 - Bài 1: Sáng tạo vì cộng đồng",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W31_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 31 - Bài 2: Robot dọn rác bãi biển",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 32": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W32_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 32 - Bài 1: Thế giới số quanh em",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W32_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 32 - Bài 2: Trí tuệ nhân tạo và việc học",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 33": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W33_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 33 - Bài 1: Ngôi nhà chung nhân loại",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W33_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 33 - Bài 2: Trái đất không đơn độc",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 34": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W34_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 34 - Bài 1: Hè về trên quê hương",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W34_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 34 - Bài 2: Dòng sông hoa phượng",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        },
+        "Tuần 35": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G4_W35_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 35 - Bài 1: Khép lại hành trình lớp 4",
+                    "text": "Dưới chân dãy Hoàng Liên Sơn hùng vĩ, những thửa ruộng bậc thang Mù Cang Chải uốn lượn mềm mại như những dải lụa vàng óng ả vắt ngang lưng trời. Bàn tay cần cù và khối óc tài hoa của đồng bào dân tộc Mông đã biến những triền đồi núi dốc đứng sỏi đá khô cằn thành kỳ quan nông nghiệp trù phú. Mỗi độ thu sang, hương lúa chín ngạt ngào quyện cùng làn mây trắng bồng bềnh dệt nên bức tranh sơn thủy hữu tình lay động lòng người.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "Hoàng Liên Sơn",
+                        "ruộng bậc thang",
+                        "óng ả",
+                        "kỳ quan nông nghiệp",
+                        "bức tranh sơn thủy"
+                    ],
+                    "question": "Ruộng bậc thang Mù Cang Chải vào mùa thu được miêu tả như thế nào?",
+                    "expected_answer": "uốn lượn như dải lụa vàng, hương lúa chín quyện cùng làn mây trắng bồng bềnh"
+                },
+                {
+                    "lesson_code": "G4_W35_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 35 - Bài 2: Hành trang vào lớp 5",
+                    "text": "Trong kỷ nguyên chuyển đổi số, việc làm chủ công nghệ và rèn luyện kỹ năng số là chìa khóa mở ra tương lai tươi sáng cho mỗi học sinh. Tại trường học thân yêu, việc ứng dụng Trí tuệ nhân tạo vào rèn đọc và học tập không chỉ giúp các em học sinh tiếp thu kiến thức nhanh chóng mà còn khơi dậy niềm đam mê khám phá khoa học. Tuy nhiên, mỗi bạn nhỏ cần rèn luyện tính tự giác, sử dụng internet an toàn, văn minh và hiệu quả.",
+                    "word_count": 93,
+                    "target_wpm": 85,
+                    "difficult_words": [
+                        "chuyển đổi số",
+                        "chìa khóa",
+                        "Trí tuệ nhân tạo",
+                        "tự giác",
+                        "văn minh"
+                    ],
+                    "question": "Khi sử dụng internet và công nghệ số, học sinh cần rèn luyện điều gì?",
+                    "expected_answer": "tính tự giác, sử dụng an toàn, văn minh và hiệu quả"
+                }
+            ]
+        }
+    },
+    "Lop_5": {
+        "Tuần 01": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W01_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 01 - Bài 1: Việt Nam - Tổ quốc em",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W01_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 01 - Bài 2: Hào khí Thăng Long nghìn năm",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 02": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W02_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 02 - Bài 1: Rừng vàng biển bạc",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W02_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 02 - Bài 2: Bảo tồn di sản tự nhiên",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 03": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W03_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 03 - Bài 1: Bản lĩnh con người Việt Nam",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W03_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 03 - Bài 2: Dũng cảm trước giông bão",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 04": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W04_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 04 - Bài 1: Cánh chim hòa bình",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W04_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 04 - Bài 2: Ước vọng bầu trời không khói lửa",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 05": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W05_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 05 - Bài 1: Tình hữu nghị quốc tế",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W05_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 05 - Bài 2: Nhịp cầu bè bạn năm châu",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 06": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W06_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 06 - Bài 1: Con người với thiên nhiên",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W06_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 06 - Bài 2: Bài học từ cánh rừng nguyên sinh",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 07": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W07_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 07 - Bài 1: Giữ lấy màu xanh",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W07_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 07 - Bài 2: Bảo vệ sinh thái đại dương",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 08": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W08_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 08 - Bài 1: Thầy cô và tương lai",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W08_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 08 - Bài 2: Người lái đò thầm lặng",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 09": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W09_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 09 - Bài 1: Ôn tập giữa học kỳ 1",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W09_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 09 - Bài 2: Nâng cao năng lực đọc hiểu",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 10": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W10_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 10 - Bài 1: Ý chí vươn lên",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W10_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 10 - Bài 2: Hạt mầm vượt qua khe đá",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 11": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W11_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 11 - Bài 1: Tự hào truyền thống",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W11_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 11 - Bài 2: Ngọn cờ lau tập trận",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 12": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W12_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 12 - Bài 1: Uống nước nhớ nguồn",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W12_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 12 - Bài 2: Lễ hội đền Trần rực rỡ",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 13": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W13_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 13 - Bài 1: Vì hạnh phúc con người",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W13_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 13 - Bài 2: Bàn tay tình nguyện nơi biên cương",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 14": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W14_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 14 - Bài 1: Công dân toàn cầu",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W14_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 14 - Bài 2: Văn hóa ứng xử trên môi trường số",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 15": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W15_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 15 - Bài 1: Bản sắc văn hóa dân tộc",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W15_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 15 - Bài 2: Tiếng khèn Mông giữa đại ngàn",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 16": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W16_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 16 - Bài 1: Đất nước đổi mới",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W16_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 16 - Bài 2: Những cây cầu vượt biển kỳ vĩ",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 17": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W17_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 17 - Bài 1: Khát vọng cống hiến",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W17_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 17 - Bài 2: Ngọn lửa tri thức trẻ",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 18": {
+            "term": "Học kỳ 1",
+            "readings": [
+                {
+                    "lesson_code": "G5_W18_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 18 - Bài 1: Ôn tập cuối học kỳ 1",
+                    "text": "Việt Nam - dải đất hình chữ S kiêu hãnh bên bờ Biển Đông muôn trùng sóng vỗ, là bản trường ca bất tận về tinh thần dựng nước và giữ nước kiên cường của cha ông. Trải qua hàng nghìn năm lịch sử dựng lũy xây thành, từ đỉnh Lũng Cú địa đầu Tổ quốc đến mũi Cà Mau rừng đước ngút ngàn, từng tấc đất quê hương đều thắm đượm máu xương và mồ hôi của bao thế hệ tiền nhân. Tự hào về non sông gấm vóc, thế hệ học sinh hôm nay nguyện ra sức học tập, tu dưỡng đạo đức để tiếp bước tiền nhân, xây dựng đất nước ngày càng đàng hoàng hơn, to đẹp hơn.",
+                    "word_count": 122,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "kiêu hãnh",
+                        "bản trường ca",
+                        "dựng lũy xây thành",
+                        "địa đầu Tổ quốc",
+                        "tiền nhân",
+                        "gấm vóc"
+                    ],
+                    "question": "Đoạn văn khẳng định quyết tâm gì của thế hệ học sinh hôm nay?",
+                    "expected_answer": "ra sức học tập, tu dưỡng đạo đức để xây dựng đất nước đàng hoàng, to đẹp hơn"
+                },
+                {
+                    "lesson_code": "G5_W18_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 18 - Bài 2: Vẻ đẹp văn học dân gian",
+                    "text": "Đại ngàn Tây Nguyên hùng vĩ ngân vang tiếng cồng chiêng trầm hùng, huyền ảo giữa đêm hội mừng lúa mới. Những âm thanh linh thiêng ấy như tiếng thì thầm của sông suối, tiếng gầm vang của đại ngàn và nhịp đập thổn thức của những trái tim nồng hậu, thủy chung. Không gian văn hóa Cồng chiêng Tây Nguyên đã được UNESCO vinh danh là Kiệt tác di sản truyền khẩu và phi vật thể của nhân loại. Giữ gìn và phát huy di sản quý báu ấy chính là trách nhiệm thiêng liêng để bản sắc dân tộc mãi trường tồn cùng thời gian.",
+                    "word_count": 107,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "trầm hùng",
+                        "huyền ảo",
+                        "linh thiêng",
+                        "thổn thức",
+                        "UNESCO",
+                        "di sản phi vật thể",
+                        "trường tồn"
+                    ],
+                    "question": "Di sản văn hóa nào của vùng Tây Nguyên được nhắc đến trong đoạn trích?",
+                    "expected_answer": "Không gian văn hóa Cồng chiêng Tây Nguyên"
+                }
+            ]
+        },
+        "Tuần 19": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W19_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 19 - Bài 1: Mùa xuân hòa bình",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W19_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 19 - Bài 2: Sức sống mãnh liệt của đất trời",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 20": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W20_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 20 - Bài 1: Tết nghĩa tình",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W20_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 20 - Bài 2: Món quà xuân nơi đảo xa",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 21": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W21_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 21 - Bài 1: Lòng nhân ái bao la",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W21_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 21 - Bài 2: Bức thư gửi từ trái tim",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 22": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W22_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 22 - Bài 1: Người công dân số",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W22_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 22 - Bài 2: Kỹ năng an toàn trên không gian mạng",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 23": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W23_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 23 - Bài 1: Khoa học và công nghệ",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W23_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 23 - Bài 2: Trí tuệ nhân tạo phục vụ đời sống",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 24": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W24_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 24 - Bài 1: Chinh phục vũ trụ",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W24_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 24 - Bài 2: Vệ tinh Việt Nam trên quỹ đạo",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 25": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W25_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 25 - Bài 1: Bác Hồ - Niềm tin sáng ngời",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W25_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 25 - Bài 2: Di chúc thiêng liêng của Người",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 26": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W26_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 26 - Bài 1: Bản hùng ca non nước",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W26_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 26 - Bài 2: Chiến thắng Điện Biên lừng lẫy",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 27": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W27_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 27 - Bài 1: Ôn tập giữa học kỳ 2",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W27_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 27 - Bài 2: Năng lực cảm thụ văn học",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 28": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W28_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 28 - Bài 1: Chủ quyền thiêng liêng",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W28_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 28 - Bài 2: Cột mốc Trường Sa sóng vỗ",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 29": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W29_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 29 - Bài 1: Vẻ đẹp con người lao động",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W29_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 29 - Bài 2: Những kỹ sư trên giàn khoan dầu",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 30": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W30_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 30 - Bài 1: Tự hào thanh niên Việt Nam",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W30_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 30 - Bài 2: Khát vọng khởi nghiệp đổi mới",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 31": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W31_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 31 - Bài 1: Môi trường và tương lai",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W31_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 31 - Bài 2: Hành động vì biến đổi khí hậu",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 32": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W32_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 32 - Bài 1: Trí tuệ Việt Nam vươn xa",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W32_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 32 - Bài 2: Những kỳ tích toán học trẻ",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 33": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W33_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 33 - Bài 1: Hòa bình và phát triển",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W33_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 33 - Bài 2: Bản hòa ca chung sống nhân loại",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 34": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W34_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 34 - Bài 1: Tiếng ve lưu bút",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W34_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 34 - Bài 2: Kỷ niệm dưới mái trường tiểu học",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        },
+        "Tuần 35": {
+            "term": "Học kỳ 2",
+            "readings": [
+                {
+                    "lesson_code": "G5_W35_L1",
+                    "lesson_number": 1,
+                    "title": "Tuần 35 - Bài 1: Tạm biệt mái trường tiểu học",
+                    "text": "Nơi đầu sóng ngọn gió giữa ngàn khơi Trường Sa thiêng liêng, những người lính hải quân kiên trung ngày đêm bồng súng đứng gác giữ vững chủ quyền biển đảo của Tổ quốc. Dưới cái nắng cháy da và những cơn bão biển gầm rú dữ dội, ánh mắt các anh vẫn ngời sáng niềm tin sắt đá và tình yêu son sắt hướng về đất liền thân thương. Từng cây bàng vuông kiên cường bén rễ trong đá san hô như tạc nên biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ Quân đội nhân dân Việt Nam anh hùng.",
+                    "word_count": 108,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "đầu sóng ngọn gió",
+                        "Trường Sa",
+                        "kiên trung",
+                        "chủ quyền biển đảo",
+                        "san hô",
+                        "bất diệt"
+                    ],
+                    "question": "Hình ảnh cây bàng vuông trên đảo Trường Sa là biểu tượng cho điều gì?",
+                    "expected_answer": "biểu tượng bất diệt cho ý chí kiên trung, bất khuất của người chiến sĩ hải quân"
+                },
+                {
+                    "lesson_code": "G5_W35_L2",
+                    "lesson_number": 2,
+                    "title": "Tuần 35 - Bài 2: Vững bước bước vào cấp Trung học cơ sở",
+                    "text": "Đứng trước ngưỡng cửa hoàn thành chương trình bậc tiểu học, hành trang quý giá nhất mà các em mang theo không chỉ là kho tàng tri thức bao la mà còn là một trái tim nhân ái, lòng biết ơn sâu sắc và khát vọng vươn tầm thế giới. Năm năm dưới mái trường tiểu học thân thương là quãng thời gian tươi đẹp nhất vun đắp nhân cách và ước mơ tuổi thơ. Mai này dù đi đến bất cứ phương trời nào, tiếng trống trường thân thương và lời dặn dò ân cần của thầy cô sẽ mãi là ngọn hải đăng soi đường chỉ lối cho các em tự tin cất cánh bay xa.",
+                    "word_count": 118,
+                    "target_wpm": 100,
+                    "difficult_words": [
+                        "hành trang quý giá",
+                        "nhân ái",
+                        "vươn tầm thế giới",
+                        "vun đắp nhân cách",
+                        "ngọn hải đăng"
+                    ],
+                    "question": "Hành trang quý giá nhất mà học sinh lớp 5 mang theo khi tốt nghiệp tiểu học là gì?",
+                    "expected_answer": "tri thức bao la, trái tim nhân ái, lòng biết ơn và khát vọng vươn tầm"
+                }
+            ]
+        }
+    }
+}
