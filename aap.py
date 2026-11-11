@@ -610,31 +610,69 @@ def _build_grade_from_list(n, items, notes):
     return out
 
 
-def _load_baitap(notes):
-    """Đọc BaiTapDocTiengViet_Lop1..5 (.py hoặc .json) nằm cạnh aap.py. Khối nào có file thì dùng."""
-    import importlib
-    import json
+def _search_roots():
     here = os.path.dirname(os.path.abspath(__file__))
+    roots = []
+    for r in (here, os.getcwd(), os.path.dirname(here)):
+        if r and r not in roots and os.path.isdir(r):
+            roots.append(r)
+    return roots
+
+
+def _find_baitap_files():
+    """Tìm file bài của từng khối, chấp nhận tên có thêm hậu tố như 'BaiTapDocTiengViet_Lop1 (1).json'
+    hoặc nằm trong thư mục con. Trả về ({khối: [đường dẫn]}, danh sách file .py/.json đã thấy)."""
+    found, seen = {}, []
+    for root in _search_roots():
+        base_depth = root.rstrip(os.sep).count(os.sep)
+        for cur, dirs, files in os.walk(root):
+            dirs[:] = [d for d in dirs if not d.startswith((".", "__")) and d not in ("node_modules", "venv", ".venv")]
+            if cur.count(os.sep) - base_depth >= 3:
+                dirs[:] = []
+            for f in sorted(files):
+                low = f.lower()
+                if not low.endswith((".py", ".json")):
+                    continue
+                full = os.path.join(cur, f)
+                if len(seen) < 40:
+                    seen.append(os.path.relpath(full, root))
+                m = re.match(r"baitapdoctiengviet[\s_\-]*lop[\s_\-]*([1-5])", low)
+                if m and full not in found.setdefault(int(m.group(1)), []):
+                    found[int(m.group(1))].append(full)
+    return found, seen
+
+
+def _read_items(path):
+    """Đọc danh sách bài từ file .json hoặc .py (biến danh sách đầu tiên trong file)."""
+    import json
+    import runpy
+    if path.lower().endswith(".json"):
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+        return data if isinstance(data, list) else next((v for v in data.values() if isinstance(v, list)), None)
+    ns = runpy.run_path(path)
+    return next((v for k, v in ns.items() if not k.startswith("_") and isinstance(v, list)), None)
+
+
+def _load_baitap(notes):
+    """Đọc bài từng khối. Ưu tiên .json (không phụ thuộc cách đặt tên module), sau đó .py."""
+    found, seen = _find_baitap_files()
     out = {}
     for n in range(1, 6):
-        name, items = f"BaiTapDocTiengViet_Lop{n}", None
-        try:
-            mod = importlib.import_module(name)
-            items = next((v for k, v in vars(mod).items() if not k.startswith("_") and isinstance(v, list)), None)
-        except Exception:
-            items = None
-        if items is None:
-            path = os.path.join(here, name + ".json")
-            if os.path.exists(path):
-                try:
-                    with open(path, encoding="utf-8") as f:
-                        items = json.load(f)
-                except Exception as e:
-                    notes.append(f"Không đọc được {name}.json ({e}).")
-        if items:
-            grade = _build_grade_from_list(n, items, notes)
-            if grade:
-                out[f"Lop_{n}"] = grade
+        paths = sorted(found.get(n, []), key=lambda p: (not p.lower().endswith(".json"), len(p)))
+        for path in paths:
+            try:
+                items = _read_items(path)
+                grade = _build_grade_from_list(n, items or [], notes) if items else {}
+                if grade:
+                    out[f"Lop_{n}"] = grade
+                    break
+            except Exception as e:
+                notes.append(f"Không đọc được {os.path.basename(path)} ({e}).")
+    if len(out) < 5:
+        listed = ", ".join(seen[:15]) + (" ..." if len(seen) > 15 else "") if seen else "không thấy file .py/.json nào"
+        notes.append("Thư mục web đang chạy: " + os.path.dirname(os.path.abspath(__file__)) +
+                     " | Các file .py/.json web nhìn thấy: " + listed)
     return out
 
 
