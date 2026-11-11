@@ -18,7 +18,7 @@ import streamlit.components.v1 as components
 # 1. CẤU HÌNH
 # =====================================================================
 SCHOOL = "TRƯỜNG TIỂU HỌC THÁI HÒA"
-APP_VERSION = "2026.11.11-c"                    # số phiên bản (để kiểm tra web đã chạy bản mới chưa)
+APP_VERSION = "2026.11.11-d"                    # số phiên bản (để kiểm tra web đã chạy bản mới chưa)
 LOCATION = "xã Thái Hòa, tỉnh Tuyên Quang"
 VN_TZ = timezone(timedelta(hours=7))   # giờ Việt Nam (máy chủ web chạy giờ UTC nên phải đổi)
 AUTHOR = "Hoàng Lâm Anh"
@@ -149,6 +149,24 @@ st.markdown("""
 
     [data-testid="stMetric"] { background: #fff; border: 2px solid #E2E8F0; border-radius: 14px; padding: 10px 14px; }
     div.stButton > button, div.stFormSubmitButton > button { border-radius: 12px; font-weight: 800; }
+    /* ---- Ô GHI ÂM: khung đỏ nổi bật + nút mic đỏ to ---- */
+    [data-testid="stAudioInput"] { background: linear-gradient(180deg, #FEE2E2, #FFF7F7) !important;
+        border: 3px solid #EF4444 !important; border-radius: 22px !important; padding: 16px 18px 12px !important;
+        box-shadow: 0 8px 22px rgba(220,38,38,.28) !important; }
+    [data-testid="stAudioInput"] label p { font-weight: 800 !important; color: #991B1B !important; font-size: 17px !important; }
+    [data-testid="stAudioInputActionButton"], [data-testid="stAudioInput"] button[aria-label*="ecord" i],
+    [data-testid="stAudioInput"] button[aria-label*="top" i] {
+        width: 78px !important; height: 78px !important; min-width: 78px !important; padding: 0 !important;
+        border-radius: 50% !important; color: #fff !important; border: 4px solid #fff !important;
+        background: radial-gradient(circle at 35% 30%, #F87171 0%, #DC2626 58%, #991B1B 100%) !important;
+        box-shadow: 0 0 0 4px #DC2626, 0 10px 20px rgba(153,27,27,.55) !important;
+        animation: micbeat 1.6s ease-in-out infinite; }
+    [data-testid="stAudioInputActionButton"] svg, [data-testid="stAudioInput"] button[aria-label*="ecord" i] svg,
+    [data-testid="stAudioInput"] button[aria-label*="top" i] svg { width: 40px !important; height: 40px !important;
+        color: #fff !important; fill: #fff !important; }
+    @keyframes micbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.09); } }
+    .mic-hint { text-align: center; font-weight: 800; font-size: clamp(15px, 3.6vw, 19px); color: #B91C1C;
+        background: #FEF2F2; border: 2px dashed #F87171; border-radius: 14px; padding: 8px 12px; margin: 4px 0 10px; }
     .footer { text-align:center; margin: 34px 0 8px; padding: 14px; border-radius: 16px; color:#475569;
         background: linear-gradient(90deg, #EEF2FF, #FDF2F8); font-weight: 700; }
     .footer b { color: #BE185D; }
@@ -1038,6 +1056,8 @@ def reading_flow():
         st.session_state.pop("result_key", None)
         st.session_state.pop("result", None)
 
+    st.markdown('<div class="mic-hint" translate="no">🔴 Bấm vào <b>nút micro đỏ</b> để bắt đầu đọc · bấm lại để dừng</div>',
+                unsafe_allow_html=True)
     # key có mã bài -> đổi bài/đổi khối thì ô ghi âm tự làm mới, không chấm nhầm bản ghi của bài trước
     audio_file = st.audio_input("Ghi âm giọng đọc của học sinh:", key=f"audio_{st.session_state['rec_n']}_{lesson_id}")
     if not audio_file:
