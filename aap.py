@@ -21,7 +21,7 @@ SCHOOL = "TRƯỜNG TIỂU HỌC THÁI HÒA"
 LOCATION = "xã Thái Hòa, tỉnh Tuyên Quang"
 VN_TZ = timezone(timedelta(hours=7))   # giờ Việt Nam (máy chủ web chạy giờ UTC nên phải đổi)
 AUTHOR = "Hoàng Lâm Anh"
-MIN_SECONDS = 3.0                    # ghi âm ngắn hơn mức này -> yêu cầu ghi lại
+MIN_SECONDS = 2.0                    # ghi âm ngắn hơn mức này -> yêu cầu ghi lại
 
 # ---------------------------------------------------------------------
 # MỨC CHẤM THEO TỪNG KHỐI (thầy/cô có thể chỉnh các con số ở đây)
@@ -564,9 +564,82 @@ def render_marked(tokens):
 # 5. KHO BÀI ĐỌC LỚP 1 - 5 (35 tuần x 2 bài / tuần) - đọc từ file giáo trình
 #    Đặt file curriculum_full_grades_1_to_5.py (hoặc .json) cùng thư mục với aap.py
 # =====================================================================
-def _load_base_curriculum():
-    """Ưu tiên kho ngữ liệu của thầy/cô (kho_ngu_lieu_350_bai_doc_tieu_hoc.py / .json),
-    nếu không có thì dùng file giáo trình cũ curriculum_full_grades_1_to_5 (.py / .json)."""
+DEFAULT_WPM = {1: 35, 2: 55, 3: 75, 4: 85, 5: 100}     # tốc độ chuẩn mặc định (tiếng/phút) của từng khối
+
+
+def _parse_answer(raw):
+    """'Mức 2: Báo hiệu năm học mới (Đạt 1 điểm).' -> (2, 'Báo hiệu năm học mới').
+    'Mức 1: Học sinh trả lời là 'mẹ' (Đạt 1 điểm).' -> (1, 'mẹ')"""
+    raw = str(raw or "").strip()
+    muc = 1
+    m = re.match(r"^Mức\s*(\d)\s*:\s*", raw)
+    if m:
+        muc, raw = int(m.group(1)), raw[m.end():]
+    raw = re.sub(r"\s*\(\s*Đạt[^)]*\)\s*\.?\s*$", "", raw).strip()
+    q = re.match(r"^Học sinh trả lời là\s*['‘’\"“”](.+?)['‘’\"“”]\s*\.?$", raw)
+    if q:
+        raw = q.group(1).strip()
+    return muc, raw.rstrip(".").strip()
+
+
+def _build_grade_from_list(n, items, notes):
+    """Chuyển danh sách bài của một khối (định dạng BaiTapDocTiengViet_LopN) sang cấu trúc của web."""
+    weeks = {}
+    for pos, it in enumerate(items):
+        try:
+            w = int(re.search(r"Tuần\s*(\d+)", str(it["khoi_tuan"])).group(1))
+            mb = re.search(r"B(\d+)\s*$", str(it.get("ma_bai", "")))
+            b = int(mb.group(1)) if mb else pos % 2 + 1
+            text = _cell(it["van_ban"])
+            if not text:
+                raise ValueError("thiếu văn bản")
+            muc, ans = _parse_answer(it.get("dap_an_huong_dan"))
+            tk = [x.strip() for x in re.split(r"[,;]", _cell(it.get("tu_ngu"))) if x.strip()]
+            weeks.setdefault(w, []).append(dict(
+                lesson_code=_cell(it.get("ma_bai")) or f"TV{n}_W{w:02d}_B{b:02d}",
+                lesson_number=b, title=f"Tuần {w} - Bài {b}: {_cell(it['ten_bai'])}", text=text,
+                word_count=len(text.split()), target_wpm=DEFAULT_WPM[n], difficult_words=tk,
+                question=_cell(it.get("cau_hoi")), expected_answer=ans, muc=muc,
+                skill=_cell(it.get("ky_nang")), topic=_cell(it.get("chu_de")), genre=_cell(it.get("the_loai"))))
+        except Exception as e:
+            notes.append(f"Lớp {n}: bỏ qua một bài bị lỗi định dạng ({e}).")
+    out = {}
+    for w in sorted(weeks):
+        out[f"Tuần {w:02d}"] = {"term": "Học kỳ 1" if w <= 18 else "Học kỳ 2",
+                                "readings": sorted(weeks[w], key=lambda r: r["lesson_number"])}
+    return out
+
+
+def _load_baitap(notes):
+    """Đọc BaiTapDocTiengViet_Lop1..5 (.py hoặc .json) nằm cạnh aap.py. Khối nào có file thì dùng."""
+    import importlib
+    import json
+    here = os.path.dirname(os.path.abspath(__file__))
+    out = {}
+    for n in range(1, 6):
+        name, items = f"BaiTapDocTiengViet_Lop{n}", None
+        try:
+            mod = importlib.import_module(name)
+            items = next((v for k, v in vars(mod).items() if not k.startswith("_") and isinstance(v, list)), None)
+        except Exception:
+            items = None
+        if items is None:
+            path = os.path.join(here, name + ".json")
+            if os.path.exists(path):
+                try:
+                    with open(path, encoding="utf-8") as f:
+                        items = json.load(f)
+                except Exception as e:
+                    notes.append(f"Không đọc được {name}.json ({e}).")
+        if items:
+            grade = _build_grade_from_list(n, items, notes)
+            if grade:
+                out[f"Lop_{n}"] = grade
+    return out
+
+
+def _load_old_curriculum():
+    """Kho cũ (chỉ dùng cho khối nào chưa có file BaiTapDocTiengViet)."""
     import importlib
     import json
     here = os.path.dirname(os.path.abspath(__file__))
@@ -581,7 +654,22 @@ def _load_base_curriculum():
         if os.path.exists(path):
             with open(path, encoding="utf-8") as f:
                 return json.load(f)
-    raise FileNotFoundError("Không tìm thấy file bài đọc (kho_ngu_lieu_350_bai_doc_tieu_hoc.py hoặc .json) cùng thư mục với aap.py")
+    return {}
+
+
+def _load_base_curriculum():
+    notes = []
+    data = _load_baitap(notes)
+    missing = [f"Lop_{n}" for n in range(1, 6) if f"Lop_{n}" not in data]
+    if missing:
+        old = _load_old_curriculum()
+        for k in missing:
+            if k in old:
+                data[k] = old[k]
+                notes.append(f"Lớp {k[-1]} chưa có file BaiTapDocTiengViet_Lop{k[-1]}.py/.json nên đang dùng bài cũ (nội dung bị lặp).")
+    if not data:
+        raise FileNotFoundError("Không tìm thấy file bài đọc BaiTapDocTiengViet_Lop1.py ... Lop5.py cùng thư mục với aap.py")
+    return dict(sorted(data.items())), notes
 
 
 def _cell(v):
@@ -592,8 +680,7 @@ def _cell(v):
 def load_curriculum():
     """Bài đọc gốc + (nếu có) file bai_doc.xlsx của giáo viên ghi đè lên từng bài.
     Trả về (giáo trình, danh sách lưu ý). Dòng nào trong Excel có nội dung bài đọc thì dùng, dòng trống thì giữ bài cũ."""
-    data = _load_base_curriculum()
-    notes = []
+    data, notes = _load_base_curriculum()
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bai_doc.xlsx")
     if not os.path.exists(path):
         return data, notes
@@ -678,13 +765,19 @@ def _word_match(a, answer_words):
     for w in answer_words:
         sw = strip_marks(w)
         if sw == sa:
-            best = best or "nodau"
+            if w == sw:
+                best = best or "nodau"           # em gõ không dấu hoàn toàn (vd: "ca kho")
+            elif len(sa) >= 4:
+                best = best or "typo"            # sai dấu ở từ dài -> coi là gõ nhầm
+            # từ ngắn khác dấu (cá / cả) là hai từ khác nhau -> không tính
         elif len(sa) >= 3 and difflib.SequenceMatcher(a=sw, b=sa).ratio() >= 0.85:
             best = best or "typo"
     return best
 
 
-def check_answer(answer, lesson_text, expected, cov=0.6):
+def check_answer(answer, lesson_text, expected, cov=0.6, muc=1):
+    """muc 1 = tìm chi tiết, 2 = hiểu, 3 = suy luận/vận dụng: mức càng cao càng chấm mềm (nhiều cách diễn đạt)."""
+    cov = max(0.4, cov - 0.1 * (max(1, min(3, muc)) - 1))
     words = _words(answer)
     ideas = _split_ideas(expected)
     hit, missing, no_dau, typo = [], [], False, False
@@ -698,7 +791,8 @@ def check_answer(answer, lesson_text, expected, cov=0.6):
             typo |= any(m == "typo" for m in ms)
         else:
             missing.append(idea)
-    level = "sai" if not hit else ("daydu" if not missing else "dung")
+    need = 1.0 if len(ideas) <= 2 else 0.7          # đáp án nhiều ý: nói được ~70% số ý là đã đầy đủ
+    level = "sai" if not hit else ("daydu" if len(hit) / len(ideas) >= need else "dung")
     # Câu trong bài chứa đáp án -> dùng làm gợi ý khi em trả lời chưa đúng
     hint, best_n = None, 0
     kw_all = {strip_marks(k) for idea in ideas for k in _keywords(idea)}
@@ -838,6 +932,8 @@ def reading_flow():
     st.markdown(f"### {P['emoji']} {lesson['title']}")
     st.markdown(f'<span class="badge" style="background:{P["soft"]};color:{P["accent"]}">{grade_label} · {P["level"]}</span>',
                 unsafe_allow_html=True)
+    if lesson.get("topic"):
+        st.caption(f"📌 Chủ đề: {lesson['topic']}")
     st.write("")
     st.radio("🔎 Cỡ chữ bài đọc", list(FONT_SIZES), index=P["fs"], horizontal=True, key=f"fs_{grade_num}")
     st.markdown(f'<div class="reading-box" translate="no">{lesson["text"].replace(chr(10), "<br>")}</div>', unsafe_allow_html=True)
@@ -983,6 +1079,9 @@ def reading_flow():
     st.markdown("---")
     st.markdown("### ❓ Câu hỏi đọc hiểu")
     st.markdown(f"**{lesson['question']}**")
+    if lesson.get("skill"):
+        muc_txt = {1: "Nhận biết", 2: "Thông hiểu", 3: "Vận dụng"}.get(lesson.get("muc"), "")
+        st.caption(f"🎯 Kỹ năng: {lesson['skill']}" + (f" · Mức {lesson['muc']} ({muc_txt})" if muc_txt else ""))
     with st.form(key=f"form_{key}"):
         answer_input = st.text_input("Con gõ câu trả lời ngắn vào đây:", placeholder="Ví dụ: Bạn nhỏ cảm thấy ...")
         submitted = st.form_submit_button("✅ Kiểm tra câu trả lời", type="primary")
@@ -990,7 +1089,7 @@ def reading_flow():
         if not answer_input.strip():
             st.warning("Con hãy gõ câu trả lời rồi bấm “Kiểm tra câu trả lời” nhé.")
         else:
-            cr = check_answer(answer_input, lesson["text"], lesson["expected_answer"], P["comp_cov"])
+            cr = check_answer(answer_input, lesson["text"], lesson["expected_answer"], P["comp_cov"], lesson.get("muc", 1))
             kind, paras = comprehension_feedback(cr, student_name)
             body = "".join(f"<p>{p}</p>" for p in paras)
             (st.success if kind == "success" else st.warning)("🎉 Con trả lời đúng rồi!" if kind == "success"
@@ -1000,7 +1099,7 @@ def reading_flow():
                 ok, err = save_comprehension_to_sheet(selected_class, student_name, lesson["title"], answer_input.strip(), COMP_LABEL[cr["level"]])
                 if not ok and err:
                     st.caption(f"(Chưa ghi được kết quả đọc hiểu vào Sheet: {err})")
-            if cr["level"] != "sai":
+            if cr["level"] != "sai" or lesson.get("muc", 1) >= 2:
                 with st.expander("Xem câu trả lời mẫu"):
                     st.markdown(cr["sample"])
 
