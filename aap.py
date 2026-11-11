@@ -18,6 +18,7 @@ import streamlit.components.v1 as components
 # 1. CẤU HÌNH
 # =====================================================================
 SCHOOL = "TRƯỜNG TIỂU HỌC THÁI HÒA"
+APP_VERSION = "2026.11.11-c"                    # số phiên bản (để kiểm tra web đã chạy bản mới chưa)
 LOCATION = "xã Thái Hòa, tỉnh Tuyên Quang"
 VN_TZ = timezone(timedelta(hours=7))   # giờ Việt Nam (máy chủ web chạy giờ UTC nên phải đổi)
 AUTHOR = "Hoàng Lâm Anh"
@@ -714,8 +715,28 @@ def _cell(v):
     return "" if v is None else str(v).strip()
 
 
+def _data_signature():
+    """Dấu vân tay của các file bài đọc (tên + dung lượng + giờ sửa). File đổi -> web tự nạp lại, không dùng nhầm bài cũ."""
+    paths = []
+    found, _ = _find_baitap_files()
+    for lst in found.values():
+        paths += lst
+    here = os.path.dirname(os.path.abspath(__file__))
+    for name in ("bai_doc.xlsx", "kho_ngu_lieu_350_bai_doc_tieu_hoc.py", "kho_ngu_lieu_350_bai_doc_tieu_hoc.json",
+                 "curriculum_full_grades_1_to_5.py", "curriculum_full_grades_1_to_5.json"):
+        paths.append(os.path.join(here, name))
+    sig = []
+    for pth in sorted(set(paths)):
+        try:
+            stt = os.stat(pth)
+            sig.append((pth, stt.st_size, int(stt.st_mtime)))
+        except OSError:
+            pass
+    return tuple(sig)
+
+
 @st.cache_data(show_spinner=False)
-def load_curriculum():
+def load_curriculum(signature=()):
     """Bài đọc gốc + (nếu có) file bai_doc.xlsx của giáo viên ghi đè lên từng bài.
     Trả về (giáo trình, danh sách lưu ý). Dòng nào trong Excel có nội dung bài đọc thì dùng, dòng trống thì giữ bài cũ."""
     data, notes = _load_base_curriculum()
@@ -763,7 +784,7 @@ def load_curriculum():
     return data, notes
 
 
-CURRICULUM, CURRICULUM_NOTES = load_curriculum()
+CURRICULUM, CURRICULUM_NOTES = load_curriculum(_data_signature())
 GRADES = {f"Lớp {k.split('_')[1]}": k for k in CURRICULUM}          # {'Lớp 1': 'Lop_1', ...}
 GRADE_OF = {v: k.split()[1] for k, v in GRADES.items()}             # {'Lop_1': '1', ...}
 
@@ -1208,8 +1229,19 @@ with tab_help:
 - Máy xét nhiều cách nghe và lấy cách khớp bài nhất để tránh phạt oan. Nếu máy nghe không rõ, bài **không được chấm** để em ghi âm lại.
 - Mức đánh giá theo Thông tư 27: **T** Hoàn thành tốt · **H** Hoàn thành · **C** Chưa hoàn thành. Điểm và sao chỉ để tham khảo, **giáo viên là người đánh giá cuối cùng**.""")
 
+with tab_help:
+    st.markdown("---")
+    st.caption("Thầy/cô vừa cập nhật file bài đọc mà web chưa đổi? Bấm nút dưới để nạp lại.")
+    if st.button("🔄 Tải lại danh sách bài đọc"):
+        st.cache_data.clear()
+        try:
+            st.rerun()
+        except Exception:
+            st.experimental_rerun()
+
 st.markdown(f"""
 <div class="footer" translate="no">
   💛 Web được tạo bởi giáo viên <b>{AUTHOR}</b><br>
-  <span style="font-weight:700;font-size:15px">Trường Tiểu học Thái Hòa · {LOCATION}</span>
+  <span style="font-weight:700;font-size:15px">Trường Tiểu học Thái Hòa · {LOCATION}</span><br>
+  <span style="font-weight:600;font-size:11px;opacity:.55">Phiên bản {APP_VERSION} · {sum(len(x["readings"]) for w in CURRICULUM.values() for x in w.values())} bài đọc</span>
 </div>""", unsafe_allow_html=True)
