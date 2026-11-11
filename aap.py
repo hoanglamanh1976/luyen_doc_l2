@@ -565,14 +565,23 @@ def render_marked(tokens):
 #    Đặt file curriculum_full_grades_1_to_5.py (hoặc .json) cùng thư mục với aap.py
 # =====================================================================
 def _load_base_curriculum():
-    try:
-        from curriculum_full_grades_1_to_5 import CURRICULUM_DATA
-        return CURRICULUM_DATA
-    except Exception:
-        import json
-        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "curriculum_full_grades_1_to_5.json")
-        with open(path, encoding="utf-8") as f:
-            return json.load(f)
+    """Ưu tiên kho ngữ liệu của thầy/cô (kho_ngu_lieu_350_bai_doc_tieu_hoc.py / .json),
+    nếu không có thì dùng file giáo trình cũ curriculum_full_grades_1_to_5 (.py / .json)."""
+    import importlib
+    import json
+    here = os.path.dirname(os.path.abspath(__file__))
+    for mod, var in (("kho_ngu_lieu_350_bai_doc_tieu_hoc", "KHO_NGU_LIEU_DOC"),
+                     ("curriculum_full_grades_1_to_5", "CURRICULUM_DATA")):
+        try:
+            return getattr(importlib.import_module(mod), var)
+        except Exception:
+            pass
+    for name in ("kho_ngu_lieu_350_bai_doc_tieu_hoc.json", "curriculum_full_grades_1_to_5.json"):
+        path = os.path.join(here, name)
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as f:
+                return json.load(f)
+    raise FileNotFoundError("Không tìm thấy file bài đọc (kho_ngu_lieu_350_bai_doc_tieu_hoc.py hoặc .json) cùng thư mục với aap.py")
 
 
 def _cell(v):
@@ -1067,4 +1076,3 @@ st.markdown(f"""
   💛 Web được tạo bởi giáo viên <b>{AUTHOR}</b><br>
   <span style="font-weight:700;font-size:15px">Trường Tiểu học Thái Hòa · {LOCATION}</span>
 </div>""", unsafe_allow_html=True)
-     
