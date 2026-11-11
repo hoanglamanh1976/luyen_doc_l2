@@ -1262,6 +1262,6 @@ with tab_help:
 st.markdown(f"""
 <div class="footer" translate="no">
   "✏️BẠN BÚT CHÌ" được tạo bởi giáo viên <b>{AUTHOR}</b><br>
-  <span style="font-weight:700;font-size:15px">Trường Tiểu học Thái Hòa · {LOCATION}</span><br>
+  <span style="font-weight:700;font-size:15px">Trường Tiểu học Thái Hòa , {LOCATION}</span><br>
   <span style="font-weight:600;font-size:11px;opacity:.55">Phiên bản {APP_VERSION} · {sum(len(x["readings"]) for w in CURRICULUM.values() for x in w.values())} bài đọc</span>
 </div>""", unsafe_allow_html=True)
