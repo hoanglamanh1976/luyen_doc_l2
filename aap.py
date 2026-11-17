@@ -18,7 +18,7 @@ import streamlit.components.v1 as components
 # 1. CẤU HÌNH
 # =====================================================================
 SCHOOL = "TRƯỜNG TIỂU HỌC THÁI HÒA"
-APP_VERSION = "2026.11.11-d"                    # số phiên bản (để kiểm tra web đã chạy bản mới chưa)
+APP_VERSION = "2026.11.11-e"                    # số phiên bản (để kiểm tra web đã chạy bản mới chưa)
 LOCATION = "xã Thái Hòa, tỉnh Tuyên Quang"
 VN_TZ = timezone(timedelta(hours=7))   # giờ Việt Nam (máy chủ web chạy giờ UTC nên phải đổi)
 AUTHOR = "Hoàng Lâm Anh"
@@ -1000,6 +1000,61 @@ div.reading-box {{ border-color: {P['accent']}66 !important;
 tab_read, tab_prog, tab_help = st.tabs(["📖 Đọc bài", "🏆 Thành tích của em", "ℹ️ Hướng dẫn & cách chấm"])
 
 
+def practice_words(res, key, wav_bytes, voice_label):
+    """Phần 'Luyện lại những từ chưa đúng': nghe lại giọng đọc của em, nghe cô đọc mẫu từng từ hoặc tất cả các từ."""
+    words, seen = [], set()
+    for tok, stt in res["tokens"]:
+        w = re.sub(r"[^\w]", "", tok, flags=re.UNICODE).replace("_", "")
+        if stt in ("miss", "near") and w and w.lower() not in seen:
+            seen.add(w.lower())
+            words.append((w, stt))
+    words = words[:12]
+
+    st.markdown("### 🔁 Luyện lại những từ chưa đúng")
+    with st.expander("🎧 Nghe lại giọng đọc của em", expanded=False):
+        st.audio(wav_bytes, format="audio/wav")
+        st.caption("Em nghe lại và so sánh với giọng đọc mẫu của cô nhé.")
+    if not words:
+        st.success("Em đã đọc đúng tất cả các từ trong bài. Giỏi lắm! 🌟")
+        return
+
+    chips = " ".join(f'<span class="{"w-miss" if stt == "miss" else "w-near"}">{w}</span>' for w, stt in words)
+    st.markdown(f'<div class="reading-box" translate="no" style="font-size:22px !important;padding:14px">{chips}</div>',
+                unsafe_allow_html=True)
+    st.caption("Nền đỏ: cần đọc lại · Nền vàng: gần đúng (chú ý dấu thanh). "
+               "Em bấm vào từng từ để nghe cô đọc, rồi đọc theo 3 lần nhé!")
+
+    if st.session_state.get("wp_key") != key:           # sang bài/lần đọc mới thì xóa lựa chọn cũ
+        st.session_state["wp_key"] = key
+        st.session_state.pop("wp_text", None)
+        st.session_state["wp_fresh"] = False
+
+    if st.button("🔊 Nghe tất cả các từ cần luyện", type="primary", key=f"wp_all_{key[:8]}"):
+        st.session_state["wp_text"] = ". ".join(w for w, _ in words) + "."
+        st.session_state["wp_label"] = "tất cả các từ cần luyện"
+        st.session_state["wp_fresh"] = True
+    cols = st.columns(3)
+    for i, (w, stt) in enumerate(words):
+        if cols[i % 3].button(f"{'🟥' if stt == 'miss' else '🟨'} 🔊 {w}", key=f"wp_{key[:8]}_{i}"):
+            st.session_state["wp_text"] = w + "."
+            st.session_state["wp_label"] = f"“{w}”"
+            st.session_state["wp_fresh"] = True
+
+    text = st.session_state.get("wp_text")
+    if text:
+        st.markdown(f"**Đang nghe:** {st.session_state.get('wp_label', '')}")
+        fresh = st.session_state.get("wp_fresh", False)
+        st.session_state["wp_fresh"] = False            # chỉ tự phát một lần, các lần chạy lại không phát lại
+        try:
+            audio_bytes, _engine, _err = synth_vi(text, VOICES[voice_label], "-25%")
+            try:
+                st.audio(audio_bytes, format="audio/mp3", autoplay=fresh)
+            except TypeError:
+                st.audio(audio_bytes, format="audio/mp3")
+        except Exception:
+            browser_tts_button(text)
+
+
 def reading_flow():
     st.markdown(f"""
 <div class="steps" translate="no">
@@ -1029,12 +1084,14 @@ def reading_flow():
     tts_key = f"{lesson_id}|{voice_label}|{speed_label}"
     if st.button("▶️ Nghe đọc mẫu", type="primary"):
         st.session_state["tts_play"] = tts_key
+        st.session_state["tts_fresh"] = True
     if st.session_state.get("tts_play") == tts_key:
+        fresh_tts = st.session_state.pop("tts_fresh", False)
         try:
             with st.spinner("Bạn Bút Chì đang chuẩn bị giọng đọc..."):
                 audio_bytes, engine, edge_err = synth_vi(lesson["text"], VOICES[voice_label], SPEEDS[speed_label])
             try:
-                st.audio(audio_bytes, format="audio/mp3", autoplay=True)
+                st.audio(audio_bytes, format="audio/mp3", autoplay=fresh_tts)
             except TypeError:
                 st.audio(audio_bytes, format="audio/mp3")
             if engine == "edge":
@@ -1137,6 +1194,7 @@ def reading_flow():
     st.markdown("### 💬 Bài đọc của em")
     st.markdown(f'<div class="reading-box" translate="no">{render_marked(res["tokens"])}</div>', unsafe_allow_html=True)
     st.caption("Màu xanh: đọc đúng · Nền vàng: đọc gần đúng (chưa chuẩn dấu) · Nền đỏ: cần đọc lại")
+    practice_words(res, key, wav_bytes, voice_label)
     st.markdown("### 📝 Nhận xét (theo Thông tư 27/2020/TT-BGDĐT)")
     cm = build_comment(student_name, lesson["title"], res, target_wpm)
     li = lambda xs: "<br>".join("• " + x for x in xs)
@@ -1261,6 +1319,7 @@ with tab_help:
 
 st.markdown(f"""
 <div class="footer" translate="no">
+
   "✏️BẠN BÚT CHÌ" được tạo bởi giáo viên <b>{AUTHOR}</b><br>
   <span style="font-weight:700;font-size:15px">Trường Tiểu học Thái Hòa , {LOCATION}</span><br>
   <span style="font-weight:600;font-size:11px;opacity:.55">Phiên bản {APP_VERSION} · {sum(len(x["readings"]) for w in CURRICULUM.values() for x in w.values())} bài đọc</span>
